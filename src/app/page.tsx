@@ -11,6 +11,7 @@ import { MapSection } from "@/components/sections/MapSection";
 import { Pillars } from "@/components/sections/Pillars";
 import { PreviewSection } from "@/components/sections/PreviewSection";
 import { QuizTotemSection } from "@/components/sections/QuizTotemSection";
+import { RunnerGameSection } from "@/components/sections/RunnerGameSection";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 
 export default function HomePage() {
@@ -28,6 +29,7 @@ export default function HomePage() {
         <DiaDTeaser />
         <PreviewSection />
         <QuizTotemSection />
+        <RunnerGameSection />
         <ImpactCta />
       </main>
       <Footer />

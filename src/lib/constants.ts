@@ -4,6 +4,7 @@ export const NAV_LINKS = [
   { label: "Dia D", href: "#dia-d" },
   { label: "Experiências", href: "#o-que-vem" },
   { label: "Quiz", href: "#quiz" },
+  { label: "Jogo", href: "#jogo" },
 ] as const;
 
 export const WHATSAPP_INSTITUTIONAL = "5527999990000";
