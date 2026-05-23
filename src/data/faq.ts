@@ -1,12 +1,32 @@
-export interface FaqItem {
-  q: string;
-  a: string;
-}
-
-export const FAQ: FaqItem[] = [
-  { q: 'Como retiro minha pulseira?', a: 'Na Praça Central de Viana, das 6h às 22h durante os 3 dias do evento. Apresente o QR-Code do cadastro.' },
-  { q: 'Os ônibus são gratuitos?', a: 'Sim, com a pulseira oficial. 4 linhas circulares com 28 paradas e saídas a cada 30 minutos.' },
-  { q: 'Posso cancelar minha reserva?', a: 'Reservas pagas têm reembolso integral até 72h antes do evento, e 50% até 24h antes.' },
-  { q: 'Tem estrutura para crianças?', a: 'Sim. Algumas atividades de aventura têm idade mínima (12+); o catálogo indica em cada card.' },
-  { q: 'O evento acontece em caso de chuva?', a: 'Sim. Atividades aquáticas podem ser remarcadas em caso de chuva forte; demais seguem normalmente.' },
-];
+export const faqItems = [
+  {
+    id: "o-que-e",
+    question: "O que é o Dia D do Turismo?",
+    answer:
+      "É um evento que reunirá o melhor do turismo de Viana/ES — esportes de aventura, polo cervejeiro, hospedagem e gastronomia — conectando visitantes da Grande Vitória ao ecossistema turístico local.",
+  },
+  {
+    id: "quando",
+    question: "Quando será o evento?",
+    answer:
+      "O Dia D está previsto para junho de 2026. A data exata e a programação oficial serão divulgadas em breve. Cadastre-se para ser avisado em primeira mão.",
+  },
+  {
+    id: "cadastro",
+    question: "Como me cadastro e o que recebo?",
+    answer:
+      "Preencha o formulário na seção Gamificação. Você receberá avisos por e-mail sobre a programação oficial, vouchers e novidades do evento, além de prioridade no Dia D.",
+  },
+  {
+    id: "pagamento",
+    question: "Preciso pagar algo no site?",
+    answer:
+      "Não. O site não processa pagamentos. Na v1, o cadastro é gratuito. Reservas e cobranças, quando disponíveis, serão feitas diretamente com os operadores.",
+  },
+  {
+    id: "empresa",
+    question: "Como minha empresa pode participar do polo?",
+    answer:
+      "Preencha o formulário Fale Conosco — Empresas na seção Institucional. Nossa equipe entrará em contato para orientar sobre participação no ecossistema turístico de Viana.",
+  },
+] as const;

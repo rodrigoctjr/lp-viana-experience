@@ -1,44 +1,63 @@
-'use client';
-import { useState, useEffect } from 'react';
+"use client";
 
-const EVENT_DATE = new Date('2026-11-14T08:00:00-03:00');
+import { useEffect, useState } from "react";
+import { EVENT_TARGET } from "@/lib/constants";
 
-export interface CountdownValue {
+interface CountdownValues {
+  months: number;
   days: number;
   hours: number;
-  mins: number;
-  secs: number;
-  ended: boolean;
-  text: string;
-  mounted: boolean;
+  minutes: number;
+  seconds: number;
+  isPast: boolean;
+  isLive: boolean;
 }
 
-const PLACEHOLDER: CountdownValue = {
-  days: 0, hours: 0, mins: 0, secs: 0,
-  ended: false, text: '— : — : —', mounted: false,
-};
+function computeCountdown(target: Date): CountdownValues {
+  const now = new Date();
+  const diff = target.getTime() - now.getTime();
 
-function calc(diff: number): CountdownValue {
-  if (diff <= 0) return { days: 0, hours: 0, mins: 0, secs: 0, ended: true, text: 'AGORA!', mounted: true };
-  const days = Math.floor(diff / 86400000);
-  const hours = Math.floor((diff % 86400000) / 3600000);
-  const mins = Math.floor((diff % 3600000) / 60000);
-  const secs = Math.floor((diff % 60000) / 1000);
-  const pad = (n: number) => String(n).padStart(2, '0');
-  return { days, hours, mins, secs, ended: false, text: `${pad(days)} : ${pad(hours)} : ${pad(mins)} : ${pad(secs)}`, mounted: true };
+  if (diff <= 0) {
+    return {
+      months: 0,
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      isPast: true,
+      isLive: true,
+    };
+  }
+
+  const totalSeconds = Math.floor(diff / 1000);
+  const totalMinutes = Math.floor(totalSeconds / 60);
+  const totalHours = Math.floor(totalMinutes / 60);
+  const totalDays = Math.floor(totalHours / 24);
+
+  const months = Math.floor(totalDays / 30);
+  const days = totalDays % 30;
+
+  return {
+    months,
+    days,
+    hours: totalHours % 24,
+    minutes: totalMinutes % 60,
+    seconds: totalSeconds % 60,
+    isPast: false,
+    isLive: totalHours < 24,
+  };
 }
 
-export function useCountdown(): CountdownValue {
-  const [value, setValue] = useState<CountdownValue>(PLACEHOLDER);
+export function useCountdown(target: Date = EVENT_TARGET) {
+  const [values, setValues] = useState<CountdownValues>(() => computeCountdown(target));
 
   useEffect(() => {
-    // Só roda no cliente, evitando mismatch de hydration
-    setValue(calc(EVENT_DATE.getTime() - Date.now()));
+    setValues(computeCountdown(target));
     const interval = setInterval(() => {
-      setValue(calc(EVENT_DATE.getTime() - Date.now()));
+      setValues(computeCountdown(target));
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [target]);
 
-  return value;
+  return values;
 }

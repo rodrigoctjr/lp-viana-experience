@@ -1,48 +1,69 @@
-import type { Metadata } from 'next';
-import { Alfa_Slab_One, DM_Serif_Display, Bricolage_Grotesque, JetBrains_Mono } from 'next/font/google';
-import './globals.css';
-import { RsvpProvider } from '@/context/RsvpContext';
+import type { Metadata } from "next";
+import {
+  Alfa_Slab_One,
+  Bricolage_Grotesque,
+  DM_Serif_Display,
+  JetBrains_Mono,
+} from "next/font/google";
+import "./globals.css";
 
-const alfaSlabOne = Alfa_Slab_One({
-  weight: '400',
-  variable: '--font-display',
-  subsets: ['latin'],
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-dm-serif",
+  display: "swap",
 });
 
-const dmSerifDisplay = DM_Serif_Display({
-  weight: ['400'],
-  style: ['normal', 'italic'],
-  variable: '--font-editorial',
-  subsets: ['latin'],
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+  display: "swap",
 });
 
-const bricolageGrotesque = Bricolage_Grotesque({
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-body',
-  subsets: ['latin'],
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+  display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  weight: ['400', '500', '700'],
-  variable: '--font-mono',
-  subsets: ['latin'],
+const alfaSlab = Alfa_Slab_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-alfa-slab",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: 'Viana Experience — Festival de Aventura · Espírito Santo',
-  description: 'Festival de aventura, cervejaria e cultura no interior do Espírito Santo. Três dias, duas rotas, 14 experiências.',
+  title: "Viana Experience — Polo Cervejeiro & Dia D do Turismo · Viana/ES",
+  description:
+    "Dia D do Turismo em jun/2026. Duas rotas, uma cidade. Natureza, cerveja e aventura no Espírito Santo.",
+  openGraph: {
+    title: "Viana Experience — Dia D do Turismo",
+    description: "Polo Cervejeiro, Rota das Águas e muito mais. Jun/2026 em Viana/ES.",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/images/polo-cervejeiro-poster.png",
+        width: 800,
+        height: 800,
+        alt: "Viana Experience — Polo Cervejeiro Dia D do Turismo",
+      },
+    ],
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${alfaSlabOne.variable} ${dmSerifDisplay.variable} ${bricolageGrotesque.variable} ${jetbrainsMono.variable}`}
-    >
-      <body>
-        <RsvpProvider>
-          {children}
-        </RsvpProvider>
+    <html lang="pt-BR">
+      <body
+        className={`${dmSerif.variable} ${bricolage.variable} ${jetbrains.variable} ${alfaSlab.variable} antialiased`}
+      >
+        {children}
       </body>
     </html>
   );
