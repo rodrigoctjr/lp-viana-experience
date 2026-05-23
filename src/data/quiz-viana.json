@@ -3,7 +3,12 @@
     "id": "q01",
     "category": "historia",
     "question": "Em qual estado brasileiro fica o município de Viana?",
-    "options": ["Espírito Santo", "Minas Gerais", "Rio de Janeiro", "Bahia"],
+    "options": [
+      "Espírito Santo",
+      "Rio de Janeiro",
+      "Minas Gerais",
+      "Bahia"
+    ],
     "correctIndex": 0,
     "curiosity": "Viana integra a Região Metropolitana da Grande Vitória, no Espírito Santo."
   },
@@ -11,47 +16,77 @@
     "id": "q02",
     "category": "historia",
     "question": "Em que ano Viana foi oficialmente fundada?",
-    "options": ["1813", "1822", "1889", "1750"],
-    "correctIndex": 0,
+    "options": [
+      "1750",
+      "1813",
+      "1822",
+      "1889"
+    ],
+    "correctIndex": 1,
     "curiosity": "Viana foi fundada com a chegada de famílias açorianas ao Espírito Santo."
   },
   {
     "id": "q03",
     "category": "historia",
     "question": "Qual grupo de imigrantes teve forte influência na fundação de Viana?",
-    "options": ["Açorianos", "Japoneses", "Africanos", "Franceses"],
-    "correctIndex": 0,
+    "options": [
+      "Africanos",
+      "Japoneses",
+      "Franceses",
+      "Açorianos"
+    ],
+    "correctIndex": 3,
     "curiosity": "53 famílias açorianas participaram do primeiro povoamento organizado da região."
   },
   {
     "id": "q04",
     "category": "historia",
     "question": "Quem foi homenageado no nome da cidade de Viana?",
-    "options": ["Paulo Fernandes Viana", "Dom Pedro I", "Vasco Coutinho", "Tiradentes"],
-    "correctIndex": 0,
+    "options": [
+      "Tiradentes",
+      "Vasco Coutinho",
+      "Dom Pedro I",
+      "Paulo Fernandes Viana"
+    ],
+    "correctIndex": 3,
     "curiosity": "Paulo Fernandes Viana foi responsável pela colonização açoriana da região."
   },
   {
     "id": "q05",
     "category": "historia",
     "question": "Antes de voltar ao nome Viana, como o município chegou a ser chamado?",
-    "options": ["Jabaeté", "Nova Vitória", "Santa Viana", "Vila Real"],
-    "correctIndex": 0,
+    "options": [
+      "Santa Viana",
+      "Jabaeté",
+      "Vila Real",
+      "Nova Vitória"
+    ],
+    "correctIndex": 1,
     "curiosity": "O nome Jabaeté foi utilizado oficialmente entre 1943 e 1953."
   },
   {
     "id": "q06",
     "category": "historia",
     "question": "Qual rio teve importância histórica para o desenvolvimento de Viana?",
-    "options": ["Rio Jucu", "Rio Doce", "Rio Cricaré", "Rio Itapemirim"],
-    "correctIndex": 0,
+    "options": [
+      "Rio Itapemirim",
+      "Rio Cricaré",
+      "Rio Jucu",
+      "Rio Doce"
+    ],
+    "correctIndex": 2,
     "curiosity": "Os primeiros colonizadores se instalaram próximos ao Rio Jucu e seus afluentes."
   },
   {
     "id": "q07",
     "category": "historia",
     "question": "Qual povo indígena habitava a região de Viana antes da colonização?",
-    "options": ["Puris", "Yanomamis", "Guaranis", "Carajás"],
+    "options": [
+      "Puris",
+      "Guaranis",
+      "Carajás",
+      "Yanomamis"
+    ],
     "correctIndex": 0,
     "curiosity": "Os Puris tiveram forte presença cultural na região."
   },
@@ -59,23 +94,38 @@
     "id": "q08",
     "category": "historia",
     "question": "Qual era a principal finalidade do povoamento açoriano em Viana?",
-    "options": ["Ocupar e desenvolver a região", "Explorar ouro", "Construir fortalezas", "Criar universidades"],
-    "correctIndex": 0,
+    "options": [
+      "Explorar ouro",
+      "Criar universidades",
+      "Ocupar e desenvolver a região",
+      "Construir fortalezas"
+    ],
+    "correctIndex": 2,
     "curiosity": "O governo português queria estimular a ocupação do território brasileiro."
   },
   {
     "id": "q09",
     "category": "historia",
     "question": "Em que ano Viana foi elevada à categoria de município?",
-    "options": ["1862", "1813", "1900", "1953"],
-    "correctIndex": 0,
+    "options": [
+      "1953",
+      "1813",
+      "1862",
+      "1900"
+    ],
+    "correctIndex": 2,
     "curiosity": "Viana foi desmembrada de Vitória em 1862."
   },
   {
     "id": "q10",
     "category": "historia",
     "question": "Qual porto fluvial foi importante para o comércio histórico de Viana?",
-    "options": ["Porto da Igreja", "Porto Central", "Porto Azul", "Porto Vitória"],
+    "options": [
+      "Porto da Igreja",
+      "Porto Azul",
+      "Porto Central",
+      "Porto Vitória"
+    ],
     "correctIndex": 0,
     "curiosity": "O Porto da Igreja foi usado para transportar materiais e mercadorias."
   },
@@ -83,7 +133,12 @@
     "id": "q11",
     "category": "economia",
     "question": "Qual setor econômico possui maior destaque em Viana?",
-    "options": ["Comércio e serviços", "Mineração", "Pesca", "Tecnologia"],
+    "options": [
+      "Comércio e serviços",
+      "Mineração",
+      "Tecnologia",
+      "Pesca"
+    ],
     "correctIndex": 0,
     "curiosity": "O comércio e os serviços representam grande parte do PIB municipal."
   },
@@ -91,15 +146,25 @@
     "id": "q12",
     "category": "economia",
     "question": "Qual produto agrícola é um dos mais cultivados em Viana?",
-    "options": ["Banana", "Algodão", "Soja", "Trigo"],
-    "correctIndex": 0,
+    "options": [
+      "Soja",
+      "Algodão",
+      "Banana",
+      "Trigo"
+    ],
+    "correctIndex": 2,
     "curiosity": "A banana é uma das principais culturas agrícolas do município."
   },
   {
     "id": "q13",
     "category": "economia",
     "question": "Qual percentual aproximado do território de Viana é composto por área rural?",
-    "options": ["60%", "20%", "80%", "10%"],
+    "options": [
+      "60%",
+      "10%",
+      "20%",
+      "80%"
+    ],
     "correctIndex": 0,
     "curiosity": "Mesmo fazendo parte da Grande Vitória, Viana mantém forte presença rural."
   },
@@ -107,7 +172,12 @@
     "id": "q14",
     "category": "economia",
     "question": "Qual atividade pecuária é comum em Viana?",
-    "options": ["Gado leiteiro", "Criação de camelos", "Ovinocultura ártica", "Criação de iaques"],
+    "options": [
+      "Gado leiteiro",
+      "Criação de iaques",
+      "Criação de camelos",
+      "Ovinocultura ártica"
+    ],
     "correctIndex": 0,
     "curiosity": "A produção leiteira é relevante na economia rural do município."
   },
@@ -115,23 +185,38 @@
     "id": "q15",
     "category": "economia",
     "question": "Qual atividade industrial tradicional existe em Viana?",
-    "options": ["Produção de panelas de barro", "Extração de ouro", "Refino de petróleo", "Fabricação de aviões"],
-    "correctIndex": 0,
+    "options": [
+      "Refino de petróleo",
+      "Produção de panelas de barro",
+      "Fabricação de aviões",
+      "Extração de ouro"
+    ],
+    "correctIndex": 1,
     "curiosity": "As panelas de barro fazem parte da tradição cultural capixaba."
   },
   {
     "id": "q16",
     "category": "economia",
     "question": "Qual cultura agrícola além da banana também se destaca em Viana?",
-    "options": ["Café", "Uva", "Arroz selvagem", "Lúpulo"],
-    "correctIndex": 0,
+    "options": [
+      "Lúpulo",
+      "Uva",
+      "Café",
+      "Arroz selvagem"
+    ],
+    "correctIndex": 2,
     "curiosity": "O café continua sendo importante para o interior capixaba."
   },
   {
     "id": "q17",
     "category": "economia",
     "question": "Viana faz parte de qual importante região econômica do Espírito Santo?",
-    "options": ["Grande Vitória", "Caparaó", "Norte Capixaba", "Litoral Sul"],
+    "options": [
+      "Grande Vitória",
+      "Norte Capixaba",
+      "Litoral Sul",
+      "Caparaó"
+    ],
     "correctIndex": 0,
     "curiosity": "A localização estratégica favorece a logística e o comércio."
   },
@@ -139,15 +224,25 @@
     "id": "q18",
     "category": "economia",
     "question": "Qual atividade econômica tem crescido em Viana nos últimos anos?",
-    "options": ["Logística", "Garimpo", "Pesca oceânica", "Extração de diamantes"],
-    "correctIndex": 0,
+    "options": [
+      "Garimpo",
+      "Logística",
+      "Extração de diamantes",
+      "Pesca oceânica"
+    ],
+    "correctIndex": 1,
     "curiosity": "Viana é considerada um polo logístico da Grande Vitória."
   },
   {
     "id": "q19",
     "category": "economia",
     "question": "Qual fruta é destaque na fruticultura de Viana?",
-    "options": ["Banana", "Maçã", "Pera", "Mirtilo"],
+    "options": [
+      "Banana",
+      "Mirtilo",
+      "Pera",
+      "Maçã"
+    ],
     "correctIndex": 0,
     "curiosity": "A banana é muito presente na cultura alimentar capixaba."
   },
@@ -155,7 +250,12 @@
     "id": "q20",
     "category": "economia",
     "question": "Qual é uma característica econômica importante de Viana?",
-    "options": ["Diversidade produtiva", "Dependência da mineração", "Economia baseada apenas no turismo", "Ausência de zona rural"],
+    "options": [
+      "Diversidade produtiva",
+      "Economia baseada apenas no turismo",
+      "Dependência da mineração",
+      "Ausência de zona rural"
+    ],
     "correctIndex": 0,
     "curiosity": "O município possui atividades agrícolas, industriais e comerciais."
   },
@@ -163,55 +263,90 @@
     "id": "q21",
     "category": "turismo",
     "question": "Como Viana é conhecida turisticamente no Espírito Santo?",
-    "options": ["Portal das Montanhas Capixabas", "Capital das Praias", "Cidade do Petróleo", "Portal do Sertão"],
-    "correctIndex": 0,
+    "options": [
+      "Capital das Praias",
+      "Portal das Montanhas Capixabas",
+      "Portal do Sertão",
+      "Cidade do Petróleo"
+    ],
+    "correctIndex": 1,
     "curiosity": "Viana conecta a região metropolitana às montanhas capixabas."
   },
   {
     "id": "q22",
     "category": "turismo",
     "question": "Qual tipo de turismo vem crescendo em Viana?",
-    "options": ["Turismo de aventura", "Turismo de neve", "Turismo espacial", "Turismo polar"],
-    "correctIndex": 0,
+    "options": [
+      "Turismo polar",
+      "Turismo de neve",
+      "Turismo de aventura",
+      "Turismo espacial"
+    ],
+    "correctIndex": 2,
     "curiosity": "A cidade possui trilhas, rios e atividades radicais."
   },
   {
     "id": "q23",
     "category": "turismo",
     "question": "Qual atividade radical é praticada em rios de Viana?",
-    "options": ["Caiaque", "Mergulho em gelo", "Surf na neve", "Esqui aquático"],
-    "correctIndex": 0,
+    "options": [
+      "Surf na neve",
+      "Esqui aquático",
+      "Caiaque",
+      "Mergulho em gelo"
+    ],
+    "correctIndex": 2,
     "curiosity": "O Rio Jucu é usado para atividades de ecoturismo."
   },
   {
     "id": "q24",
     "category": "turismo",
     "question": "Qual elemento natural atrai visitantes para Viana?",
-    "options": ["Cachoeiras", "Desertos", "Geleiras", "Vulcões"],
-    "correctIndex": 0,
+    "options": [
+      "Vulcões",
+      "Cachoeiras",
+      "Geleiras",
+      "Desertos"
+    ],
+    "correctIndex": 1,
     "curiosity": "As áreas naturais ajudam a fortalecer o ecoturismo."
   },
   {
     "id": "q25",
     "category": "turismo",
     "question": "Qual tipo de patrimônio histórico pode ser encontrado em Viana?",
-    "options": ["Casarios antigos", "Pirâmides", "Castelos medievais", "Templos egípcios"],
-    "correctIndex": 0,
+    "options": [
+      "Pirâmides",
+      "Castelos medievais",
+      "Templos egípcios",
+      "Casarios antigos"
+    ],
+    "correctIndex": 3,
     "curiosity": "A influência açoriana ainda aparece na arquitetura local."
   },
   {
     "id": "q26",
     "category": "turismo",
     "question": "Qual festa tradicional açoriana é preservada em Viana?",
-    "options": ["Festa do Divino Espírito Santo", "Festa Junina Imperial", "Carnaval Colonial", "Festa das Flores"],
-    "correctIndex": 0,
+    "options": [
+      "Festa Junina Imperial",
+      "Festa das Flores",
+      "Festa do Divino Espírito Santo",
+      "Carnaval Colonial"
+    ],
+    "correctIndex": 2,
     "curiosity": "A celebração mantém viva a herança cultural açoriana."
   },
   {
     "id": "q27",
     "category": "turismo",
     "question": "Qual característica geográfica favorece o turismo em Viana?",
-    "options": ["Vales e montanhas", "Neve constante", "Ilhas vulcânicas", "Dunas gigantes"],
+    "options": [
+      "Vales e montanhas",
+      "Ilhas vulcânicas",
+      "Dunas gigantes",
+      "Neve constante"
+    ],
     "correctIndex": 0,
     "curiosity": "A cidade possui belas paisagens naturais próximas à capital."
   },
@@ -219,7 +354,12 @@
     "id": "q28",
     "category": "turismo",
     "question": "Qual tipo de turismo cultural Viana possui?",
-    "options": ["Turismo histórico-cultural", "Turismo glacial", "Turismo submarino", "Turismo desértico"],
+    "options": [
+      "Turismo histórico-cultural",
+      "Turismo glacial",
+      "Turismo submarino",
+      "Turismo desértico"
+    ],
     "correctIndex": 0,
     "curiosity": "A cidade preserva tradições históricas e culturais antigas."
   },
@@ -227,39 +367,64 @@
     "id": "q29",
     "category": "turismo",
     "question": "Qual prática de aventura já foi divulgada como atração em Viana?",
-    "options": ["Salto de pêndulo", "Bungee jump em prédio", "Paraquedismo urbano", "Esqui alpino"],
-    "correctIndex": 0,
+    "options": [
+      "Paraquedismo urbano",
+      "Bungee jump em prédio",
+      "Salto de pêndulo",
+      "Esqui alpino"
+    ],
+    "correctIndex": 2,
     "curiosity": "O turismo de aventura tem ganhado destaque recente."
   },
   {
     "id": "q30",
     "category": "turismo",
     "question": "Qual é a relação de Viana com a capital Vitória?",
-    "options": ["Fica a poucos minutos da capital", "Está a mais de 800 km", "É uma ilha isolada", "Não possui ligação rodoviária"],
-    "correctIndex": 0,
+    "options": [
+      "Está a mais de 800 km",
+      "Não possui ligação rodoviária",
+      "Fica a poucos minutos da capital",
+      "É uma ilha isolada"
+    ],
+    "correctIndex": 2,
     "curiosity": "A proximidade favorece o turismo e a logística."
   },
   {
     "id": "q31",
     "category": "gastronomia",
     "question": "Qual utensílio tradicional produzido em Viana é usado na culinária capixaba?",
-    "options": ["Panela de barro", "Panela de cobre", "Panela de ferro fundido", "Panela de prata"],
-    "correctIndex": 0,
+    "options": [
+      "Panela de prata",
+      "Panela de cobre",
+      "Panela de ferro fundido",
+      "Panela de barro"
+    ],
+    "correctIndex": 3,
     "curiosity": "A panela de barro é símbolo da culinária do Espírito Santo."
   },
   {
     "id": "q32",
     "category": "gastronomia",
     "question": "Qual prato típico capixaba costuma ser preparado em panela de barro?",
-    "options": ["Moqueca capixaba", "Feijoada", "Acarajé", "Tacacá"],
-    "correctIndex": 0,
+    "options": [
+      "Tacacá",
+      "Acarajé",
+      "Feijoada",
+      "Moqueca capixaba"
+    ],
+    "correctIndex": 3,
     "curiosity": "A moqueca capixaba não leva dendê, diferente da baiana."
   },
   {
     "id": "q33",
     "category": "gastronomia",
     "question": "Qual fruta muito cultivada em Viana também aparece em receitas regionais?",
-    "options": ["Banana", "Maçã", "Cereja", "Pêssego"],
+    "options": [
+      "Banana",
+      "Pêssego",
+      "Cereja",
+      "Maçã"
+    ],
     "correctIndex": 0,
     "curiosity": "A banana é bastante presente na culinária capixaba."
   },
@@ -267,15 +432,25 @@
     "id": "q34",
     "category": "gastronomia",
     "question": "Qual atividade artesanal ajuda a preservar a gastronomia regional em Viana?",
-    "options": ["Produção de panelas de barro", "Fabricação de cristais", "Tecelagem indígena", "Escultura em gelo"],
-    "correctIndex": 0,
+    "options": [
+      "Fabricação de cristais",
+      "Produção de panelas de barro",
+      "Tecelagem indígena",
+      "Escultura em gelo"
+    ],
+    "correctIndex": 1,
     "curiosity": "O artesanato tradicional fortalece a identidade cultural."
   },
   {
     "id": "q35",
     "category": "gastronomia",
     "question": "Qual alimento agrícola é tradicionalmente cultivado em Viana?",
-    "options": ["Mandioca", "Trigo europeu", "Centeio", "Batata inglesa"],
+    "options": [
+      "Mandioca",
+      "Trigo europeu",
+      "Centeio",
+      "Batata inglesa"
+    ],
     "correctIndex": 0,
     "curiosity": "A mandioca faz parte da base alimentar brasileira."
   },
@@ -283,63 +458,103 @@
     "id": "q36",
     "category": "gastronomia",
     "question": "Qual produto derivado do leite é produzido por agroindústrias de Viana?",
-    "options": ["Queijo", "Chocolate suíço", "Caviar", "Salmão defumado"],
-    "correctIndex": 0,
+    "options": [
+      "Salmão defumado",
+      "Caviar",
+      "Queijo",
+      "Chocolate suíço"
+    ],
+    "correctIndex": 2,
     "curiosity": "A agricultura familiar abastece agroindústrias locais."
   },
   {
     "id": "q37",
     "category": "gastronomia",
     "question": "Qual bebida agrícola tradicional é produzida em áreas rurais capixabas?",
-    "options": ["Café", "Saquê", "Vodka", "Whisky"],
-    "correctIndex": 0,
+    "options": [
+      "Saquê",
+      "Café",
+      "Whisky",
+      "Vodka"
+    ],
+    "correctIndex": 1,
     "curiosity": "O Espírito Santo é um dos maiores produtores de café do Brasil."
   },
   {
     "id": "q38",
     "category": "gastronomia",
     "question": "Qual ingrediente diferencia a moqueca capixaba da baiana?",
-    "options": ["Ausência de dendê", "Uso de chocolate", "Uso de queijo", "Uso de curry"],
-    "correctIndex": 0,
+    "options": [
+      "Uso de curry",
+      "Uso de queijo",
+      "Ausência de dendê",
+      "Uso de chocolate"
+    ],
+    "correctIndex": 2,
     "curiosity": "A moqueca capixaba possui sabor mais leve."
   },
   {
     "id": "q39",
     "category": "gastronomia",
     "question": "Qual tipo de produção rural é forte em Viana?",
-    "options": ["Agricultura familiar", "Plantação de trigo europeu", "Cultivo de oliva", "Viticultura alpina"],
-    "correctIndex": 0,
+    "options": [
+      "Viticultura alpina",
+      "Plantação de trigo europeu",
+      "Agricultura familiar",
+      "Cultivo de oliva"
+    ],
+    "correctIndex": 2,
     "curiosity": "Muitas pequenas propriedades sustentam a economia local."
   },
   {
     "id": "q40",
     "category": "gastronomia",
     "question": "Qual cultura agrícola ganhou notoriedade recente em Viana?",
-    "options": ["Cacau", "Uva", "Azeitona", "Amêndoas"],
-    "correctIndex": 0,
+    "options": [
+      "Uva",
+      "Cacau",
+      "Amêndoas",
+      "Azeitona"
+    ],
+    "correctIndex": 1,
     "curiosity": "O cultivo de cacau tem crescido em algumas regiões do município."
   },
   {
     "id": "q41",
     "category": "geografia",
     "question": "Viana faz parte de qual região do Espírito Santo?",
-    "options": ["Região Metropolitana da Grande Vitória", "Noroeste Capixaba", "Sul Serrano", "Litoral Norte"],
-    "correctIndex": 0,
+    "options": [
+      "Litoral Norte",
+      "Sul Serrano",
+      "Região Metropolitana da Grande Vitória",
+      "Noroeste Capixaba"
+    ],
+    "correctIndex": 2,
     "curiosity": "A cidade possui posição estratégica próxima à capital."
   },
   {
     "id": "q42",
     "category": "geografia",
     "question": "Qual é uma característica geográfica marcante de Viana?",
-    "options": ["Grande área rural", "Deserto arenoso", "Clima de neve", "Arquipélago oceânico"],
-    "correctIndex": 0,
+    "options": [
+      "Deserto arenoso",
+      "Arquipélago oceânico",
+      "Grande área rural",
+      "Clima de neve"
+    ],
+    "correctIndex": 2,
     "curiosity": "Boa parte do território é composta por áreas verdes e rurais."
   },
   {
     "id": "q43",
     "category": "geografia",
     "question": "Qual rio atravessa a região de Viana?",
-    "options": ["Rio Jucu", "Rio São Francisco", "Rio Paraná", "Rio Negro"],
+    "options": [
+      "Rio Jucu",
+      "Rio São Francisco",
+      "Rio Negro",
+      "Rio Paraná"
+    ],
     "correctIndex": 0,
     "curiosity": "O Rio Jucu é importante para abastecimento e turismo."
   },
@@ -347,7 +562,12 @@
     "id": "q44",
     "category": "geografia",
     "question": "Qual bioma predomina na região de Viana?",
-    "options": ["Mata Atlântica", "Pantanal", "Pampa", "Caatinga"],
+    "options": [
+      "Mata Atlântica",
+      "Pantanal",
+      "Pampa",
+      "Caatinga"
+    ],
     "correctIndex": 0,
     "curiosity": "A Mata Atlântica é um dos biomas mais ricos do mundo."
   },
@@ -355,7 +575,12 @@
     "id": "q45",
     "category": "geografia",
     "question": "Qual característica favorece a logística em Viana?",
-    "options": ["Localização estratégica", "Isolamento geográfico", "Ausência de rodovias", "Clima polar"],
+    "options": [
+      "Localização estratégica",
+      "Clima polar",
+      "Ausência de rodovias",
+      "Isolamento geográfico"
+    ],
     "correctIndex": 0,
     "curiosity": "A cidade possui fácil acesso às principais rodovias do estado."
   },
@@ -363,39 +588,64 @@
     "id": "q46",
     "category": "curiosidades",
     "question": "Qual cultura europeia é fortemente preservada em Viana?",
-    "options": ["Açoriana", "Russa", "Dinamarquesa", "Escocesa"],
-    "correctIndex": 0,
+    "options": [
+      "Dinamarquesa",
+      "Russa",
+      "Escocesa",
+      "Açoriana"
+    ],
+    "correctIndex": 3,
     "curiosity": "Viana é considerada referência da cultura açoriana no Espírito Santo."
   },
   {
     "id": "q47",
     "category": "curiosidades",
     "question": "Qual apelido turístico Viana recebeu devido à sua localização?",
-    "options": ["Portal das Montanhas Capixabas", "Cidade Maravilhosa Capixaba", "Terra das Neves", "Capital do Ouro"],
-    "correctIndex": 0,
+    "options": [
+      "Cidade Maravilhosa Capixaba",
+      "Capital do Ouro",
+      "Terra das Neves",
+      "Portal das Montanhas Capixabas"
+    ],
+    "correctIndex": 3,
     "curiosity": "O município é passagem para regiões serranas do estado."
   },
   {
     "id": "q48",
     "category": "curiosidades",
     "question": "Qual elemento cultural ainda pode ser visto nos casarios antigos de Viana?",
-    "options": ["Arquitetura açoriana", "Arquitetura japonesa", "Arquitetura egípcia", "Arquitetura romana"],
-    "correctIndex": 0,
+    "options": [
+      "Arquitetura japonesa",
+      "Arquitetura açoriana",
+      "Arquitetura romana",
+      "Arquitetura egípcia"
+    ],
+    "correctIndex": 1,
     "curiosity": "A colonização deixou marcas na arquitetura histórica."
   },
   {
     "id": "q49",
     "category": "curiosidades",
     "question": "Qual atividade histórica ajudou no desenvolvimento inicial de Viana?",
-    "options": ["Agricultura", "Extração de petróleo", "Indústria automobilística", "Tecnologia da informação"],
-    "correctIndex": 0,
+    "options": [
+      "Tecnologia da informação",
+      "Indústria automobilística",
+      "Extração de petróleo",
+      "Agricultura"
+    ],
+    "correctIndex": 3,
     "curiosity": "Os primeiros colonizadores cultivavam milho, mandioca e arroz."
   },
   {
     "id": "q50",
     "category": "curiosidades",
     "question": "Qual característica torna Viana única no Espírito Santo?",
-    "options": ["Preservação da cultura açoriana", "Presença de vulcões", "Clima alpino", "Maior praia do estado"],
+    "options": [
+      "Preservação da cultura açoriana",
+      "Clima alpino",
+      "Maior praia do estado",
+      "Presença de vulcões"
+    ],
     "correctIndex": 0,
     "curiosity": "Viana mantém tradições culturais herdadas dos imigrantes açorianos."
   },
@@ -403,15 +653,25 @@
     "id": "q51",
     "category": "turismo",
     "question": "Qual cervejaria de Viana ficou conhecida como a primeira cervejaria artesanal capixaba?",
-    "options": ["Else Beer", "Brahma ES", "Pedra Azul Beer", "Vitória Lager"],
-    "correctIndex": 0,
+    "options": [
+      "Brahma ES",
+      "Else Beer",
+      "Vitória Lager",
+      "Pedra Azul Beer"
+    ],
+    "correctIndex": 1,
     "curiosity": "A Else Beer foi pioneira no movimento de cerveja artesanal no Espírito Santo."
   },
   {
     "id": "q52",
     "category": "turismo",
     "question": "Em qual região turística de Viana está localizada a cervejaria Else Beer?",
-    "options": ["Pedra Mulata", "Centro Histórico", "Jucu Velho", "Vale do Sol"],
+    "options": [
+      "Pedra Mulata",
+      "Centro Histórico",
+      "Jucu Velho",
+      "Vale do Sol"
+    ],
     "correctIndex": 0,
     "curiosity": "A cervejaria fica em uma área cercada por natureza e turismo rural."
   },
@@ -419,23 +679,38 @@
     "id": "q53",
     "category": "turismo",
     "question": "Qual experiência turística é oferecida pela Else Beer em Viana?",
-    "options": ["Tour com degustação", "Passeio de barco", "Mergulho", "Safári"],
-    "correctIndex": 0,
+    "options": [
+      "Safári",
+      "Mergulho",
+      "Passeio de barco",
+      "Tour com degustação"
+    ],
+    "correctIndex": 3,
     "curiosity": "Os visitantes podem conhecer o processo de fabricação das cervejas."
   },
   {
     "id": "q54",
     "category": "turismo",
     "question": "Qual característica natural ajuda a atrair turistas para Viana?",
-    "options": ["Paisagens rurais e montanhas", "Desertos de areia", "Neve permanente", "Falésias vulcânicas"],
-    "correctIndex": 0,
+    "options": [
+      "Neve permanente",
+      "Paisagens rurais e montanhas",
+      "Desertos de areia",
+      "Falésias vulcânicas"
+    ],
+    "correctIndex": 1,
     "curiosity": "A cidade possui forte potencial para ecoturismo."
   },
   {
     "id": "q55",
     "category": "turismo",
     "question": "Qual rio é usado para atividades de ecoturismo em Viana?",
-    "options": ["Rio Jucu", "Rio Doce", "Rio Cricaré", "Rio São Mateus"],
+    "options": [
+      "Rio Jucu",
+      "Rio Cricaré",
+      "Rio São Mateus",
+      "Rio Doce"
+    ],
     "correctIndex": 0,
     "curiosity": "O Rio Jucu é utilizado em atividades de lazer e aventura."
   },
@@ -443,31 +718,51 @@
     "id": "q56",
     "category": "turismo",
     "question": "Qual estilo de turismo vem crescendo em Viana graças às áreas naturais?",
-    "options": ["Ecoturismo", "Turismo polar", "Turismo industrial", "Turismo espacial"],
-    "correctIndex": 0,
+    "options": [
+      "Turismo espacial",
+      "Ecoturismo",
+      "Turismo industrial",
+      "Turismo polar"
+    ],
+    "correctIndex": 1,
     "curiosity": "As trilhas e cachoeiras fortalecem o turismo ecológico."
   },
   {
     "id": "q57",
     "category": "turismo",
     "question": "Por que Viana é chamada de 'Portal das Montanhas Capixabas'?",
-    "options": ["Porque liga a Grande Vitória às regiões serranas", "Porque possui neve o ano todo", "Porque fica no ponto mais alto do estado", "Porque é cercada por vulcões"],
-    "correctIndex": 0,
+    "options": [
+      "Porque fica no ponto mais alto do estado",
+      "Porque é cercada por vulcões",
+      "Porque liga a Grande Vitória às regiões serranas",
+      "Porque possui neve o ano todo"
+    ],
+    "correctIndex": 2,
     "curiosity": "A cidade é passagem estratégica para cidades turísticas serranas."
   },
   {
     "id": "q58",
     "category": "turismo",
     "question": "Qual tradição cultural açoriana atrai turistas para Viana?",
-    "options": ["Festa do Divino Espírito Santo", "Oktoberfest", "Carnaval Imperial", "Festival do Inverno"],
-    "correctIndex": 0,
+    "options": [
+      "Festival do Inverno",
+      "Oktoberfest",
+      "Carnaval Imperial",
+      "Festa do Divino Espírito Santo"
+    ],
+    "correctIndex": 3,
     "curiosity": "A festa mantém viva a herança cultural dos açorianos."
   },
   {
     "id": "q59",
     "category": "turismo",
     "question": "Qual característica torna a zona rural de Viana atrativa para visitantes?",
-    "options": ["Contato com a natureza", "Resorts de neve", "Cassinos históricos", "Praias artificiais"],
+    "options": [
+      "Contato com a natureza",
+      "Cassinos históricos",
+      "Praias artificiais",
+      "Resorts de neve"
+    ],
     "correctIndex": 0,
     "curiosity": "O turismo rural é um dos destaques da cidade."
   },
@@ -475,7 +770,12 @@
     "id": "q60",
     "category": "turismo",
     "question": "Qual fator facilita o turismo de fim de semana em Viana?",
-    "options": ["Proximidade com Vitória e Vila Velha", "Aeroporto internacional próprio", "Porto marítimo turístico", "Fronteira com Minas Gerais"],
+    "options": [
+      "Proximidade com Vitória e Vila Velha",
+      "Porto marítimo turístico",
+      "Fronteira com Minas Gerais",
+      "Aeroporto internacional próprio"
+    ],
     "correctIndex": 0,
     "curiosity": "Viana fica próxima dos principais centros urbanos da Grande Vitória."
   }
