@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { PosterStrip } from "@/components/ui/BotanicalDecor";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { TextReveal } from "@/components/ui/TextReveal";
@@ -29,7 +29,11 @@ function CategoryBadge({ category }: { category: QuizQuestion["category"] }) {
 }
 
 export function QuizTotemSection() {
-  const [shuffled, setShuffled] = useState(() => shuffleArray(questions));
+  const [shuffled, setShuffled] = useState(questions);
+
+  useEffect(() => {
+    setShuffled(shuffleArray(questions));
+  }, []);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [revealed, setRevealed] = useState(false);

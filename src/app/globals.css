@@ -33,6 +33,16 @@
   --color-wheat: #c4a035;
   --color-brown-deep: #4a2a1f;
 
+  /* Cartaz — site em construção */
+  --color-soon-cream: #f4f0e6;
+  --color-soon-forest: #1a6e36;
+  --color-soon-forest-deep: #0f4a24;
+  --color-soon-terra: #b24a28;
+  --color-soon-dot: #e24b2a;
+  --color-soon-leaf: #c9c2ae;
+  --color-soon-line: #ddd6c8;
+  --color-soon-icon: #e5f0e4;
+
   --font-display: var(--font-dm-serif);
   --font-body: var(--font-bricolage);
   --font-mono: var(--font-jetbrains);
@@ -59,7 +69,7 @@
   }
 
   body {
-    background-color: var(--color-ochre-light);
+    background-color: var(--color-soon-cream);
     color: var(--color-ink);
     font-family: var(--font-body), system-ui, sans-serif;
     font-size: 16px;
@@ -170,6 +180,16 @@
 
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+
+  .viana-wordmark-mask {
+    background-color: var(--color-soon-forest);
+    -webkit-mask-image: url("/logo/logo-mobile.png");
+    mask-image: url("/logo/logo-mobile.png");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 }
 

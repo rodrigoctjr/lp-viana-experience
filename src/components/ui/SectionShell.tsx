@@ -31,7 +31,7 @@ export function SectionShell({
     <section
       id={id}
       className={cn(
-        "grain relative overflow-hidden py-24 sm:py-32",
+        "grain relative scroll-mt-6 overflow-hidden py-24 sm:py-32",
         variantClasses[variant],
         className,
       )}
