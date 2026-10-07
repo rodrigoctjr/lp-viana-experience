@@ -34,13 +34,17 @@
   --color-brown-deep: #4a2a1f;
 
   /* Cartaz — site em construção */
-  --color-soon-cream: #f4f0e6;
+  --color-soon-cream: #fdf6e7;
   --color-soon-forest: #1a6e36;
   --color-soon-forest-deep: #0f4a24;
   --color-soon-terra: #b24a28;
   --color-soon-dot: #e24b2a;
-  --color-soon-leaf: #c9c2ae;
-  --color-soon-line: #ddd6c8;
+  --color-soon-leaf: #1a6e36;
+  --color-soon-leaf-bright: #2f8f4c;
+  --color-soon-line: #b0a68c;
+  --color-soon-water: #2f7a72;
+  --color-soon-water-fill: #8fcdc4;
+  --color-soon-sun: #f2b84b;
   --color-soon-icon: #e5f0e4;
 
   --font-display: var(--font-dm-serif);
@@ -86,6 +90,10 @@
   :focus-visible {
     outline: 2px solid var(--color-brown);
     outline-offset: 3px;
+  }
+
+  #quiz {
+    scroll-margin-top: 16px;
   }
 }
 
@@ -182,15 +190,6 @@
     display: none;
   }
 
-  .viana-wordmark-mask {
-    background-color: var(--color-soon-forest);
-    -webkit-mask-image: url("/logo/logo-mobile.png");
-    mask-image: url("/logo/logo-mobile.png");
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-  }
 }
 
 @keyframes marquee {
@@ -241,5 +240,55 @@
   .animate-float,
   .animate-pulse-glow {
     animation: none;
+  }
+}
+
+.hero-fillet {
+  stroke-width: 4px;
+}
+
+.hero-cta {
+  border: 2px solid var(--color-soon-forest-deep);
+  background-color: var(--color-soon-terra);
+  color: var(--color-soon-cream);
+  text-decoration: none;
+  box-shadow: 0 5px 0 var(--color-soon-forest-deep);
+  transition:
+    background-color 120ms ease-out,
+    transform 120ms ease-out,
+    box-shadow 120ms ease-out;
+}
+
+.hero-cta:hover {
+  background-color: var(--color-soon-dot);
+}
+
+.hero-cta:active {
+  background-color: var(--color-soon-terra);
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 var(--color-soon-forest-deep);
+}
+
+.hero-cta:focus-visible {
+  outline: none;
+  box-shadow:
+    0 5px 0 var(--color-soon-forest-deep),
+    0 0 0 2px #fdf6e7,
+    0 0 0 4px #0f4a24;
+}
+
+.hero-cta:visited {
+  color: var(--color-soon-cream);
+}
+
+@media (min-width: 1024px) {
+  .hero-fillet {
+    stroke-width: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta {
+    transition: none;
   }
 }
