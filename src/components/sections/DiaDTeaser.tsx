@@ -50,7 +50,7 @@ export function DiaDTeaser() {
           <div className="max-w-2xl">
             <PosterStrip className="mb-6 !bg-brown-deep" />
             <TextReveal as="p" className="section-eyebrow !text-accent-sun">
-              07.11.2026 · Viana/ES
+              08.11.2026 · Viana/ES
             </TextReveal>
             <TextReveal
               as="h2"

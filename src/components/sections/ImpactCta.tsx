@@ -41,7 +41,7 @@ export function ImpactCta() {
           transition={{ delay: 0.5 }}
           className="mx-auto mt-8 max-w-lg font-body text-lg text-primary/70"
         >
-          7 de novembro. Um dia inteiro. A cidade abre por dentro — e a próxima decisão é se você
+          8 de novembro. Um dia inteiro. A cidade abre por dentro — e a próxima decisão é se você
           entra.
         </motion.p>
 
@@ -77,7 +77,7 @@ export function ImpactCta() {
           transition={{ delay: 1 }}
           className="mt-16 font-countdown text-[clamp(4rem,15vw,10rem)] leading-none text-brown"
         >
-          07.11
+          08.11
         </motion.p>
         <p className="mt-4 font-mono-label text-[10px] text-primary/45">Viana/ES</p>
       </motion.div>

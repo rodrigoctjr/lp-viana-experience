@@ -65,7 +65,7 @@ export function Hero({ refCopy }: HeroProps) {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="font-mono-label text-[11px] text-brown"
           >
-            Sábado, 7 de novembro de 2026 · Viana, ES
+            Domingo, 8 de novembro de 2026 · Viana, ES
           </motion.p>
 
           <motion.p
@@ -157,7 +157,7 @@ export function Hero({ refCopy }: HeroProps) {
             transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -right-1 top-2 z-20 rounded-full bg-brown px-3 py-1 font-mono-label text-[9px] text-on-accent shadow-md"
           >
-            07.11
+            08.11
           </motion.span>
           <motion.div
             style={reduced ? undefined : { rotateX: tiltX, rotateY: tiltY, transformPerspective: 900 }}
@@ -203,7 +203,7 @@ export function Hero({ refCopy }: HeroProps) {
                 transition={{ delay: 1.05, type: "spring", stiffness: 420, damping: 12 }}
                 className="rounded-full border-2 border-dashed border-terra px-3 py-2 text-center font-mono-label text-[9px] leading-tight text-terra"
               >
-                07.11
+                08.11
                 <span className="mt-0.5 block">VIANA</span>
               </motion.div>
             </div>
@@ -225,7 +225,7 @@ export function Hero({ refCopy }: HeroProps) {
         >
           <div className="h-10 w-px bg-linear-to-b from-transparent via-brown to-transparent" />
         </motion.div>
-        <p className="font-countdown text-2xl text-brown sm:text-3xl">07.11.2026</p>
+        <p className="font-countdown text-2xl text-brown sm:text-3xl">08.11.2026</p>
       </motion.div>
     </section>
   );

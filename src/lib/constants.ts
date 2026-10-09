@@ -8,8 +8,8 @@ export const NAV_LINKS = [
 
 export const WHATSAPP_INSTITUTIONAL = "5527999990000";
 
-export const EVENT_TARGET = new Date("2026-11-07T09:00:00-03:00");
-export const EVENT_DATE_LABEL = "07.11.2026";
+export const EVENT_TARGET = new Date("2026-11-08T09:00:00-03:00");
+export const EVENT_DATE_LABEL = "08.11.2026";
 
 export const REF_COPY: Record<string, string> = {
   bikebeer: "Você veio da Bike Beer — bem-vindo à jornada.",
@@ -17,7 +17,7 @@ export const REF_COPY: Record<string, string> = {
 };
 
 export const MARQUEE_ITEMS = [
-  "DIA D · 07.11.2026",
+  "DIA D · 08.11.2026",
   "ROTA DAS ÁGUAS",
   "POLO CERVEJEIRO",
   "RIO JUCU",
