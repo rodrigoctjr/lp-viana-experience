@@ -42,7 +42,7 @@ export function ImpactCta() {
           transition={{ delay: 0.5 }}
           className="mx-auto mt-8 max-w-lg font-body text-lg text-primary/70"
         >
-          Junho de 2026. Montanhas, rios, cervejarias e tradição capixaba — Viana abre as portas
+          8 de novembro de 2026. Montanhas, rios, cervejarias e tradição capixaba — Viana abre as portas
           para a Grande Vitória.
         </motion.p>
 

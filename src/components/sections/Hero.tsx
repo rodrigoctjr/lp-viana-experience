@@ -100,7 +100,7 @@ export function Hero({ refCopy }: HeroProps) {
               onClick={() => scrollToSection("dia-d")}
               className="rounded-sm border-2 border-primary/25 bg-ochre-light/50 px-8 py-4 font-body text-sm font-bold uppercase tracking-[0.12em] text-primary/80 transition-colors hover:border-hop hover:text-hop"
             >
-              Dia D · Jun/2026
+              Dia D · 08.11.2026
             </button>
           </motion.div>
 
