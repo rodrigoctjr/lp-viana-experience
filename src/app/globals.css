@@ -281,6 +281,23 @@
   color: var(--color-soon-cream);
 }
 
+.hero-cta.hero-cta-featured {
+  background-color: var(--color-soon-sun);
+  color: var(--color-soon-forest-deep);
+}
+
+.hero-cta.hero-cta-featured:hover {
+  background-color: color-mix(in srgb, var(--color-soon-sun) 78%, var(--color-soon-forest-deep));
+}
+
+.hero-cta.hero-cta-featured:active {
+  background-color: var(--color-soon-sun);
+}
+
+.hero-cta.hero-cta-featured:visited {
+  color: var(--color-soon-forest-deep);
+}
+
 @media (min-width: 1024px) {
   .hero-fillet {
     stroke-width: 6px;
