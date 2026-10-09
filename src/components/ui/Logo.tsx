@@ -21,24 +21,23 @@ export function Logo({
 }: LogoProps) {
   if (variant === "hero") {
     return (
-      <span className={cn("inline-flex w-full max-w-none shrink-0 justify-center lg:justify-start", className)}>
+      <span
+        className={cn("relative block w-[min(92vw,36rem)] overflow-hidden", className)}
+        style={{ aspectRatio: "2.85 / 1" }}
+      >
         <Image
           src="/logo/logo-desktop.png"
           alt="Viana Experience"
-          width={Math.round(180 * LOGO_ASPECT)}
-          height={180}
-          className="hidden w-[min(92vw,36rem)] max-w-none sm:block"
-          style={{ width: "min(92vw, 36rem)", height: "auto" }}
+          fill
+          className="hidden object-cover object-center sm:block"
           priority={priority}
           sizes="(min-width: 640px) 576px"
         />
         <Image
           src="/logo/logo-mobile.png"
           alt="Viana Experience"
-          width={Math.round(140 * LOGO_ASPECT)}
-          height={140}
-          className="w-[min(94vw,22rem)] max-w-none sm:hidden"
-          style={{ width: "min(94vw, 22rem)", height: "auto" }}
+          fill
+          className="object-cover object-center sm:hidden"
           priority={priority}
           sizes="(max-width: 639px) 352px"
         />

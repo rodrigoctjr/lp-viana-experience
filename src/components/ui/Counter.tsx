@@ -18,11 +18,11 @@ export function Counter({ variant = "hero", className }: CounterProps) {
           "flex items-center gap-2 rounded border border-dashed border-accent-sun/60 px-3 py-1.5",
           className,
         )}
-        aria-label="Contagem para o Dia D do Turismo em junho de 2026"
+        aria-label="Contagem para o Dia D do Turismo em 7 de novembro de 2026"
       >
         <span className="font-mono-label text-[10px] text-on-primary/80">Dia D</span>
         <span className="font-countdown text-lg text-accent-sun">
-          {isPast ? "AGORA!" : "Jun/2026"}
+          {isPast ? "AGORA!" : "07.11"}
         </span>
       </div>
     );
@@ -45,7 +45,7 @@ export function Counter({ variant = "hero", className }: CounterProps) {
       ) : (
         <>
           <p className="font-countdown text-5xl leading-none text-accent-sun sm:text-7xl">
-            Jun/2026
+            07.11
           </p>
           <div className="mt-4 flex gap-4">
             <div className="text-center">

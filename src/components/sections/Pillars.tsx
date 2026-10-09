@@ -3,14 +3,24 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { RichCard } from "@/components/ui/RichCard";
+import { SectionNext } from "@/components/ui/SectionNext";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { TextReveal } from "@/components/ui/TextReveal";
 import { pillars } from "@/data/pillars";
 
 const images = [
-  "/images/viana-1.jpg",
-  "/images/viana-2.jpg",
-  "/images/bike-beer.jpg",
+  {
+    src: "/images/viana/igreja-matriz.jpg",
+    alt: "Igreja Matriz no centro de Viana, com torres e fachada clara contra o céu.",
+  },
+  {
+    src: "/images/viana/mata-atlantica.jpg",
+    alt: "Copas da Mata Atlântica em Viana, vistas de baixo, com samambaiaçus contra o céu.",
+  },
+  {
+    src: "/images/viana/lupulo.jpg",
+    alt: "Cones de lúpulo colhidos em Viana, nas mãos de quem cultiva o polo cervejeiro.",
+  },
 ];
 
 const gradients = [
@@ -43,7 +53,8 @@ export function Pillars() {
             title={pillar.title}
             subtitle={pillar.subtitle}
             description={pillar.description}
-            image={images[i]}
+            image={images[i].src}
+            imageAlt={images[i].alt}
             gradient={gradients[i]}
             size={i === 0 ? "large" : "default"}
           />
@@ -69,6 +80,16 @@ export function Pillars() {
         </blockquote>
         <p className="relative mt-4 font-mono-label text-[10px] text-on-accent/50">Viana/ES</p>
       </motion.div>
+
+      <SectionNext
+        copy="Esses três mundos se cruzam num único sábado. O que cabe entre o amanhecer e o último brinde?"
+        label="O que acontece no Dia D"
+        target="dia-d"
+      />
+      <p className="mt-6 font-body text-[11px] leading-relaxed text-primary/40">
+        Fotos públicas de Viana: Igreja Matriz, Siumara Gonçalves (CC BY-SA 3.0); Mata Atlântica,
+        Instituto Últimos Refúgios (CC BY-SA 4.0); lúpulo, Prefeitura de Viana.
+      </p>
     </SectionShell>
   );
 }

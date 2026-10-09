@@ -1,15 +1,29 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { motion, useInView, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 import { BotanicalDecor, PosterStrip } from "@/components/ui/BotanicalDecor";
+import { SectionNext } from "@/components/ui/SectionNext";
 import { TextReveal } from "@/components/ui/TextReveal";
 import { diaDThemes } from "@/data/dia-d-themes";
+import { cn } from "@/lib/utils";
 
 const themeColors = ["#6B3D2E", "#2E6E7A", "#C4A035", "#4A7C59"];
 
 export function DiaDTeaser() {
   const containerRef = useRef<HTMLElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
+  const stageInView = useInView(stageRef, { once: true, margin: "-10%" });
+  const reduced = useReducedMotion();
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (reduced || !stageInView) return;
+    const timer = window.setInterval(() => {
+      setActive((current) => (current + 1) % diaDThemes.length);
+    }, 2400);
+    return () => window.clearInterval(timer);
+  }, [reduced, stageInView]);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
@@ -36,7 +50,7 @@ export function DiaDTeaser() {
           <div className="max-w-2xl">
             <PosterStrip className="mb-6 !bg-brown-deep" />
             <TextReveal as="p" className="section-eyebrow !text-accent-sun">
-              Jun/2026 · Viana/ES
+              07.11.2026 · Viana/ES
             </TextReveal>
             <TextReveal
               as="h2"
@@ -45,55 +59,71 @@ export function DiaDTeaser() {
               Um dia inteiro de turismo em Viana
             </TextReveal>
           </div>
-          <motion.span
+          <motion.a
+            href="#atracoes"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex w-fit animate-pulse-glow rounded-sm border-2 border-accent-sun/50 bg-accent-sun/20 px-5 py-2 font-mono-label text-xs text-accent-sun"
+            className="inline-flex w-fit rounded-sm border-2 border-accent-sun/50 bg-accent-sun/20 px-5 py-2 font-mono-label text-xs text-accent-sun transition-colors hover:bg-accent-sun/30"
           >
-            Programação em breve
-          </motion.span>
+            Parceiros confirmados
+          </motion.a>
         </div>
 
-        <div className="mt-16 -mx-4 overflow-x-auto px-4 hide-scrollbar sm:mx-0 sm:px-0">
-          <div className="flex w-max gap-5 pb-4 sm:gap-6">
-            {diaDThemes.map((theme, i) => (
+        <div ref={stageRef} className="mt-16 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {diaDThemes.map((theme, i) => {
+            const featured = active === i;
+            return (
               <motion.article
                 key={theme.id}
-                initial={{ opacity: 0, x: 60 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-5%" }}
-                transition={{ delay: i * 0.12, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -8 }}
-                className="relative w-[min(85vw,340px)] shrink-0 overflow-hidden rounded-sm border-2 border-on-accent/15 bg-ochre p-8 text-primary shadow-lg sm:w-[380px]"
+                initial={reduced ? false : { opacity: 0, y: 72, scale: 0.9, rotate: i % 2 === 0 ? -2 : 2 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+                viewport={{ once: true, margin: "-8%" }}
+                transition={{
+                  delay: reduced ? 0 : 0.12 + i * 0.2,
+                  type: "spring",
+                  stiffness: 220,
+                  damping: 18,
+                }}
+                className="h-full"
               >
-                <span
-                  className="font-countdown text-7xl leading-none opacity-25"
-                  style={{ color: themeColors[i] }}
+                <motion.div
+                  animate={reduced ? undefined : { y: featured ? -14 : 0 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 22 }}
+                  className={cn(
+                    "relative h-full overflow-hidden rounded-sm border-2 bg-ochre p-6 text-primary shadow-lg sm:p-8",
+                    featured
+                      ? "border-accent-sun shadow-[0_20px_40px_-16px_rgba(245,166,35,0.55)]"
+                      : "border-on-accent/15",
+                  )}
+                >
+                <motion.span
+                  className="font-countdown text-6xl leading-none sm:text-7xl"
+                  animate={{ opacity: featured ? 0.45 : 0.22, color: themeColors[i] }}
+                  transition={{ duration: 0.4 }}
                 >
                   0{i + 1}
-                </span>
+                </motion.span>
                 <h3 className="mt-4 font-display text-2xl text-primary">{theme.title}</h3>
-                <p className="mt-3 font-body text-sm leading-relaxed text-primary/70">
-                  {theme.description}
-                </p>
-                <div
+                <p className="mt-3 font-body text-sm leading-relaxed text-primary/70">{theme.description}</p>
+                <motion.div
                   className="absolute -bottom-8 -right-8 size-32 rounded-full blur-3xl"
-                  style={{ backgroundColor: themeColors[i], opacity: 0.35 }}
+                  style={{ backgroundColor: themeColors[i] }}
+                  animate={{ opacity: featured ? 0.55 : 0.2, scale: featured ? 1.15 : 1 }}
+                  transition={{ duration: 0.45 }}
                 />
+                </motion.div>
               </motion.article>
-            ))}
-          </div>
+            );
+          })}
         </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center font-display text-lg italic text-on-accent/70"
-        >
-          A programação oficial será divulgada em breve — fique de olho.
-        </motion.p>
+        <SectionNext
+          tone="dark"
+          copy="Sete portas já abriram. Uma delas separou uma cortesia com o seu nome."
+          label="Ver quem confirmou"
+          target="atracoes"
+        />
       </div>
     </section>
   );

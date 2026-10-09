@@ -36,10 +36,10 @@ const alfaSlab = Alfa_Slab_One({
 export const metadata: Metadata = {
   title: "Viana Experience — Polo Cervejeiro & Dia D do Turismo · Viana/ES",
   description:
-    "Dia D do Turismo em jun/2026. Duas rotas, uma cidade. Natureza, cerveja e aventura no Espírito Santo.",
+    "Dia D do Turismo em 7 de novembro de 2026. Duas rotas, uma cidade. Natureza, cerveja e aventura no Espírito Santo.",
   openGraph: {
     title: "Viana Experience — Dia D do Turismo",
-    description: "Polo Cervejeiro, Rota das Águas e muito mais. Jun/2026 em Viana/ES.",
+    description: "Polo Cervejeiro, Rota das Águas e muito mais. 7 de novembro de 2026 em Viana/ES.",
     locale: "pt_BR",
     type: "website",
     images: [

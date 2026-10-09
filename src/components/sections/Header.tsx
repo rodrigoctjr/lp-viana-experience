@@ -40,13 +40,13 @@ export function Header() {
             <Logo height={52} mobileHeight={44} priority />
           </a>
 
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Principal">
+          <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Principal">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "rounded-full px-4 py-2 font-body text-xs font-medium uppercase tracking-wider transition-colors",
+                  "rounded-full px-3 py-2 font-body text-xs font-medium uppercase tracking-wider transition-colors",
                   scrolled
                     ? "text-on-accent/80 hover:bg-on-accent/10 hover:text-on-accent"
                     : "text-primary/70 hover:bg-primary/5 hover:text-primary",
@@ -60,7 +60,7 @@ export function Header() {
           <button
             type="button"
             className={cn(
-              "flex size-10 items-center justify-center rounded-full md:hidden",
+              "flex size-10 items-center justify-center rounded-full lg:hidden",
               scrolled ? "text-on-accent" : "text-primary",
             )}
             aria-expanded={menuOpen}
@@ -76,7 +76,7 @@ export function Header() {
         <motion.nav
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="fixed inset-x-4 top-[5.5rem] z-[99] rounded-2xl border border-brown/15 bg-brown/95 p-4 backdrop-blur-xl md:hidden"
+          className="fixed inset-x-4 top-[5.5rem] z-[99] rounded-2xl border border-brown/15 bg-brown/95 p-4 backdrop-blur-xl lg:hidden"
           aria-label="Menu mobile"
         >
           {NAV_LINKS.map((link) => (

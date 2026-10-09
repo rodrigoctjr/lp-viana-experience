@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useState } from "react";
 import { PosterStrip } from "@/components/ui/BotanicalDecor";
+import { SectionNext } from "@/components/ui/SectionNext";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { TextReveal } from "@/components/ui/TextReveal";
 import quizData from "@/data/quiz-viana.json";
@@ -68,22 +69,24 @@ export function QuizTotemSection() {
 
   return (
     <SectionShell id="quiz" variant="ochre" accentBar>
-      <TextReveal as="p" className="section-eyebrow">
-        Totem interativo
-      </TextReveal>
-      <TextReveal
-        as="h2"
-        className="mt-4 max-w-2xl font-display text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] text-primary"
-      >
-        Quiz de curiosidades de Viana
-      </TextReveal>
-      <p className="mt-4 max-w-xl font-body text-primary/70">
-        História, cultura e turismo — toque na resposta, descubra a curiosidade e avance para a
-        próxima. Perguntas em ordem aleatória a cada rodada.
-      </p>
+      <div className="mx-auto max-w-2xl text-center">
+        <TextReveal as="p" className="section-eyebrow">
+          Totem interativo
+        </TextReveal>
+        <TextReveal
+          as="h2"
+          className="mt-4 font-display text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] text-primary"
+        >
+          Quiz de curiosidades de Viana
+        </TextReveal>
+        <p className="mx-auto mt-4 max-w-xl font-body text-primary/70">
+          História, cultura e turismo — toque na resposta, descubra a curiosidade e avance para a
+          próxima. Perguntas em ordem aleatória a cada rodada.
+        </p>
+      </div>
 
-      <div className="mt-12 flex justify-center">
-        <div className="relative w-full max-w-2xl">
+      <div className="mx-auto mt-12 w-full max-w-2xl">
+        <div className="relative w-full">
           {/* Totem frame */}
           <div className="absolute -inset-3 rounded-sm bg-brown shadow-[0_24px_64px_-12px_rgba(74,42,31,0.5)] sm:-inset-4" />
           <div className="absolute left-1/2 top-0 z-20 h-3 w-24 -translate-x-1/2 -translate-y-full rounded-t-sm bg-brown-deep" />
@@ -220,6 +223,12 @@ export function QuizTotemSection() {
           <div className="mx-auto h-3 w-[70%] rounded-b-sm bg-brown/80" />
         </div>
       </div>
+
+      <SectionNext
+        copy="A cidade já fez uma pergunta. A rota faz outra: você chega pedalando?"
+        label="Entrar na rota"
+        target="jogo"
+      />
     </SectionShell>
   );
 }

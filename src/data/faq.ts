@@ -9,7 +9,7 @@ export const faqItems = [
     id: "quando",
     question: "Quando será o evento?",
     answer:
-      "O Dia D está previsto para junho de 2026. A data exata e a programação oficial serão divulgadas em breve. Cadastre-se para ser avisado em primeira mão.",
+      "O Dia D do Turismo é em 7 de novembro de 2026, em Viana/ES. Cadastre-se para receber a programação e as novidades em primeira mão.",
   },
   {
     id: "cadastro",

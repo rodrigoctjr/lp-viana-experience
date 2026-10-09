@@ -8,7 +8,7 @@ export function Footer() {
         <div>
           <Logo height={48} mobileHeight={40} />
           <p className="mt-3 font-body text-xs text-on-accent/50">
-            © 2026 Viana Experience · Dia D Jun/2026 · Viana/ES
+            © 2026 Viana Experience · Dia D 07.11.2026 · Viana/ES
           </p>
         </div>
 

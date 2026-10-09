@@ -2,6 +2,7 @@
 
 import { PosterStrip } from "@/components/ui/BotanicalDecor";
 import { VianaRunnerGame } from "@/components/game/VianaRunnerGame";
+import { SectionNext } from "@/components/ui/SectionNext";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { TextReveal } from "@/components/ui/TextReveal";
 import { ATTRACTION_PRIZES } from "@/data/runner-game";
@@ -40,6 +41,12 @@ export function RunnerGameSection() {
       <div className="mt-10">
         <VianaRunnerGame />
       </div>
+
+      <SectionNext
+        copy="A rota acaba. A cidade, não. O que você leva de Viana quando o dia fecha?"
+        label="Guardar a data"
+        target="impacto"
+      />
     </SectionShell>
   );
 }

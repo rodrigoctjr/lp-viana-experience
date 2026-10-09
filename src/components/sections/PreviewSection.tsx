@@ -2,15 +2,16 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
+import { SectionNext } from "@/components/ui/SectionNext";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { TextReveal } from "@/components/ui/TextReveal";
 import { previewThemes } from "@/data/preview-themes";
 
 const cardImages = [
-  "/images/viana-2.jpg",
-  "/images/bike-beer.jpg",
-  "/images/viana-1.jpg",
-  "/images/viana-2.jpg",
+  "/images/viana/mata-atlantica.jpg",
+  "/images/viana/lupulo.jpg",
+  "/images/viana/estacao.jpg",
+  "/images/atracoes/sabores-de-perobas.jpg",
 ];
 
 const accentColors = ["#4A7C59", "#6B3D2E", "#B5421C", "#2E6E7A"];
@@ -58,6 +59,12 @@ export function PreviewSection() {
           </motion.article>
         ))}
       </div>
+
+      <SectionNext
+        copy="Natureza, cerveja, caminho, mesa. Qual desses combina com o seu jeito de chegar?"
+        label="Descobrir no quiz"
+        target="quiz"
+      />
     </SectionShell>
   );
 }

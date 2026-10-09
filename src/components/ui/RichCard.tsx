@@ -54,6 +54,7 @@ interface RichCardProps {
   subtitle: string;
   description: string;
   image?: string;
+  imageAlt?: string;
   gradient?: string;
   className?: string;
   size?: "default" | "large" | "wide";
@@ -66,6 +67,7 @@ export function RichCard({
   subtitle,
   description,
   image,
+  imageAlt = "",
   gradient = "from-primary via-brand-green/80 to-rio/60",
   className,
   size = "default",
@@ -93,7 +95,7 @@ export function RichCard({
         {image ? (
           <Image
             src={image}
-            alt=""
+            alt={imageAlt}
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 50vw"
