@@ -11,7 +11,7 @@ const cardImages = [
   "/images/viana/mata-atlantica.jpg",
   "/images/viana/lupulo.jpg",
   "/images/viana/estacao.jpg",
-  "/images/atracoes/sabores-de-perobas.jpg",
+  "/images/atracoes/sabores-de-perobas.webp",
 ];
 
 const accentColors = ["#4A7C59", "#6B3D2E", "#B5421C", "#2E6E7A"];

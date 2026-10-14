@@ -10,6 +10,7 @@ import { VoucherDialog } from "@/components/sections/VoucherDialog";
 import {
   ATTRACTION_FILTERS,
   attractions,
+  ATTRACTION_FORM_URL,
   whatsappClaimUrl,
   type Attraction,
   type AttractionFilter,
@@ -82,18 +83,52 @@ function AttractionLinks({
               quiet,
             )}
           >
-            {item.feature ? "Sobre a trilha" : "Como chegar"}
+            Como chegar
+          </a>
+        ) : null}
+        {item.website && item.claim !== "external" ? (
+          <a
+            href={item.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              "inline-flex min-h-11 items-center rounded-full border px-4 font-mono-label text-[10px] transition-colors",
+              quiet,
+            )}
+          >
+            {item.websiteLabel ?? "Site"}
           </a>
         ) : null}
       </div>
       {item.claim === "whatsapp" && item.phone ? (
         <a
-          href={whatsappClaimUrl(item.phone, item.name)}
+          href={whatsappClaimUrl(item.phone, item.name, item.whatsappText)}
           target="_blank"
           rel="noopener noreferrer"
           className={cn(actionClass, "bg-hop text-on-accent hover:bg-hop/90")}
         >
           Reservar no WhatsApp
+        </a>
+      ) : null}
+      {item.claim === "external" && item.externalUrl ? (
+        <a
+          href={item.externalUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(actionClass, "bg-brown text-on-accent hover:bg-brown-deep")}
+        >
+          {item.externalLabel ?? "Abrir o site"}
+        </a>
+      ) : null}
+      {item.claim === "form" ? (
+        <a
+          href={ATTRACTION_FORM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(actionClass, "bg-brown text-on-accent hover:bg-brown-deep")}
+        >
+          Inscrever
+          <span className="sr-only"> (abre o formulário em nova aba)</span>
         </a>
       ) : null}
       {item.claim === "signup" ? (
@@ -118,6 +153,30 @@ function AttractionLinks({
         </button>
       ) : null}
     </div>
+  );
+}
+
+function CouponButton({ code, onDark = false }: { code: string; onDark?: boolean }) {
+  const [copied, setCopied] = useState(false);
+
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        navigator.clipboard.writeText(code).then(() => {
+          setCopied(true);
+          window.setTimeout(() => setCopied(false), 2000);
+        });
+      }}
+      className={cn(
+        "mt-3 inline-flex min-h-11 items-center self-start rounded-full border px-4 font-mono-label text-[10px] transition-colors",
+        onDark
+          ? "border-on-primary/30 text-on-primary hover:bg-on-primary/10"
+          : "border-brown/25 bg-ochre/50 text-primary hover:bg-ochre",
+      )}
+    >
+      {copied ? "Cupom copiado" : `Copiar cupom ${code}`}
+    </button>
   );
 }
 
@@ -166,61 +225,9 @@ function AttractionCard({
           {item.offer}
         </p>
         <p className="mt-2 font-body text-xs text-primary/55">{item.hours}</p>
+        {item.coupon ? <CouponButton code={item.coupon} /> : null}
         <div className="mt-auto">
           <AttractionLinks item={item} remaining={remaining} onSignup={onSignup} />
-        </div>
-      </div>
-    </motion.article>
-  );
-}
-
-function ForestFeature({
-  item,
-  remaining,
-  onSignup,
-}: {
-  item: Attraction;
-  remaining: RemainingMap | null;
-  onSignup: (item: Attraction) => void;
-}) {
-  return (
-    <motion.article
-      layout
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-8%" }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="overflow-hidden rounded-sm border-4 border-hop/40 bg-primary-deep text-on-primary"
-    >
-      <div className="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-        <div className="relative flex min-h-64 flex-col justify-between bg-[radial-gradient(ellipse_at_20%_20%,rgba(74,124,89,0.55),transparent_55%),radial-gradient(ellipse_at_80%_80%,rgba(196,160,53,0.18),transparent_50%)] p-6 sm:p-8">
-          <span className="w-fit rounded-sm bg-ochre px-3 py-1.5 font-mono-label text-[10px] text-primary">
-            {item.category}
-          </span>
-          <div className="mt-10 grid grid-cols-3 gap-3">
-            {item.sessions?.map((session) => {
-              const left = spotsLeft(item, remaining, session.time);
-              return (
-                <div key={session.time} className="border-t border-on-primary/20 pt-3">
-                  <p className="font-countdown text-3xl leading-none text-accent-sun sm:text-4xl">{session.time}</p>
-                  <p className="mt-2 font-mono-label text-[10px] text-on-primary/70">
-                    {left <= 0 && remaining ? "Esgotado" : `${left} vagas`}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className="p-6 sm:p-8 lg:p-10">
-          <p className="font-mono-label text-[10px] text-accent-sun">{item.place}</p>
-          <h3 className="mt-3 font-display text-4xl leading-none sm:text-5xl">{item.name}</h3>
-          <p className="mt-4 max-w-xl font-body text-sm leading-relaxed text-on-primary/75">{item.summary}</p>
-          <p className="mt-4 font-body text-sm">
-            <span className="font-mono-label text-[10px] text-accent-sun">No evento · </span>
-            {item.offer}
-          </p>
-          <p className="mt-2 font-body text-xs text-on-primary/55">{item.hours}</p>
-          <AttractionLinks item={item} onDark remaining={remaining} onSignup={onSignup} />
         </div>
       </div>
     </motion.article>
@@ -245,8 +252,7 @@ export function AttractionsSection() {
       cancelled = true;
     };
   }, []);
-  const cards = visible.filter((item) => !item.feature);
-  const feature = visible.find((item) => item.feature);
+  const cards = visible;
 
   return (
     <SectionShell id="atracoes" variant="cream" accentBar className="scroll-mt-28">
@@ -262,8 +268,8 @@ export function AttractionsSection() {
             Quem vai estar no Viana Experience.
           </TextReveal>
           <p className="mt-4 max-w-2xl font-body text-primary/65">
-            Sete espaços confirmaram presença e separaram cortesias: sítios, cachoeira, restaurantes
-            e uma manhã de trilha na mata de Jucuruaba.
+            Aventura com a Radical Oficial, corrida de rua, sítios, cachoeira, parque e restaurantes.
+            Cada parceiro separou vagas ou cortesias para o dia 8 de novembro.
           </p>
         </div>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrar atrações">
@@ -297,12 +303,6 @@ export function AttractionsSection() {
               onSignup={setSignupItem}
             />
           ))}
-        </div>
-      ) : null}
-
-      {feature ? (
-        <div className={cards.length > 0 ? "mt-6" : "mt-12"}>
-          <ForestFeature item={feature} remaining={remaining} onSignup={setSignupItem} />
         </div>
       ) : null}
 

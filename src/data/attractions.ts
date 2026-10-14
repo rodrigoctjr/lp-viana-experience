@@ -1,6 +1,9 @@
-export type AttractionCategory = "Lazer" | "Gastronomia" | "Natureza";
+export type AttractionCategory = "Aventura" | "Lazer" | "Gastronomia" | "Natureza";
 
-export type AttractionClaim = "whatsapp" | "signup";
+export type AttractionClaim = "whatsapp" | "signup" | "external" | "form";
+
+export const ATTRACTION_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdQauWLtG-8K0gjnoPxzP3LzkDQPnAtdmNITRx4sbqNh6AvDA/viewform";
 
 export interface VoucherSlot {
   id: string;
@@ -23,14 +26,21 @@ export interface Attraction {
   phone?: string;
   phoneLabel?: string;
   maps?: string;
+  website?: string;
+  websiteLabel?: string;
+  externalUrl?: string;
+  externalLabel?: string;
+  coupon?: string;
+  /** Substitui o texto padrão do WhatsApp quando a vaga não é cortesia. */
+  whatsappText?: string;
   feature?: boolean;
   sessions?: { time: string; spots: string }[];
-  /** whatsapp: o parceiro controla. signup: a vaga fecha aqui quando acaba. */
+  /** whatsapp: o parceiro controla. signup: a vaga fecha aqui. form: sem contato, abre o Google Forms. */
   claim: AttractionClaim;
   slots?: VoucherSlot[];
 }
 
-export const ATTRACTION_FILTERS = ["Todas", "Lazer", "Gastronomia", "Natureza"] as const;
+export const ATTRACTION_FILTERS = ["Todas", "Aventura", "Lazer", "Gastronomia", "Natureza"] as const;
 
 export type AttractionFilter = (typeof ATTRACTION_FILTERS)[number];
 
@@ -45,8 +55,8 @@ export const attractions: Attraction[] = [
     offer: "10 cortesias para o Dia D.",
     offerShort: "10 cortesias",
     hours: "Sábados, domingos e feriados · 9h–17h",
-    image: "/images/atracoes/sitio-gava.jpg",
-    imageAlt: "Piscinas de água clara entre pedras e mata no Sítio Gava, em Piapitangui.",
+    image: "/images/atracoes/sitio-gava.webp",
+    imageAlt: "Vista aérea das piscinas do Sítio Gava entre as pedras.",
     instagram: "sitio_gava_oficial",
     phone: "5527997765791",
     phoneLabel: "(27) 99776-5791",
@@ -62,8 +72,8 @@ export const attractions: Attraction[] = [
     offer: "10 cortesias para o Dia D.",
     offerShort: "10 cortesias",
     hours: "Todos os dias · 8h–17h",
-    image: "/images/atracoes/piscinas-ze-maria.jpg",
-    imageAlt: "Piscina e área coberta das Piscinas Zé Maria, em meio às árvores de Borbas.",
+    image: "/images/atracoes/piscinas-ze-maria-banho.jpg",
+    imageAlt: "Piscina das Piscinas Zé Maria, cheia, com a mata ao redor.",
     instagram: "piscinaszemaria",
     phone: "5527998384821",
     phoneLabel: "(27) 99838-4821",
@@ -79,8 +89,8 @@ export const attractions: Attraction[] = [
     offer: "50 cortesias para o Dia D.",
     offerShort: "50 cortesias",
     hours: "Todos os dias · 7h–20h",
-    image: "/images/atracoes/cachoeira-aloisio.jpg",
-    imageAlt: "Leito de rio entre pedras e mata na Cachoeira do Aloísio, em Viana.",
+    image: "/images/atracoes/cachoeira-do-aloisio.jpg",
+    imageAlt: "Cachoeira caindo em um poço de areia na Cachoeira do Aloísio.",
     instagram: "cachoeira_doaloisiocosta",
     phone: "5527998118917",
     phoneLabel: "(27) 99811-8917",
@@ -96,8 +106,8 @@ export const attractions: Attraction[] = [
     offer: "7 vouchers de R$ 80 e 7 vouchers de pedalinho.",
     offerShort: "7 vouchers + pedalinho",
     hours: "Domingos e feriados · almoço 11h–15h",
-    image: "/images/atracoes/recanto-dos-lagos.jpg",
-    imageAlt: "Caminho de pedra à beira do lago no Recanto dos Lagos, em Universal.",
+    image: "/images/atracoes/recanto-dos-lagos-fonte.jpg",
+    imageAlt: "Lago com fonte e o restaurante do Recanto dos Lagos.",
     instagram: "recanto_dos_lagoses",
     phone: "5527999176919",
     phoneLabel: "(27) 9917-6919",
@@ -113,12 +123,11 @@ export const attractions: Attraction[] = [
     offer: "2 vouchers de almoço, sem bebidas.",
     offerShort: "2 almoços",
     hours: "Almoço em família, com música ao vivo no domingo",
-    image: "/images/atracoes/cantim-di-minas.jpg",
-    imageAlt: "Balanço de madeira no gramado do Cantim di Minas, em Viana.",
+    image: "/images/atracoes/cantim-di-minas-fachada.jpg",
+    imageAlt: "Fachada do Restaurante Cantim di Minas, com mesas na área coberta.",
     instagram: "cantimdiminas",
     maps: "https://maps.app.goo.gl/4rTjQrfrk8LsWLpr8",
-    claim: "signup",
-    slots: [{ id: "almoco", label: "Almoço, sem bebidas", capacity: 2 }],
+    claim: "form",
   },
   {
     id: "sabores-de-perobas",
@@ -130,11 +139,136 @@ export const attractions: Attraction[] = [
     offer: "30 experiências do mangará.",
     offerShort: "30 experiências",
     hours: "Fins de semana · almoço e happy hour",
-    image: "/images/atracoes/sabores-de-perobas.jpg",
-    imageAlt: "Compotas, geleias e licores de frutas, no estilo da produção de Sabores de Perobas.",
+    image: "/images/atracoes/sabores-de-perobas.webp",
+    imageAlt: "Compotas e conservas de Sabores de Perobas.",
     instagram: "sabores.de.perobas",
     phone: "5527999198537",
     phoneLabel: "(27) 99919-8537",
+    claim: "whatsapp",
+  },
+  {
+    id: "trilha-radical",
+    name: "Trilha",
+    category: "Aventura",
+    place: "Radical Oficial",
+    summary:
+      "Trilha conduzida pela Radical Oficial no Dia D. A mesma equipe organiza o pêndulo e a descida de caiaque.",
+    offer: "300 vagas.",
+    offerShort: "300 vagas",
+    hours: "Dia D · 8 de novembro",
+    image: "/images/atracoes/trilha-radical.png",
+    imageAlt: "Trilha na pedra com a equipe da Radical Oficial.",
+    phone: "5527995757122",
+    phoneLabel: "(27) 99575-7122",
+    website: "https://radicaloficial.com.br/",
+    websiteLabel: "Site da Radical",
+    whatsappText: "Olá! Quero uma vaga no Dia D: Trilha.",
+    claim: "whatsapp",
+  },
+  {
+    id: "pendulo-radical",
+    name: "Pêndulo",
+    category: "Aventura",
+    place: "Radical Oficial",
+    summary: "Salto de pêndulo com a Radical Oficial, no Dia D.",
+    offer: "10 vagas.",
+    offerShort: "10 vagas",
+    hours: "Dia D · 8 de novembro",
+    image: "/images/atracoes/pendulo-radical.png",
+    imageAlt: "Salto de pêndulo de cabeça para baixo, sobre o rio.",
+    phone: "5527995757122",
+    phoneLabel: "(27) 99575-7122",
+    website: "https://radicaloficial.com.br/",
+    websiteLabel: "Site da Radical",
+    whatsappText: "Olá! Quero uma vaga no Dia D: Pêndulo.",
+    claim: "whatsapp",
+  },
+  {
+    id: "descida-rio",
+    name: "Descida de caiaque",
+    category: "Aventura",
+    place: "Radical Oficial",
+    summary: "Descida de caiaque no rio, com a Radical Oficial, no Dia D.",
+    offer: "10 vagas.",
+    offerShort: "10 vagas",
+    hours: "Dia D · 8 de novembro",
+    image: "/images/atracoes/descida-rio.png",
+    imageAlt: "Dupla de caiaque vista de cima, com a Radical Oficial.",
+    phone: "5527995757122",
+    phoneLabel: "(27) 99575-7122",
+    website: "https://radicaloficial.com.br/",
+    websiteLabel: "Site da Radical",
+    whatsappText: "Olá! Quero uma vaga no Dia D: Descida de caiaque.",
+    claim: "whatsapp",
+  },
+  {
+    id: "linear-e-movimento",
+    name: "Linear e Movimento",
+    category: "Aventura",
+    place: "Corrida de 5 km",
+    summary:
+      "Primeira corrida oficial do Linear e Movimento, no dia 8 de novembro. A inscrição é feita no site da prova.",
+    offer: "10% de desconto com o cupom VIANAEXPERIENCE, até 31 de outubro.",
+    offerShort: "10% no cupom",
+    hours: "8 de novembro · cupom até 31/10",
+    image: "/images/atracoes/linear-corrida.webp",
+    imageAlt: "Kit da 1ª corrida Linear e Movimento: camiseta, viseira, bolsa e número de peito.",
+    website: "https://www.linearemovimento.com.br/",
+    externalUrl: "https://www.linearemovimento.com.br/",
+    externalLabel: "Inscrever na corrida",
+    coupon: "VIANAEXPERIENCE",
+    claim: "external",
+  },
+  {
+    id: "sitio-agua-viva",
+    name: "Sítio Água Viva",
+    category: "Lazer",
+    place: "Formate · Piapitangui, Viana",
+    summary:
+      "Dia de lazer com piscinas de água corrente, cachoeira, represa no rio, churrasqueira, campinho de areia, estacionamento e pousada. Fica na estrada principal, sentido Formate a Piapitangui, a 3,7 km da BR-262. CEP 29139-899.",
+    offer: "24 cortesias para o Dia D.",
+    offerShort: "24 cortesias",
+    hours: "Lazer diurno",
+    image: "/images/atracoes/sitio-agua-viva.webp",
+    imageAlt: "Piscina natural e casa do Sítio Água Viva, com bananal ao fundo.",
+    instagram: "sitioaguaviva.viana",
+    phone: "5527988607971",
+    phoneLabel: "(27) 98860-7971",
+    maps: "https://www.google.com/maps/search/?api=1&query=S%C3%ADtio+%C3%81gua+Viva+Viana+ES+29139-899",
+    claim: "whatsapp",
+  },
+  {
+    id: "viana-restaurante",
+    name: "Viana Restaurante",
+    category: "Gastronomia",
+    place: "Estação Ferroviária, Viana",
+    summary:
+      "Parceiro gastronômico do Viana Experience. A inscrição entra na seleção das cortesias. No dia, a visita inclui a exposição de artesanato na área externa e duas apresentações musicais.",
+    offer: "10 cortesias, por inscrição.",
+    offerShort: "10 cortesias",
+    hours: "Dia D · mesa, artesanato e música",
+    image: "/images/atracoes/viana-restaurante.webp",
+    imageAlt: "Salão do vagão do Viana Restaurante, com as mesas postas.",
+    instagram: "vianarestaurantees",
+    maps: "https://www.google.com/maps/search/?api=1&query=Esta%C3%A7%C3%A3o+Ferrovi%C3%A1ria+de+Viana+ES",
+    claim: "form",
+  },
+  {
+    id: "parque-tunel-da-alegria",
+    name: "Parque Túnel da Alegria",
+    category: "Lazer",
+    place: "Borbas, Viana",
+    summary:
+      "Área verde no Vale das Cachoeiras, cercada pelo Rio Santo Agostinho. Tem cachoeira, piscinas, toboágua e área de churrasco. Outro contato: (27) 3226-6805. Acesso pela BR-262, depois da sede de Viana, sentido montanhas, estrada de Formate.",
+    offer: "20 cortesias para o Dia D.",
+    offerShort: "20 cortesias",
+    hours: "Todos os dias · 8h–17h",
+    image: "/images/atracoes/parque-tunel-alegria.jpg",
+    imageAlt: "Piscina do Parque Túnel da Alegria, com toboágua e palmeiras.",
+    instagram: "parquetuneldaalegria",
+    phone: "5527999854799",
+    phoneLabel: "(27) 99985-4799",
+    maps: "https://www.google.com/maps/search/?api=1&query=Parque+T%C3%BAnel+da+Alegria+Borbas+Viana+ES",
     claim: "whatsapp",
   },
   {
@@ -147,23 +281,15 @@ export const attractions: Attraction[] = [
     offer: "Três sessões de manhã, com 40 vagas em cada uma.",
     offerShort: "120 vagas",
     hours: "Manhã do evento · sessões às 9h, 10h e 11h",
-    feature: true,
-    sessions: [
-      { time: "9h", spots: "40 vagas" },
-      { time: "10h", spots: "40 vagas" },
-      { time: "11h", spots: "40 vagas" },
-    ],
-    maps: "https://incaper.es.gov.br/fazendas",
-    claim: "signup",
-    slots: [
-      { id: "9h", label: "Sessão das 9h", capacity: 40 },
-      { id: "10h", label: "Sessão das 10h", capacity: 40 },
-      { id: "11h", label: "Sessão das 11h", capacity: 40 },
-    ],
+    image: "/images/atracoes/banho-de-floresta.jpg",
+    imageAlt: "Pessoa sentada sob as árvores na trilha do banho de floresta.",
+    website: "https://incaper.es.gov.br/fazendas",
+    websiteLabel: "Sobre a trilha",
+    claim: "form",
   },
 ];
 
-export function whatsappClaimUrl(phone: string, attractionName: string) {
-  const text = `Olá! Quero a cortesia do Dia D: ${attractionName}.`;
+export function whatsappClaimUrl(phone: string, attractionName: string, message?: string) {
+  const text = message ?? `Olá! Quero a cortesia do Dia D: ${attractionName}.`;
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 }
