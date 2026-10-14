@@ -26,14 +26,7 @@ export function TextReveal({
   const parts =
     splitBy === "chars" ? children.split("") : children.split(" ");
 
-  if (reduced) {
-    return (
-      <Tag ref={ref as never} className={className}>
-        {children}
-      </Tag>
-    );
-  }
-
+  // Keep identical markup on the server and on reduced-motion clients.
   return (
     <Tag ref={ref as never} className={cn("overflow-hidden", className)} aria-label={children}>
       <span className="sr-only">{children}</span>
@@ -42,8 +35,8 @@ export function TextReveal({
           <motion.span
             key={`${part}-${i}`}
             className="inline-block"
-            initial={{ y: "110%", opacity: 0, rotateX: 40 }}
-            animate={inView ? { y: 0, opacity: 1, rotateX: 0 } : {}}
+            initial={false}
+            animate={!reduced && inView ? { y: [12, 0], opacity: [0.7, 1] } : {}}
             transition={{
               duration: 0.7,
               delay: delay + i * 0.04,

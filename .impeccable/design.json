@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T22:24:50.164Z",
+  "title": "Design System: Destino Viana",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Areia",
+        "tonalRamp": [
+          "oklch(15.00% 0.0093 99.98)",
+          "oklch(26.43% 0.0093 99.98)",
+          "oklch(37.86% 0.0093 99.98)",
+          "oklch(49.29% 0.0093 99.98)",
+          "oklch(60.71% 0.0093 99.98)",
+          "oklch(72.14% 0.0093 99.98)",
+          "oklch(83.57% 0.0093 99.98)",
+          "oklch(95.00% 0.0093 99.98)"
+        ]
+      },
+      "surface-elevated": {
+        "role": "neutral",
+        "displayName": "Branco",
+        "tonalRamp": [
+          "oklch(15.00% 0.0000 89.88)",
+          "oklch(26.43% 0.0000 89.88)",
+          "oklch(37.86% 0.0000 89.88)",
+          "oklch(49.29% 0.0000 89.88)",
+          "oklch(60.71% 0.0000 89.88)",
+          "oklch(72.14% 0.0000 89.88)",
+          "oklch(83.57% 0.0000 89.88)",
+          "oklch(95.00% 0.0000 89.88)"
+        ]
+      },
+      "mineral": {
+        "role": "neutral",
+        "displayName": "Mineral claro",
+        "tonalRamp": [
+          "oklch(15.00% 0.0154 145.45)",
+          "oklch(26.43% 0.0154 145.45)",
+          "oklch(37.86% 0.0154 145.45)",
+          "oklch(49.29% 0.0154 145.45)",
+          "oklch(60.71% 0.0154 145.45)",
+          "oklch(72.14% 0.0154 145.45)",
+          "oklch(83.57% 0.0154 145.45)",
+          "oklch(95.00% 0.0154 145.45)"
+        ]
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Azul editorial",
+        "tonalRamp": [
+          "oklch(15.00% 0.0453 208.77)",
+          "oklch(26.43% 0.0453 208.77)",
+          "oklch(37.86% 0.0453 208.77)",
+          "oklch(49.29% 0.0453 208.77)",
+          "oklch(60.71% 0.0453 208.77)",
+          "oklch(72.14% 0.0453 208.77)",
+          "oklch(83.57% 0.0453 208.77)",
+          "oklch(95.00% 0.0453 208.77)"
+        ]
+      },
+      "primary-deep": {
+        "role": "primary",
+        "displayName": "Azul de atlas",
+        "tonalRamp": [
+          "oklch(15.00% 0.0421 221.45)",
+          "oklch(26.43% 0.0421 221.45)",
+          "oklch(37.86% 0.0421 221.45)",
+          "oklch(49.29% 0.0421 221.45)",
+          "oklch(60.71% 0.0421 221.45)",
+          "oklch(72.14% 0.0421 221.45)",
+          "oklch(83.57% 0.0421 221.45)",
+          "oklch(95.00% 0.0421 221.45)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "tonalRamp": [
+          "oklch(15.00% 0.0394 214.08)",
+          "oklch(26.43% 0.0394 214.08)",
+          "oklch(37.86% 0.0394 214.08)",
+          "oklch(49.29% 0.0394 214.08)",
+          "oklch(60.71% 0.0394 214.08)",
+          "oklch(72.14% 0.0394 214.08)",
+          "oklch(83.57% 0.0394 214.08)",
+          "oklch(95.00% 0.0394 214.08)"
+        ]
+      },
+      "secondary-text": {
+        "role": "neutral",
+        "displayName": "Texto secundário sólido",
+        "tonalRamp": [
+          "oklch(15.00% 0.0329 210.22)",
+          "oklch(26.43% 0.0329 210.22)",
+          "oklch(37.86% 0.0329 210.22)",
+          "oklch(49.29% 0.0329 210.22)",
+          "oklch(60.71% 0.0329 210.22)",
+          "oklch(72.14% 0.0329 210.22)",
+          "oklch(83.57% 0.0329 210.22)",
+          "oklch(95.00% 0.0329 210.22)"
+        ]
+      },
+      "hop": {
+        "role": "secondary",
+        "displayName": "Verde mineral",
+        "tonalRamp": [
+          "oklch(15.00% 0.0671 164.15)",
+          "oklch(26.43% 0.0671 164.15)",
+          "oklch(37.86% 0.0671 164.15)",
+          "oklch(49.29% 0.0671 164.15)",
+          "oklch(60.71% 0.0671 164.15)",
+          "oklch(72.14% 0.0671 164.15)",
+          "oklch(83.57% 0.0671 164.15)",
+          "oklch(95.00% 0.0671 164.15)"
+        ]
+      },
+      "accent": {
+        "role": "tertiary",
+        "displayName": "Coral terra",
+        "tonalRamp": [
+          "oklch(15.00% 0.1509 32.55)",
+          "oklch(26.43% 0.1509 32.55)",
+          "oklch(37.86% 0.1509 32.55)",
+          "oklch(49.29% 0.1509 32.55)",
+          "oklch(60.71% 0.1509 32.55)",
+          "oklch(72.14% 0.1509 32.55)",
+          "oklch(83.57% 0.1509 32.55)",
+          "oklch(95.00% 0.1509 32.55)"
+        ]
+      },
+      "accent-hover": {
+        "role": "tertiary",
+        "displayName": "Coral terra em hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.1302 34.63)",
+          "oklch(26.43% 0.1302 34.63)",
+          "oklch(37.86% 0.1302 34.63)",
+          "oklch(49.29% 0.1302 34.63)",
+          "oklch(60.71% 0.1302 34.63)",
+          "oklch(72.14% 0.1302 34.63)",
+          "oklch(83.57% 0.1302 34.63)",
+          "oklch(95.00% 0.1302 34.63)"
+        ]
+      },
+      "accent-sun": {
+        "role": "tertiary",
+        "displayName": "Coral iluminado",
+        "tonalRamp": [
+          "oklch(15.00% 0.0996 43.03)",
+          "oklch(26.43% 0.0996 43.03)",
+          "oklch(37.86% 0.0996 43.03)",
+          "oklch(49.29% 0.0996 43.03)",
+          "oklch(60.71% 0.0996 43.03)",
+          "oklch(72.14% 0.0996 43.03)",
+          "oklch(83.57% 0.0996 43.03)",
+          "oklch(95.00% 0.0996 43.03)"
+        ]
+      },
+      "on-dark-muted": {
+        "role": "neutral",
+        "displayName": "Verde claro sobre azul",
+        "tonalRamp": [
+          "oklch(15.00% 0.0342 167.82)",
+          "oklch(26.43% 0.0342 167.82)",
+          "oklch(37.86% 0.0342 167.82)",
+          "oklch(49.29% 0.0342 167.82)",
+          "oklch(60.71% 0.0342 167.82)",
+          "oklch(72.14% 0.0342 167.82)",
+          "oklch(83.57% 0.0342 167.82)",
+          "oklch(95.00% 0.0342 167.82)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Título de capítulo",
+        "purpose": "Títulos editoriais."
+      },
+      "title": {
+        "displayName": "Título de pilar",
+        "purpose": "Ensaios fotográficos."
+      },
+      "body": {
+        "displayName": "Texto",
+        "purpose": "Leitura e interface."
+      },
+      "label": {
+        "displayName": "Rótulo",
+        "purpose": "Ações do hero."
+      }
+    },
+    "shadows": [
+      {
+        "name": "mobile-menu",
+        "value": "0 20px 25px -20px #082a3433",
+        "purpose": "Separar o menu expandido do conteúdo."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.23,1,.32,1)",
+        "purpose": "Revelações e imagem."
+      },
+      {
+        "name": "camera-ease",
+        "value": "cubic-bezier(.77,0,.175,1)",
+        "purpose": "Aproximação cartográfica."
+      },
+      {
+        "name": "camera-desktop",
+        "value": "4.2s",
+        "purpose": "Hero no desktop."
+      },
+      {
+        "name": "camera-mobile",
+        "value": "3s",
+        "purpose": "Hero até 767px."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "static destination",
+        "purpose": "Destino estático e deslocamentos decorativos removidos."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "chapter-wide",
+        "value": "640px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "767px"
+      },
+      {
+        "name": "header-compact-max",
+        "value": "1100px"
+      }
+    ],
+    "provenance": {
+      "mode": "manual scan; launcher unavailable",
+      "sources": [
+        "src/app/globals.css",
+        "src/components/sections/Hero.tsx",
+        "src/components/hero/DestinationMap.tsx",
+        "src/components/ui/Button.tsx",
+        "src/components/ui/Forms.tsx",
+        "src/components/sections/AttractionsSection.tsx"
+      ],
+      "tonalRamps": "Synthesized OKLCH previews; not production tokens.",
+      "validation": "JSON syntax and local consistency checks only; no engine or panel execution."
+    }
+  },
+  "components": [
+    {
+      "name": "Ação do hero",
+      "kind": "button",
+      "refersTo": "destination-primary",
+      "description": "Ação para o próximo capítulo.",
+      "html": "<a class=\"ds-control ds-destination-primary\" href=\"#dia-d\">Explorar o Dia D<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-destination-primary{background:var(--color-primary,#143c42);color:#fff;padding:15px 20px;border-radius:5px;min-height:48px;gap:24px;font-size:13px;font-weight:600;text-decoration:none}.ds-destination-primary:hover{background:var(--color-hop,#326650)}.ds-destination-primary:active{filter:brightness(.95)}"
+    },
+    {
+      "name": "Link do hero",
+      "kind": "button",
+      "refersTo": "destination-secondary",
+      "description": "Ação secundária com linha inferior.",
+      "html": "<a class=\"ds-control ds-destination-secondary\" href=\"#atracoes\">Ver as atrações<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-destination-secondary{min-height:48px;color:var(--color-ink,#14343b);border-bottom:1px solid #9bb3a8;gap:24px;font-size:13px;font-weight:600;text-decoration:none}.ds-destination-secondary:hover{color:var(--color-hop,#326650)}"
+    },
+    {
+      "name": "Botão primary",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Variante do botão compartilhado.",
+      "html": "<button class=\"ds-control ds-button-primary\">Continuar</button>",
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-button-primary{padding:0 24px;border-radius:4px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border:0;background:var(--color-accent,#b84732);color:#fff}.ds-button-primary:hover{background:var(--color-accent-hover,#963923)}.ds-button-primary:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Botão secondary",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Variante do botão compartilhado.",
+      "html": "<button class=\"ds-control ds-button-secondary\">Continuar</button>",
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-button-secondary{padding:0 24px;border-radius:4px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border:2px solid var(--color-ink,#14343b);background:transparent;color:var(--color-ink,#14343b)}.ds-button-secondary:hover{background:var(--color-surface-muted,#e3ebe3)}.ds-button-secondary:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Botão ghost",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Variante do botão compartilhado.",
+      "html": "<button class=\"ds-control ds-button-ghost\">Continuar</button>",
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-button-ghost{padding:0 24px;border-radius:4px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border:0;background:transparent;color:var(--color-on-primary,#f4f3ec)}.ds-button-ghost:hover{background:color-mix(in srgb,var(--color-terra,#b5421c) 20%,transparent)}.ds-button-ghost:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Campo",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Campo de formulário existente.",
+      "html": "<label class=\"ds-field-label\" for=\"ds-name\">Nome</label><input id=\"ds-name\" class=\"ds-control ds-field\" name=\"name\" autocomplete=\"name\" />",
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-field-label{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:block;color:var(--color-ink,#14343b);font-size:14px;font-weight:500;margin-bottom:6px}.ds-field{min-height:44px;padding:0 12px;border-radius:4px;border:1px solid color-mix(in srgb,var(--color-primary,#143c42) 20%,transparent);background:var(--color-surface,#f4f3ec);color:var(--color-ink,#14343b);font-size:16px}.ds-field:hover{border-color:var(--color-primary,#143c42)}.ds-field:focus-visible{border-color:var(--color-accent,#b84732);outline:none;box-shadow:0 0 0 2px color-mix(in srgb,var(--color-accent,#b84732) 30%,transparent)}"
+    },
+    {
+      "name": "Navegação",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Amostra dos links do cabeçalho, sem lógica do menu.",
+      "html": "<nav class=\"ds-navigation\" aria-label=\"Seções\"><a class=\"ds-control ds-nav-link\" href=\"#dia-d\">Dia D</a><a class=\"ds-control ds-nav-link\" href=\"#atracoes\">Atrações</a></nav>",
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-navigation{display:flex;gap:26px;background:var(--color-paper,#f4f3ec);padding:12px 24px}.ds-nav-link{font-size:12px;font-weight:500;color:var(--color-ink,#14343b);padding:14px 0;text-decoration:none}.ds-nav-link:hover{color:var(--color-accent,#b84732)}"
+    },
+    {
+      "name": "Filtro selecionado",
+      "kind": "chip",
+      "refersTo": "category-chip",
+      "description": "Estado selecionado do filtro de atrações.",
+      "html": "<button type=\"button\" class=\"ds-control ds-chip\" aria-pressed=\"true\">Todas</button>",
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-chip{min-height:44px;padding:0 16px;border:0;border-radius:9999px;background:var(--color-brown,#143c42);color:#fff;font-size:10px;letter-spacing:.075em;text-transform:uppercase}.ds-chip:hover{background:var(--color-brown-deep,#082a34)}.ds-chip:active{filter:brightness(.95)}"
+    },
+    {
+      "name": "Cartão de atração",
+      "kind": "card",
+      "refersTo": "attraction-card",
+      "description": "Superfície e hierarquia; amostra sem inventar oferta operacional.",
+      "html": "<article class=\"ds-card\"><p class=\"ds-card-place\">Viana, Espírito Santo</p><h3 class=\"ds-card-title\">Atração</h3><p class=\"ds-card-copy\">Informações da atração e ações existentes.</p><a class=\"ds-control ds-card-link\" href=\"#atracoes\">Ver atrações</a></article>",
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-card{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;padding:24px;border:1px solid #ccd9cf;border-radius:12px;background:var(--color-surface-elevated,#fff);color:var(--color-primary,#143c42);box-shadow:none;max-width:340px}.ds-card-place{font-size:10px;letter-spacing:.075em;text-transform:uppercase}.ds-card-title{font-size:26px;font-weight:600;margin:8px 0 12px}.ds-card-copy{font-size:14px;line-height:1.625;color:var(--color-primary,#143c42)}.ds-card-link{font-size:12px;color:var(--color-primary,#143c42)}.ds-card-link:hover{color:var(--color-hop,#326650)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Destino Viana",
+    "overview": "Uma linguagem de atlas e ensaio fotográfico apresenta Viana como um destino a descobrir. Superfícies claras, azul profundo e fotografias grandes dão espaço à marca original e à informação do evento.\n\nA tipografia editorial organiza os capítulos; a interface permanece direta e legível. O movimento localiza o município e acompanha a passagem entre capítulos, sem bloquear o scroll ou exigir animação para acessar conteúdo.",
+    "keyCharacteristics": [
+      "Abertura cartográfica com origem identificada.",
+      "Capítulos fotográficos com espaço para leitura.",
+      "Marca original preservada e ações reconhecíveis."
+    ],
+    "rules": [
+      {
+        "name": "The Legibility Rule",
+        "body": "Preserve o texto secundário sólido nas superfícies claras e avalie cada combinação de texto e fundo antes de reduzir sua opacidade.",
+        "section": "colors"
+      },
+      {
+        "name": "The Motion Rule",
+        "body": "Preserve a informação e as ações acessíveis durante o movimento; com movimento reduzido, mostre o destino estático e retire deslocamentos decorativos.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do preservar as imagens originais da marca e a data confirmada.",
+      "Do manter foco visível e controles com espaço de toque.",
+      "Do usar fotografias com alternativas e créditos existentes.",
+      "Do oferecer o destino estático quando houver preferência por movimento reduzido."
+    ],
+    "donts": [
+      "Don't usar animação como espera obrigatória para conteúdo ou ações.",
+      "Don't exigir hover para ler informações ou operar fluxos.",
+      "Don't apresentar o pin municipal como endereço do evento ou rota de transporte."
+    ]
+  }
+}

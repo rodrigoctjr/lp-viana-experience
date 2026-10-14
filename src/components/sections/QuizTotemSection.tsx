@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { PosterStrip } from "@/components/ui/BotanicalDecor";
 import { SectionNext } from "@/components/ui/SectionNext";
 import { SectionShell } from "@/components/ui/SectionShell";
@@ -30,7 +30,11 @@ function CategoryBadge({ category }: { category: QuizQuestion["category"] }) {
 }
 
 export function QuizTotemSection() {
-  const [shuffled, setShuffled] = useState(() => shuffleArray(questions));
+  // Server and first client render must agree; randomize only after hydration.
+  const [shuffled, setShuffled] = useState(questions);
+  useEffect(() => {
+    setShuffled(shuffleArray(questions));
+  }, []);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [revealed, setRevealed] = useState(false);

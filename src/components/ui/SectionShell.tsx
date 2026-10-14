@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { BotanicalDecor } from "@/components/ui/BotanicalDecor";
+import { NatureTransition } from "@/components/ui/NatureTransition";
 
 type SectionVariant = "ochre" | "cream" | "brown" | "nature";
 
@@ -36,13 +36,7 @@ export function SectionShell({
         className,
       )}
     >
-      {accentBar ? (
-        <div
-          className="absolute left-0 top-0 h-1 w-full bg-linear-to-r from-brown via-wheat to-hop"
-          aria-hidden="true"
-        />
-      ) : null}
-      {decor ? <BotanicalDecor variant="section" /> : null}
+      {decor || accentBar ? <NatureTransition /> : null}
       <div className="container-site relative z-10">{children}</div>
     </section>
   );

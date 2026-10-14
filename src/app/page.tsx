@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { MotionConfig } from "motion/react";
 import { RefHandler } from "@/components/RefHandler";
 import { AttractionsSection } from "@/components/sections/AttractionsSection";
 import { DiaDTeaser } from "@/components/sections/DiaDTeaser";
@@ -16,7 +17,7 @@ export default function HomePage() {
   const [refCopy, setRefCopy] = useState<string | undefined>();
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <RefHandler onRefCopy={setRefCopy} />
       <Header />
       <main>
@@ -29,6 +30,6 @@ export default function HomePage() {
         <ImpactCta />
       </main>
       <Footer />
-    </>
+    </MotionConfig>
   );
 }

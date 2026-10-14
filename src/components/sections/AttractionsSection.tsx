@@ -194,8 +194,8 @@ function AttractionCard({
   return (
     <motion.article
       layout
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={false}
+      whileInView={{ opacity: [0.7, 1] }}
       viewport={{ once: true, margin: "-8%" }}
       transition={{ delay: Math.min(index * 0.06, 0.24), duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       className="flex h-full flex-col overflow-hidden rounded-sm border-4 border-brown/15 bg-surface-elevated shadow-[0_16px_40px_-20px_rgba(107,61,46,0.45)]"
@@ -224,7 +224,7 @@ function AttractionCard({
           <span className="font-mono-label text-[10px] text-terra">No evento · </span>
           {item.offer}
         </p>
-        <p className="mt-2 font-body text-xs text-primary/55">{item.hours}</p>
+        <p className="mt-2 font-body text-xs text-[#476267]">{item.hours}</p>
         {item.coupon ? <CouponButton code={item.coupon} /> : null}
         <div className="mt-auto">
           <AttractionLinks item={item} remaining={remaining} onSignup={onSignup} />
@@ -267,7 +267,7 @@ export function AttractionsSection() {
           >
             Quem vai estar no Viana Experience.
           </TextReveal>
-          <p className="mt-4 max-w-2xl font-body text-primary/65">
+          <p className="mt-4 max-w-2xl font-body text-[#476267]">
             Aventura com a Radical Oficial, corrida de rua, sítios, cachoeira, parque e restaurantes.
             Cada parceiro separou vagas ou cortesias para o dia 8 de novembro.
           </p>
