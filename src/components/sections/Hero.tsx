@@ -7,6 +7,7 @@ import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "motion/r
 import { Logo } from "@/components/ui/Logo";
 import { DestinationMap } from "@/components/hero/DestinationMap";
 import { NatureBackdrop } from "@/components/ui/NatureBackdrop";
+import { InstitutionalLogos } from "@/components/ui/InstitutionalLogos";
 
 export function Hero({ refCopy }: { refCopy?: string }) {
   const [journey, setJourney] = useState(0);
@@ -43,6 +44,7 @@ export function Hero({ refCopy }: { refCopy?: string }) {
         </motion.div> : null}
         </AnimatePresence>
       </motion.div>
+      <InstitutionalLogos className="hero-institutional" />
     </section>
       <motion.div layout="position" transition={{ layout: positionTransition }} className="destination-photo-strip">
         <div className="destination-photo"><Image src="/images/viana/mata-atlantica.jpg" alt="Copas da Mata Atlântica em Viana" fill sizes="(max-width: 700px) 40vw, 25vw" className="object-cover" /></div>

@@ -1,9 +1,11 @@
 import { Logo } from "@/components/ui/Logo";
+import { InstitutionalLogos } from "@/components/ui/InstitutionalLogos";
 import { NAV_LINKS, WHATSAPP_INSTITUTIONAL } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="border-t border-brown/20 bg-brown-deep py-12 text-on-accent">
+    <footer className="border-t border-brown/20 bg-brown-deep pb-12 text-on-accent">
+      <InstitutionalLogos className="page-institutional" />
       <div className="container-site flex flex-col items-center gap-8 text-center sm:flex-row sm:justify-between sm:text-left">
         <div>
           <Logo height={48} mobileHeight={40} />
