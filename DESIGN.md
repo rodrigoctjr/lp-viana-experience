@@ -209,3 +209,5 @@ O botão Rever viagem continua disponível fora do mapa removido e reinicia a in
 - Don't usar animação como espera obrigatória para conteúdo ou ações.
 - Don't exigir hover para ler informações ou operar fluxos.
 - Don't apresentar o pin municipal como endereço do evento ou rota de transporte.
+
+A capa do hero ocupa a altura dinâmica da tela, incluindo o cabeçalho. A faixa fotográfica fica abaixo da capa. O mapa móvel usa a mesma área do conteúdo, sem empilhar uma segunda tela durante a introdução. Telas baixas recebem espaçamento e marca compactos; conteúdo ampliado por acessibilidade pode expandir a capa para preservar a leitura.

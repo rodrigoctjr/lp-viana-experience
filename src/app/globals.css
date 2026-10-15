@@ -238,8 +238,8 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
 .hero-poster { background: #edf1e9; }
 .nature-transition { position: absolute; inset: 0 0 auto; height: 72px; overflow: hidden; color: #326650; opacity: .3; pointer-events: none; }
 .nature-transition svg { width: calc(100% + 120px); height: 100%; margin-left: -60px; }
-.destination-hero { padding-top: 88px; background: #f4f3ec; }
-.destination-hero-grid { display: grid; grid-template-columns: .95fr 1.05fr; min-height: min(760px,calc(100svh - 88px)); }
+.destination-hero { --hero-header-height: 88px; padding-top: var(--hero-header-height); background: #f4f3ec; min-height: 100svh; min-height: 100dvh; }
+.destination-hero-grid { display: grid; grid-template-columns: .95fr 1.05fr; min-height: calc(100svh - var(--hero-header-height)); min-height: calc(100dvh - var(--hero-header-height)); }
 .destination-copy { padding: clamp(30px,4vw,70px) clamp(24px,5vw,80px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; position: relative; z-index: 2; }
 .destination-logo { width: min(100%,440px) !important; mix-blend-mode: multiply; }
 .destination-copy h1 { width: 100%; margin-bottom: 34px; }
@@ -324,8 +324,8 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
 @media (hover: hover) and (pointer: fine) { .pillar-editorial:hover img { transform: scale(1.04); } }
 @media (max-width: 1100px) { .destination-copy { padding-inline: 30px; }.map-caption { flex-direction: column; align-items: start; gap: 0; }.destination-actions { gap: 12px; }.destination-primary { gap: 10px; }.destination-copy h1 { margin-bottom: 24px; } }
 @media (max-width: 767px) {
-  .destination-hero { padding-top: 76px; }
-  .destination-hero-grid { grid-template-columns: 1fr; min-height: auto; }
+  .destination-hero { --hero-header-height: 76px; }
+  .destination-hero-grid { grid-template-columns: 1fr; }
   .destination-copy { padding: 28px 24px 34px; }
   .destination-copy h1 { margin-bottom: 18px; }
   .destination-logo { width: min(100%,340px) !important; }
@@ -334,7 +334,7 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
   .destination-date { margin-top: 22px; gap: 16px; }.destination-day { font-size: 72px; }
   .destination-actions { margin-top: 24px; gap: 22px; }
   .destination-primary,.destination-secondary { font-size: 12px; gap: 12px; }
-  .destination-map-stage { min-height: 510px; border-radius: 0; }
+  .destination-map-stage { position: absolute; inset: 0; z-index: 3; min-height: 0; border-radius: 0; }
   .map-caption { left: 28px; top: 22px; font-size: 10px; }
   .map-compass { top: 28px; right: 24px; }
   .map-source { left: 24px; bottom: 13px; font-size: 8px; }.map-event { right: 24px; bottom: 43px; }
@@ -469,6 +469,13 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
 .hero-centered .destination-actions { justify-content: center; }
 .hero-replay { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; margin-top: 16px; padding: 8px 18px; color: #476267; font-size: 12px; cursor: pointer; }
 .hero-replay:hover { background: #143c420b; color: #143c42; }
-@media (max-width: 767px) {
-  .hero-centered .destination-copy { min-height: calc(100svh - 76px); }
+@media (max-height: 760px) {
+  .destination-copy { padding-block: 20px; }
+  .destination-copy h1 { max-width: 250px; margin-bottom: 16px; }
+  .destination-copy h2 { font-size: 32px; }
+  .destination-copy > p { margin-top: 14px; font-size: 13px; line-height: 1.5; }
+  .destination-date { margin-top: 18px; }
+  .destination-day { font-size: 56px; }
+  .destination-actions { margin-top: 20px; }
+  .hero-replay { margin-top: 6px; }
 }

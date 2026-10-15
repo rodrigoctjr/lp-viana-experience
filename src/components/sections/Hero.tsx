@@ -23,9 +23,9 @@ export function Hero({ refCopy }: { refCopy?: string }) {
     setPhase("mapping");
   }
   return (
-    <section id="top" className="destination-hero" data-phase={phase}>
+    <LayoutGroup><section id="top" className="destination-hero" data-phase={phase}>
       <NatureBackdrop />
-      <LayoutGroup><motion.div layout transition={{ layout: positionTransition }} className={`destination-hero-grid${phase === "centered" ? " hero-centered" : ""}`}>
+      <motion.div layout transition={{ layout: positionTransition }} className={`destination-hero-grid${phase === "centered" ? " hero-centered" : ""}`}>
         <div className="destination-copy">
           <motion.h1 layout="position" transition={{ layout: positionTransition }}><span className="sr-only">Viana Experience, Dia D do Turismo</span><Logo variant="hero" priority className="destination-logo" /></motion.h1>
           <motion.h2 layout="position" transition={{ layout: positionTransition }}>Dia D do Turismo.<br /><em>Viva Viana.</em></motion.h2>
@@ -43,11 +43,11 @@ export function Hero({ refCopy }: { refCopy?: string }) {
         </motion.div> : null}
         </AnimatePresence>
       </motion.div>
+    </section>
       <motion.div layout="position" transition={{ layout: positionTransition }} className="destination-photo-strip">
         <div className="destination-photo"><Image src="/images/viana/mata-atlantica.jpg" alt="Copas da Mata Atlântica em Viana" fill sizes="(max-width: 700px) 40vw, 25vw" className="object-cover" /></div>
         <p>Entre a mata e a cidade,<br /><strong>há muito para descobrir.</strong></p>
         <a href="#pillars">Conheça Viana <span aria-hidden="true">↓</span></a>
       </motion.div></LayoutGroup>
-    </section>
   );
 }
