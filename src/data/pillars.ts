@@ -2,7 +2,7 @@ export const pillars = [
   {
     id: "historia",
     title: "História e Cultura",
-    subtitle: "O Berço de Araçatiba",
+    subtitle: "Igreja Matriz de Viana",
     description:
       "Patrimônio colonial, tradições capixabas e a memória viva de uma cidade que guarda séculos de história.",
     accent: "terra" as const,
