@@ -5,9 +5,9 @@ import { DirectionArrow } from "@/components/ui/DirectionArrow";
 import { useDestinationExplorer } from "@/components/providers/DestinationExplorerProvider";
 
 const scenes = [
-  { src: "/images/viana/estacao.jpg", alt: "Locomotiva histórica e fachada amarela da Estação Ferroviária de Viana", title: "Histórias que permanecem", place: "Estação Ferroviária de Viana" },
-  { src: "/images/atracoes/cachoeira-do-aloisio.jpg", alt: "Cachoeira do Aloísio cercada de mata, com água caindo em um poço natural", title: "Natureza para aproveitar", place: "Cachoeira do Aloísio" },
-  { src: "/images/atracoes/viana-restaurante.webp", alt: "Mesas do Viana Restaurante em um vagão de trem", title: "Sabores para descobrir", place: "Viana Restaurante" },
+  { src: "/images/viana/estacao.jpg", alt: "Locomotiva histórica e fachada amarela da Estação Ferroviária de Viana", title: "Histórias que permanecem", place: "Estação Ferroviária de Viana", cta: "Conhecer a história" },
+  { src: "/images/atracoes/cachoeira-do-aloisio.jpg", alt: "Cachoeira do Aloísio cercada de mata, com água caindo em um poço natural", title: "Natureza para aproveitar", place: "Cachoeira do Aloísio", cta: "Explorar a natureza" },
+  { src: "/images/atracoes/viana-restaurante.webp", alt: "Mesas do Viana Restaurante em um vagão de trem", title: "Sabores para descobrir", place: "Viana Restaurante", cta: "Descobrir os sabores" },
 ];
 
 export function DestinationIntro() {
@@ -21,9 +21,9 @@ export function DestinationIntro() {
         </div>
         <div className="destination-intro-scenes">
           {scenes.map((scene, i) => (
-            <button key={scene.src} type="button" onClick={() => explore(i)} aria-haspopup="dialog" aria-label={`Explorar ${scene.title}`} className="destination-intro-link">
+            <button key={scene.src} type="button" onClick={() => explore(i)} aria-haspopup="dialog" aria-label={scene.cta} className="destination-intro-link">
               <span className="destination-intro-photo"><Image src={scene.src} alt={scene.alt} fill sizes="(max-width: 767px) 90vw, 33vw" /></span>
-              <span className="destination-intro-caption"><span>{scene.title} <DirectionArrow diagonal /></span><small>{scene.place}</small></span>
+              <span className="destination-intro-caption"><span className="destination-intro-title">{scene.title}</span><small>{scene.place}</small><span className="destination-item-cta">{scene.cta} <DirectionArrow diagonal /></span></span>
             </button>
           ))}
         </div>

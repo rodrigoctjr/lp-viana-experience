@@ -60,7 +60,7 @@ export function DestinationExplorerProvider({ children }: { children: ReactNode 
             if (Math.abs(x) > 60 && Math.abs(x) > Math.abs(y) * 1.5) go(index + (x < 0 ? 1 : -1));
           }} onTouchCancel={() => { touchStart.current = null; }}>
             <motion.div key={story.id} initial={reduced ? false : { opacity: .5, x: direction * 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: reduced ? 0 : .22, ease: [.23, 1, .32, 1] }}>
-              <figure className="destination-explorer-photo"><div><Image src={story.image} alt={story.alt} fill sizes="(max-width: 767px) 95vw, 860px" /></div><figcaption>{story.caption}</figcaption></figure>
+              <figure className="destination-explorer-photo"><div><Image src={story.image} alt={story.alt} fill sizes="(max-width: 767px) 95vw, 700px" /></div><figcaption>{story.caption}</figcaption></figure>
               <article className="destination-explorer-text" aria-labelledby="destination-explorer-heading">
                 <h3 id="destination-explorer-heading">{story.title}</h3>
                 {story.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}

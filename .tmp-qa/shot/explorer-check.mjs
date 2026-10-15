@@ -29,10 +29,15 @@ try {
   await page.setViewport({ width: 1440, height: 1000 });
   await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'reduce' }]);
   await page.goto('http://localhost:3457/', { waitUntil: 'networkidle0' });
+  const itemCtas = await page.$$eval('.destination-item-cta, .pillar-history-link', els => els.map(el => ({ text: el.textContent.trim(), height: el.getBoundingClientRect().height, background: getComputedStyle(el).backgroundColor })));
+  assert.equal(itemCtas.length, 6);
+  assert.ok(itemCtas.every(cta => cta.text.length > 10 && cta.height >= 44 && cta.background === 'rgb(20, 60, 66)'));
   const url = page.url();
   const trigger = await open('#conheca-viana .destination-explore-cta');
   const position = await page.evaluate(() => scrollY);
   assert.equal(await heading(), titles[0]);
+  const desktop = await page.$eval('.destination-explorer-dialog', el => { const r = el.getBoundingClientRect(); return { width: r.width, height: r.height }; });
+  assert.ok(desktop.width <= 700 && desktop.height <= 820);
   await page.keyboard.down('Shift'); await page.keyboard.press('Tab'); await page.keyboard.up('Shift');
   assert.equal(await page.evaluate(() => document.activeElement.classList.contains('destination-explorer-next')), true);
   await page.keyboard.press('Tab');
@@ -88,7 +93,7 @@ try {
   assert.equal(page.url(), url);
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
   assert.deepEqual(errors, []);
-  const report = { entries, ctas: 2, keyboard: true, focusRestored: true, historyExpanded: true, fixedControls: true, scrollReset: true, overlayClose: true, touchSwipe: true, sameUrl: true, mobile, errors };
+  const report = { entries, ctas: 2, itemCtas, desktop, keyboard: true, focusRestored: true, historyExpanded: true, fixedControls: true, scrollReset: true, overlayClose: true, touchSwipe: true, sameUrl: true, mobile, errors };
   fs.writeFileSync(`${out}/explorer-qa.json`, JSON.stringify(report, null, 2));
   console.log(JSON.stringify(report, null, 2));
 } finally { await page.close(); await browser.close(); }
