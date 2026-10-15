@@ -100,9 +100,9 @@ components:
 
 **Creative North Star: "Destino Viana"**
 
-Uma linguagem de atlas e ensaio fotográfico apresenta Viana como um destino a descobrir. Capítulos em cores claras, texto navy e fotografias grandes dão espaço à marca original e à informação do evento. A abertura sai do atlas e chega à fotografia da cidade.
+Uma linguagem de atlas e ensaio fotográfico apresenta Viana como um destino a descobrir. Capítulos em cores claras, texto navy e fotografias grandes dão espaço à marca original e à informação do evento. A abertura usa o atlas como introdução e termina no conteúdo centralizado sobre o fundo de natureza.
 
-A tipografia editorial organiza os capítulos; a interface permanece direta e legível. O movimento localiza o município, transforma o mapa em fotografia e acompanha a passagem entre capítulos, sem bloquear o scroll ou exigir animação para acessar conteúdo.
+A tipografia editorial organiza os capítulos; a interface permanece direta e legível. O movimento localiza o município, encerra o mapa e acompanha a centralização do hero e a passagem entre capítulos, sem bloquear o scroll ou exigir animação para acessar conteúdo.
 
 **Key Characteristics:**
 - Abertura cartográfica com origem identificada.
@@ -122,7 +122,7 @@ A areia quente acolhe a marca; azul claro, verde, pêssego, lima clara, mel e li
 
 ### Tertiary
 - **Coral terra** (`accent`, `accent-hover`): data sobre areia e ações dos componentes compartilhados.
-- **Coral iluminado** (`accent-sun`): data sobre azul profundo ou fotografia sombreada.
+- **Coral iluminado** (`accent-sun`): data sobre o azul profundo do mapa introdutório.
 - **Terra sobre pêssego** (`peach-emphasis`): ênfase no título e ícones da programação.
 
 ### Neutral
@@ -159,7 +159,7 @@ DM Serif Display dá caráter aos títulos; Bricolage organiza interface, data, 
 
 ## Layout
 
-Contêiner com largura máxima de 1440px e espaço lateral fluido. Os capítulos compartilhados usam 96px de respiro vertical, passando a 128px a partir de 640px; programação e fechamento usam 100px. O hero em desktop combina duas colunas proporcionais (.95fr / 1.05fr), com marca e informação ao lado do mapa.
+Contêiner com largura máxima de 1440px e espaço lateral fluido. Os capítulos compartilhados usam 96px de respiro vertical, passando a 128px a partir de 640px; programação e fechamento usam 100px. Durante a introdução, o hero em desktop combina duas colunas proporcionais (.95fr / 1.05fr), com marca e informação ao lado do mapa. Após a saída e remoção do mapa, uma coluna centraliza marca, título, descrição, data e ações. A composição interna da data mantém texto à esquerda.
 
 Até 767px, o mapa ocupa a primeira linha e revela pin e data na tela inicial; marca completa, textos e ações vêm em seguida. O mapa tem altura mínima de 510px. Os pilares deixam o escalonamento de 80/160px e passam a uma coluna; a programação e o fechamento também se empilham. Marca, título, parágrafo, bloco de data e ações ficam centralizados no hero móvel; o texto dentro da data mantém alinhamento à esquerda. O menu substitui a navegação desktop. Entre 768px e 1100px, a navegação permanece e a ação lateral do cabeçalho fica oculta.
 
@@ -169,7 +169,7 @@ O sistema usa contraste de superfícies e fotografia como profundidade. Cartões
 
 ## Shapes
 
-Fotografias dos pilares usam cantos de 28px; cartões de atrações, 24px; a fotografia da faixa, 22px. Ações, botões, replay e contatos adotam cápsulas (999px), com exceção das respostas do quiz (20px). O contêiner do jogo usa 24px. O mapa é a exceção explícita: todos os cantos são retos (0px), em qualquer breakpoint. A fotografia final ocupa esse mesmo quadro reto.
+Fotografias dos pilares usam cantos de 28px; cartões de atrações, 24px; a fotografia da faixa, 22px. Ações, botões, replay e contatos adotam cápsulas (999px), com exceção das respostas do quiz (20px). O contêiner do jogo usa 24px. O mapa é a exceção explícita: todos os cantos são retos (0px), em qualquer breakpoint. O quadro reto existe somente durante a introdução e é removido ao concluir a saída.
 
 ## Components
 
@@ -191,11 +191,11 @@ Fundos de folhas e água acrescentam movimento discreto atrás do conteúdo, com
 ### Cartographic opening
 Malhas locais do IBGE mostram Brasil, recuo inicial e aproximação ao Espírito Santo e a Viana. O enquadramento estadual (viewBox 818 565 82 102) faz o Espírito Santo quase preencher a etapa e mantém uma pausa. A câmera passa pelo recorte da cidade (850 619 25 31) e chega a viewBox 858.4 630 8 10. Pin e rótulo ajustam a escala em sentido inverso ao zoom para manter sua presença visual controlada. A câmera dura 7,4s no desktop e 5,8s no celular. O pin não indica o endereço de um evento.
 
-A chegada usa a imagem existente public/images/viana/estacao.jpg, revelada por uma abertura circular do centro (1,2s), com assentamento de escala 1,16 para 1 (2s). A abertura começa em 6,3s no desktop e 4,8s no celular, sobrepondo o fim do zoom. A legenda identifica a Estação Ferroviária de Viana e credita Rafael Deminicis, CC BY-SA 4.0. Sombreamento da foto sustenta a leitura de legenda, data, replay e fonte IBGE.
+O encerramento segue as fases mapping → fading → centered. O pin permanece visível até o fim do zoom e sai junto com o mapa. O callback real de conclusão do zoom inicia o fade-out do mapa (0,65s); após a remoção do quadro, a conclusão da saída dispara a centralização dos grupos por Motion layout (0,85s, ease-out). Não há fotografia de chegada. O estado final reúne marca, título, descrição, data e ações sobre o fundo de natureza. O subtítulo é “Dia D do Turismo. Viva Viana.”.
 
-Replay e data permanecem acessíveis; a data aparece também no conteúdo textual do hero. Em movimento reduzido, a foto final e sua legenda ficam estáticas, sem abertura circular ou assentamento. A ordem mobile e esses tempos são decisões desta superfície; novos usos do sistema devem respeitar seu próprio contexto.
+O botão Rever viagem continua disponível fora do mapa removido e reinicia a introdução. O identificador da jornada ignora callbacks antigos de replays. A data permanece no conteúdo textual do hero. Em movimento reduzido, zoom, fade e reposicionamento têm duração zero: o hero chega imediatamente ao conteúdo centralizado e a natureza fica estática. A ordem mobile e esses tempos são decisões desta superfície; novos usos do sistema devem respeitar seu próprio contexto.
 
-**The Motion Rule.** Preserve a informação e as ações acessíveis durante o movimento; com movimento reduzido, mostre a foto final estática e retire deslocamentos decorativos.
+**The Motion Rule.** Preserve a informação e as ações acessíveis durante o movimento; com movimento reduzido, mostre o conteúdo centralizado imediatamente e retire deslocamentos decorativos.
 
 ## Do's and Don'ts
 
@@ -203,7 +203,7 @@ Replay e data permanecem acessíveis; a data aparece também no conteúdo textua
 - Do preservar as imagens originais da marca e a data confirmada.
 - Do manter foco visível e controles com espaço de toque.
 - Do usar fotografias com alternativas e créditos existentes.
-- Do oferecer a foto final estática quando houver preferência por movimento reduzido.
+- Do oferecer o conteúdo centralizado imediatamente quando houver preferência por movimento reduzido.
 
 ### Don't:
 - Don't usar animação como espera obrigatória para conteúdo ou ações.

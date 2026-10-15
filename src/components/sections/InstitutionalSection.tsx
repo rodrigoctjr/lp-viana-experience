@@ -6,7 +6,7 @@ const blocks = [
     id: "lei",
     title: "Lei de Incentivo ao Turismo",
     description:
-      "Lei Municipal nº 4.218/24 — marco legal que fortalece o turismo sustentável em Viana/ES.",
+      "Lei Municipal nº 4.218/24, marco legal que fortalece o turismo sustentável em Viana/ES.",
     link: "https://www.viana.es.gov.br",
     linkLabel: "Prefeitura de Viana",
   },
@@ -18,7 +18,7 @@ const blocks = [
   {
     id: "projeto",
     title: "Projeto",
-    description: "Viana Experience — iniciativa de Francisco Cizino para conectar demanda e oferta turística.",
+    description: "Viana Experience, iniciativa de Francisco Cizino para conectar demanda e oferta turística.",
   },
 ];
 
@@ -58,7 +58,7 @@ export function InstitutionalSection() {
 
         <ScrollReveal className="mt-16">
           <div className="rounded-xl bg-surface-elevated p-6 text-ink sm:p-8">
-            <h3 className="font-display text-2xl text-primary">Fale Conosco — Empresas</h3>
+            <h3 className="font-display text-2xl text-primary">Fale Conosco para Empresas</h3>
             <p className="mt-2 font-body text-sm text-ink/70">
               Sua empresa quer fazer parte do ecossistema turístico de Viana? Preencha o formulário.
             </p>

@@ -107,7 +107,7 @@ export function PosterStrip({ className }: { className?: string }) {
         className,
       )}
     >
-      Polo Cervejeiro – Dia D do Turismo
+      Polo Cervejeiro, Dia D do Turismo
     </div>
   );
 }

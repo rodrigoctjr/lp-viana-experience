@@ -12,8 +12,8 @@ export const EVENT_TARGET = new Date("2026-11-08T09:00:00-03:00");
 export const EVENT_DATE_LABEL = "08.11.2026";
 
 export const REF_COPY: Record<string, string> = {
-  bikebeer: "Você veio da Bike Beer — bem-vindo à jornada.",
-  evento: "Dia D do Turismo — Viana te espera.",
+  bikebeer: "Você veio da Bike Beer. Boas vindas à jornada.",
+  evento: "Dia D do Turismo, Viana te espera.",
 };
 
 export const MARQUEE_ITEMS = [

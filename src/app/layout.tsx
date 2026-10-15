@@ -34,11 +34,11 @@ const alfaSlab = Alfa_Slab_One({
 });
 
 export const metadata: Metadata = {
-  title: "Viana Experience — Polo Cervejeiro & Dia D do Turismo · Viana/ES",
+  title: "Viana Experience, Polo Cervejeiro & Dia D do Turismo · Viana/ES",
   description:
     "Dia D do Turismo em 8 de novembro de 2026. Duas rotas, uma cidade. Natureza, cerveja e aventura no Espírito Santo.",
   openGraph: {
-    title: "Viana Experience — Dia D do Turismo",
+    title: "Viana Experience, Dia D do Turismo",
     description: "Polo Cervejeiro, Rota das Águas e muito mais. 8 de novembro de 2026 em Viana/ES.",
     locale: "pt_BR",
     type: "website",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         url: "/images/polo-cervejeiro-poster.png",
         width: 800,
         height: 800,
-        alt: "Viana Experience — Polo Cervejeiro Dia D do Turismo",
+        alt: "Viana Experience, Polo Cervejeiro Dia D do Turismo",
       },
     ],
   },

@@ -84,7 +84,7 @@ export function QuizTotemSection() {
           Quiz de curiosidades de Viana
         </TextReveal>
         <p className="mx-auto mt-4 max-w-xl font-body text-primary/70">
-          História, cultura e turismo — toque na resposta, descubra a curiosidade e avance para a
+          História, cultura e turismo. Toque na resposta, descubra a curiosidade e avance para a
           próxima. Perguntas em ordem aleatória a cada rodada.
         </p>
       </div>

@@ -537,7 +537,7 @@ export function VianaRunnerGame({ className }: { className?: string }) {
             jump();
           }}
           role="img"
-          aria-label="Jogo da bicicleta — desvie de obstáculos e colete atrações de Viana"
+          aria-label="Jogo da bicicleta, desvie de obstáculos e colete atrações de Viana"
         />
       </div>
 

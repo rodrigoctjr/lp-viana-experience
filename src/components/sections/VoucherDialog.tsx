@@ -124,7 +124,7 @@ export function VoucherDialog({ item, onClose, onClaimed }: VoucherDialogProps) 
                 type="tel"
                 inputMode="tel"
                 autoComplete="tel"
-                placeholder="(27) 99999-0000"
+                placeholder="(27) 99999 0000"
                 value={phone}
                 onChange={(event) => setPhone(event.target.value)}
                 className="min-h-11 rounded-sm border border-brown/20 bg-ochre-light px-3"

@@ -388,7 +388,7 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
 #jogo { background: var(--color-sky-background); }
 .destination-close { background: var(--color-lilac-background); }
 .destination-map { --photo-delay: 5.2s; --pin-show: 2.7s; --pin-hide: 4s; }
-.map-arrival { animation: map-arrive .5s var(--ease-out) var(--pin-show) both, map-leave .3s ease var(--pin-hide) forwards; }
+.map-arrival { animation: map-arrive .5s var(--ease-out) var(--pin-show) both; }
 .map-pin { animation-delay: var(--pin-show); }
 .map-region-labels { animation: map-leave .3s ease var(--pin-hide) forwards; }
 .map-ripple { animation-delay: 3.2s; }
@@ -418,7 +418,8 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
   .city-arrival { animation: none; clip-path: none; }
   .city-photo-drift { animation: none; transform: none; }
   .city-arrival-caption { animation: none; opacity: 1; transform: none; }
-  .map-arrival,.map-region-labels { animation: none; opacity: 0; }
+  .map-arrival { animation: none; opacity: 1; }
+  .map-region-labels { animation: none; opacity: 0; }
 }
 
 /* Folhagens, água e formas acolhedoras; o mapa mantém bordas retas. */
@@ -457,4 +458,17 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
 }
 @media (prefers-reduced-motion: reduce) {
   .nature-bough,.nature-water { animation: none; }
+}
+
+/* A viagem se encerra e o conteúdo assume o centro do hero. */
+.destination-copy h1 { max-width: 440px; }
+.destination-hero-grid.hero-centered { grid-template-columns: 1fr; }
+.hero-centered .destination-copy { align-items: center; text-align: center; }
+.hero-centered .destination-copy h1 { display: flex; justify-content: center; }
+.hero-centered .destination-date { text-align: left; }
+.hero-centered .destination-actions { justify-content: center; }
+.hero-replay { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; margin-top: 16px; padding: 8px 18px; color: #476267; font-size: 12px; cursor: pointer; }
+.hero-replay:hover { background: #143c420b; color: #143c42; }
+@media (max-width: 767px) {
+  .hero-centered .destination-copy { min-height: calc(100svh - 76px); }
 }

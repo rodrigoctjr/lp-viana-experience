@@ -1,6 +1,5 @@
 "use client";
 import { motion, useReducedMotion } from "motion/react";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { mapStates, mapMunicipalities, vianaPin } from "@/data/viana-map";
 
@@ -8,7 +7,7 @@ const regionalView = "818 565 82 102";
 const cityView = "850 619 25 31";
 const finalView = "858.4 630 8 10";
 const cameraTimes = [0, 0.1, 0.4, 0.58, 0.8, 1];
-export function DestinationMap() {
+export function DestinationMap({ onZoomComplete }: { onZoomComplete?: () => void }) {
   const reduced = useReducedMotion();
   const markerRef = useRef<SVGGElement>(null);
   const [compact, setCompact] = useState(false);
@@ -28,7 +27,7 @@ export function DestinationMap() {
         const width = Number(String(latest.viewBox).split(" ")[2]);
         // Native SVG scaling keeps (0,0) at the municipality; CSS origins use the text bounds.
         if (Number.isFinite(width)) markerRef.current?.setAttribute("transform", `scale(${width / 230})`);
-      }} preserveAspectRatio="xMidYMid meet">
+      }} onAnimationComplete={onZoomComplete} preserveAspectRatio="xMidYMid meet">
         <title id="destination-map-title">Mapa do Brasil com aproximação ao Espírito Santo e destaque no município de Viana.</title>
         <defs><pattern id="map-grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#b9d5d0" strokeWidth="0.18" opacity="0.16" /></pattern></defs>
         <rect x="-1000" y="-1000" width="3000" height="3000" fill="url(#map-grid)" />
@@ -45,11 +44,6 @@ export function DestinationMap() {
           </g>
         </g>
       </motion.svg>
-      <figure className="city-arrival">
-        <div className="city-photo-drift"><Image src="/images/viana/estacao.jpg" alt="Estação Ferroviária de Viana, com fachada amarela, o nome da cidade e uma locomotiva histórica." fill priority sizes="(max-width: 767px) 100vw, 55vw" className="city-arrival-photo" /></div>
-        <div className="city-photo-shade" aria-hidden="true" />
-        <figcaption className="city-arrival-caption"><span>Você chegou.</span><strong>Bem-vindo a Viana.</strong><p>Estação Ferroviária · Viana, ES</p><small>Foto: Rafael Deminicis · CC BY-SA 4.0</small></figcaption>
-      </figure>
       <div className="map-event"><span>O encontro está marcado.</span><p>08<span>.11</span><small>2026</small></p><span>Dia D do Turismo</span></div>
     </div>
   );

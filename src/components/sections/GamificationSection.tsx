@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 const perks = [
   "Voucher R$50 (quando confirmado)",
-  "Aviso por e-mail",
+  "Aviso por email",
   "Brinde no evento",
   "Prioridade no Dia D",
 ];
@@ -38,7 +38,7 @@ export function GamificationSection() {
               Seja o primeiro a saber
             </h2>
             <p className="mt-4 font-body text-[15px] leading-relaxed text-ink/75">
-              Cadastre-se e receba a programação oficial, vouchers e novidades do Dia D.
+              Faça seu cadastro e receba a programação oficial, vouchers e novidades do Dia D.
             </p>
             <ul className="mt-6 space-y-3">
               {perks.map((perk) => (

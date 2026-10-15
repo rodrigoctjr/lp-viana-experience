@@ -46,7 +46,7 @@ export function MapSection() {
               transition={{ delay: 0.3 }}
               className="mt-6 font-body text-base leading-relaxed text-primary/70"
             >
-              Do Rio Jucu às cervejarias artesanais — a Rota das Águas encontra o Polo
+              Do Rio Jucu às cervejarias artesanais, a Rota das Águas encontra o Polo
               Cervejeiro no coração capixaba.
             </motion.p>
 

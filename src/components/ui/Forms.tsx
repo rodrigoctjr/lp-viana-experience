@@ -91,7 +91,7 @@ export function RegistrationForm({
     const newErrors: Record<string, string> = {};
 
     if (!data.get("nome")) newErrors.nome = "Informe seu nome";
-    if (!data.get("email")) newErrors.email = "Informe seu e-mail";
+    if (!data.get("email")) newErrors.email = "Informe seu email";
     if (!data.get("telefone")) newErrors.telefone = "Informe seu telefone";
     if (!data.get("lgpd")) newErrors.lgpd = "Aceite os termos para continuar";
 
@@ -164,7 +164,7 @@ export function ContactForm({ variant = "b2c" }: ContactFormProps) {
     const data = new FormData(form);
     const newErrors: Record<string, string> = {};
     if (!data.get("nome")) newErrors.nome = "Informe seu nome";
-    if (!data.get("email")) newErrors.email = "Informe seu e-mail";
+    if (!data.get("email")) newErrors.email = "Informe seu email";
     if (variant === "b2c" && !data.get("mensagem")) newErrors.mensagem = "Informe sua mensagem";
     if (variant === "b2b" && !data.get("razao")) newErrors.razao = "Informe a razão social";
     if (Object.keys(newErrors).length > 0) {

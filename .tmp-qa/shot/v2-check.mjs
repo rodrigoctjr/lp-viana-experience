@@ -1,62 +1,109 @@
 import puppeteer from 'puppeteer-core';
 import fs from 'node:fs';
 const out = '.impeccable/review';
-fs.mkdirSync(out,{recursive:true});
-const browser = await puppeteer.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true,args:['--hide-scrollbars']});
+fs.mkdirSync(out, { recursive: true });
+const browser = await puppeteer.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: true, args: ['--hide-scrollbars'] });
 const page = await browser.newPage();
-const errors=[];
-page.on('pageerror',err=>errors.push(String(err)));
-const delay = ms=>new Promise(r=>setTimeout(r,ms));
-const report={errors,consoleErrors:[]};
-page.on('console',msg=>{if(msg.type()==='error') report.consoleErrors.push(msg.text())});
-async function clickText(selector,text){for(const el of await page.$$(selector)){if((await el.evaluate(e=>e.textContent.trim())).includes(text)){await el.click();return;}}throw new Error('Button missing: '+text);}
-async function load(width,height,reduced=false){
- await page.setViewport({width,height,deviceScaleFactor:1});
- await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:reduced?'reduce':'no-preference'}]);
- await page.goto('http://localhost:3457/',{waitUntil:'networkidle0',timeout:120000});
- await page.waitForSelector('.geographic-map');
- await page.evaluate(()=>document.fonts.ready);
+const report = { errors: [], consoleErrors: [] };
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+page.on('pageerror', error => report.errors.push(String(error)));
+page.on('console', message => { if (message.type() === 'error') report.consoleErrors.push(message.text()); });
+async function clickText(selector, text) {
+  for (const element of await page.$$(selector)) {
+    if ((await element.evaluate(el => el.textContent.trim())).includes(text)) { await element.click(); return; }
+  }
+  throw new Error('Button missing: ' + text);
 }
-async function inspect(name){
- await delay(9000);
- report[name]=await page.evaluate(()=>{const center=selector=>{const b=document.querySelector(selector).getBoundingClientRect();return b.x+b.width/2};return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,logoCenter:center('.destination-logo'),headingCenter:center('.destination-copy h2'),dateCenter:center('.destination-date'),mapRadius:getComputedStyle(document.querySelector('.destination-map-stage')).borderRadius,photoClip:getComputedStyle(document.querySelector('.city-arrival')).clipPath,photoLoaded:document.querySelector('.city-arrival-photo').naturalWidth>0,viewBox:document.querySelector('.geographic-map').getAttribute('viewBox'),arrival:getComputedStyle(document.querySelector('.map-arrival')).opacity,date:document.querySelector('.destination-date').innerText,images:[...document.querySelectorAll('#top img')].map(i=>({src:i.getAttribute('src'),loaded:i.complete&&i.naturalWidth>0}))}});
- await page.screenshot({path:`${out}/${name}-hero.png`});
- if(name!=='desktop') await (await page.$('.destination-copy')).screenshot({path:`${out}/${name}-copy.png`});
- for(let y=0;y<await page.evaluate(()=>document.body.scrollHeight);y+=650){await page.evaluate(top=>scrollTo({top,behavior:'instant'}),y);await delay(120);}
- await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await delay(300);
- await page.screenshot({path:`${out}/${name}.png`,fullPage:true});
+async function load(width, height, reduced = false) {
+  await page.setViewport({ width, height, deviceScaleFactor: 1 });
+  await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: reduced ? 'reduce' : 'no-preference' }]);
+  await page.goto('http://localhost:3457/', { waitUntil: 'networkidle0', timeout: 120000 });
+  await page.waitForSelector('.destination-hero');
+  await page.evaluate(() => document.fonts.ready);
 }
-await load(1440,1000);await inspect('desktop');
-await page.click('.map-caption button');await delay(700);
-report.replayStart=await page.$eval('.geographic-map',el=>el.getAttribute('viewBox'));
-await page.waitForFunction(()=>document.querySelector('.geographic-map').getAttribute('viewBox')==='818 565 82 102',{timeout:10000});
-report.regionalView=await page.$eval('.geographic-map',el=>el.getAttribute('viewBox'));
-report.markerOffset=await page.evaluate(()=>{const origin=new DOMPoint(0,0);const a=origin.matrixTransform(document.querySelector('.map-arrival').getScreenCTM());const b=origin.matrixTransform(document.querySelector('.map-marker').getScreenCTM());return Math.hypot(a.x-b.x,a.y-b.y)});
-await page.screenshot({path:`${out}/map-state.png`});await delay(6500);
-report.replayEnd=await page.$eval('.geographic-map',el=>el.getAttribute('viewBox'));
-await page.$eval('#atracoes',el=>el.scrollIntoView({behavior:'instant'}));await delay(800);
-report.attractionsTotal=await page.$$eval('#atracoes article h3',els=>els.map(el=>el.textContent));
-await clickText('#atracoes button','Aventura');await delay(1000);
-report.adventure=await page.$$eval('#atracoes article h3',els=>els.map(el=>el.textContent));
-await page.screenshot({path:`${out}/attractions.png`});
-await page.$eval('#quiz',el=>el.scrollIntoView({behavior:'instant'}));await delay(1000);
-report.quizBefore=await page.$eval('#quiz h3',el=>el.textContent);
-await page.click('#quiz [aria-label="Opções de resposta"] button');await delay(500);
-report.quizRevealed=await page.$eval('#quiz [role=status]',el=>el.textContent);
-await clickText('#quiz button','Próxima pergunta');await delay(800);
-report.quizAfter=await page.$eval('#quiz h3',el=>el.textContent);
-await page.screenshot({path:`${out}/quiz.png`});
-await page.$eval('#jogo',el=>el.scrollIntoView({behavior:'instant'}));await delay(1000);
-report.gameBefore=await page.$eval('#jogo canvas',el=>({width:el.width,height:el.height}));await page.click('#jogo canvas');await delay(1000);
-report.gameAfter=await page.$eval('#jogo',el=>el.innerText);await page.screenshot({path:`${out}/game.png`});
-await load(390,844);await inspect('mobile');
-await page.click('.atlas-menu-toggle');report.menuOpen=await page.$eval('.atlas-menu-toggle',el=>el.getAttribute('aria-expanded'));
-await page.click('#atlas-mobile-nav a[href="#quiz"]');await page.waitForFunction(()=>Math.abs(document.querySelector('#quiz').getBoundingClientRect().top)<120,{timeout:10000});report.menuClosed=await page.$eval('.atlas-menu-toggle',el=>el.getAttribute('aria-expanded'));
-report.navQuiz=await page.evaluate(()=>Math.abs(document.querySelector('#quiz').getBoundingClientRect().top)<120);
-await load(698,900);await inspect('user-698');
-await load(390,844,true);await delay(200);
-report.reduced=await page.evaluate(()=>({photoClip:getComputedStyle(document.querySelector('.city-arrival')).clipPath,photoLoaded:document.querySelector('.city-arrival-photo').naturalWidth>0,viewBox:document.querySelector('.geographic-map').getAttribute('viewBox'),arrival:getComputedStyle(document.querySelector('.map-arrival')).opacity}));await page.screenshot({path:`${out}/reduced.png`});
-fs.writeFileSync(`${out}/qa.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));await browser.close();
-const centered=q=>Math.abs(q.logoCenter-q.width/2)<1&&Math.abs(q.headingCenter-q.width/2)<1&&Math.abs(q.dateCenter-q.width/2)<1;
-const checks=[errors.length===0,report.markerOffset<1,report.desktop.scrollWidth===1440,report.mobile.scrollWidth===390,report['user-698'].scrollWidth===698,centered(report.mobile),centered(report['user-698']),report.desktop.mapRadius==='0px',report.mobile.mapRadius==='0px',report.regionalView==='818 565 82 102',report.replayEnd==='858.4 630 8 10',report.replayStart!==report.replayEnd,report.attractionsTotal.length===14,report.adventure.length>0,report.quizBefore!==report.quizAfter,report.quizRevealed.length>0,report.gameBefore.width>0,report.gameAfter.includes('PONTOS:')&&report.gameAfter.includes('= PULAR'),report.menuOpen==='true',report.menuClosed==='false',report.navQuiz,report.reduced.viewBox==='858.4 630 8 10',report.desktop.photoLoaded&&report.mobile.photoLoaded&&report.reduced.photoLoaded&&report.reduced.photoClip==='none',report.reduced.arrival==='0'];
-if(checks.some(ok=>!ok)){console.error('FAILED CHECKS',checks);process.exitCode=1;}else console.log('All interaction checks passed.');
+async function settled() {
+  await page.waitForFunction(() => document.querySelector('#top')?.dataset.phase === 'centered', { timeout: 20000 });
+  await delay(1100);
+}
+async function measure() {
+  return page.evaluate(() => {
+    const center = selector => { const box = document.querySelector(selector).getBoundingClientRect(); return box.x + box.width / 2; };
+    return {
+      width: innerWidth, scrollWidth: document.documentElement.scrollWidth,
+      phase: document.querySelector('#top').dataset.phase,
+      mapRemoved: !document.querySelector('.destination-map-stage'),
+      logoCenter: center('.destination-logo'), headingCenter: center('.destination-copy h2'), dateCenter: center('.destination-date'),
+      date: document.querySelector('.destination-date').innerText,
+      images: [...document.querySelectorAll('#top img')].map(img => ({ src: img.getAttribute('src'), loaded: img.complete && img.naturalWidth > 0 }))
+    };
+  });
+}
+async function inspect(name) {
+  await settled(); report[name] = await measure();
+  await page.screenshot({ path: `${out}/${name}-hero.png` });
+  if (name !== 'desktop') await (await page.$('.destination-copy')).screenshot({ path: `${out}/${name}-copy.png` });
+  for (let y = 0; y < await page.evaluate(() => document.body.scrollHeight); y += 650) {
+    await page.evaluate(top => scrollTo({ top, behavior: 'instant' }), y); await delay(120);
+  }
+  await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' })); await delay(300);
+  await page.screenshot({ path: `${out}/${name}.png`, fullPage: true });
+}
+try {
+  await load(1440, 1000); await inspect('desktop');
+  await page.evaluate(() => {
+    window.__heroPhases = [{ phase: document.querySelector('#top').dataset.phase, time: performance.now() }];
+    new MutationObserver(() => window.__heroPhases.push({ phase: document.querySelector('#top').dataset.phase, time: performance.now() })).observe(document.querySelector('#top'), { attributes: true, attributeFilter: ['data-phase'] });
+  });
+  await page.click('.hero-replay'); await page.waitForSelector('.geographic-map'); await delay(500);
+  report.replayStart = await page.$eval('.geographic-map', el => el.getAttribute('viewBox'));
+  await page.waitForFunction(() => document.querySelector('.geographic-map')?.getAttribute('viewBox') === '818 565 82 102', { timeout: 10000 });
+  report.regionalView = await page.$eval('.geographic-map', el => el.getAttribute('viewBox'));
+  report.markerOffset = await page.evaluate(() => {
+    const origin = new DOMPoint(0, 0);
+    const a = origin.matrixTransform(document.querySelector('.map-arrival').getScreenCTM());
+    const b = origin.matrixTransform(document.querySelector('.map-marker').getScreenCTM());
+    return Math.hypot(a.x - b.x, a.y - b.y);
+  });
+  await page.screenshot({ path: `${out}/map-state.png` });
+  await page.waitForFunction(() => document.querySelector('.geographic-map')?.getAttribute('viewBox') === '858.4 630 8 10', { timeout: 10000 });
+  report.finalPinOpacity = await page.$eval('.map-arrival', el => getComputedStyle(el).opacity);
+  await page.screenshot({ path: `${out}/map-final.png` });
+  await settled();
+  report.phases = await page.evaluate(() => window.__heroPhases);
+  report.replayEnd = await measure();
+  await page.$eval('#atracoes', el => el.scrollIntoView({ behavior: 'instant' })); await delay(800);
+  report.attractionsTotal = await page.$$eval('#atracoes article h3', els => els.map(el => el.textContent));
+  await clickText('#atracoes button', 'Aventura'); await delay(800);
+  report.adventure = await page.$$eval('#atracoes article h3', els => els.map(el => el.textContent));
+  await page.screenshot({ path: `${out}/attractions.png` });
+  await page.$eval('#quiz', el => el.scrollIntoView({ behavior: 'instant' })); await delay(800);
+  report.quizBefore = await page.$eval('#quiz h3', el => el.textContent);
+  await page.click('#quiz [aria-label="Opções de resposta"] button'); await delay(500);
+  report.quizRevealed = await page.$eval('#quiz [role=status]', el => el.textContent);
+  await clickText('#quiz button', 'Próxima pergunta'); await delay(800);
+  report.quizAfter = await page.$eval('#quiz h3', el => el.textContent);
+  await page.screenshot({ path: `${out}/quiz.png` });
+  await page.$eval('#jogo', el => el.scrollIntoView({ behavior: 'instant' })); await delay(800);
+  await page.click('#jogo canvas'); await delay(800);
+  report.gameAfter = await page.$eval('#jogo', el => el.innerText);
+  await page.screenshot({ path: `${out}/game.png` });
+  await load(390, 844); await inspect('mobile');
+  await page.click('.atlas-menu-toggle'); report.menuOpen = await page.$eval('.atlas-menu-toggle', el => el.getAttribute('aria-expanded'));
+  await page.click('#atlas-mobile-nav a[href="#quiz"]');
+  await page.waitForFunction(() => Math.abs(document.querySelector('#quiz').getBoundingClientRect().top) < 120, { timeout: 10000 });
+  report.menuClosed = await page.$eval('.atlas-menu-toggle', el => el.getAttribute('aria-expanded'));
+  await load(698, 900); await inspect('user-698');
+  await load(390, 844, true); await settled(); report.reduced = await measure();
+  await page.screenshot({ path: `${out}/reduced.png` });
+  const centered = q => Math.abs(q.logoCenter - q.width / 2) < 1 && Math.abs(q.headingCenter - q.width / 2) < 1 && Math.abs(q.dateCenter - q.width / 2) < 1;
+  const checks = [
+    report.errors.length === 0, report.consoleErrors.length === 0,
+    ...['desktop', 'mobile', 'user-698', 'reduced', 'replayEnd'].map(name => centered(report[name]) && report[name].mapRemoved && report[name].scrollWidth === report[name].width),
+    report.phases.some(p => p.phase === 'mapping'), report.phases.some(p => p.phase === 'fading'), report.phases.at(-1).phase === 'centered',
+    report.markerOffset < 1, report.finalPinOpacity === '1', report.regionalView === '818 565 82 102', report.attractionsTotal.length === 14, report.adventure.length === 4,
+    report.quizBefore !== report.quizAfter, report.quizRevealed.length > 0, report.gameAfter.includes('PONTOS:') && report.gameAfter.includes('= PULAR'), report.menuOpen === 'true', report.menuClosed === 'false'
+  ];
+  fs.writeFileSync(`${out}/qa.json`, JSON.stringify(report, null, 2));
+  console.log(JSON.stringify(report, null, 2));
+  if (checks.some(ok => !ok)) { console.error('FAILED CHECKS', checks); process.exitCode = 1; } else console.log('All interaction checks passed.');
+} finally { await page.close(); await browser.close(); }

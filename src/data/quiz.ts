@@ -9,7 +9,7 @@ export const quizQuestion = {
   ],
   correctId: "b" as const,
   successMessage:
-    "Correto! O Rio Jucu é o coração da Rota das Águas. Cadastre-se e garanta seu voucher.",
+    "Correto! O Rio Jucu é o coração da Rota das Águas. Faça seu cadastro e garanta seu voucher.",
   errorMessage:
-    "Quase! O Rio Jucu corta Viana e é o eixo da Rota das Águas. Cadastre-se para aprender mais.",
+    "Quase! O Rio Jucu corta Viana e é o eixo da Rota das Águas. Faça seu cadastro para aprender mais.",
 };

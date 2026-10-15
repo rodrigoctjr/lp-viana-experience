@@ -13,7 +13,7 @@ Site do Dia D do Turismo em Viana/ES. Apresenta o evento, atrações e parceiros
 - Não inventar ofertas, horários, disponibilidade ou rotas operacionais.
 - V2 autorizada na branch homologacao-v2. Base homologacao salva no commit d49c906.
 - Direção Destino Viana aprovada: mapa animado Brasil → Espírito Santo → Viana, pin e data; nova paleta e transições de natureza.
-- No celular, o mapa vem primeiro e revela pin/data na tela inicial; marca completa, textos e ações seguem na página. Câmera de 5,8s no celular e 7,4s no desktop: enquadramento próximo do Espírito Santo, pausa estadual e aproximação profunda por Viana e chegada à foto existente da Estação Ferroviária por abertura circular. Movimento reduzido mostra a foto final estática.
+- No celular, o mapa vem primeiro e revela pin/data na tela inicial; marca completa, textos e ações seguem na página. Câmera de 5,8s no celular e 7,4s no desktop: enquadramento próximo do Espírito Santo, pausa estadual e aproximação profunda por Viana. Ao concluir o zoom, o mapa desaparece e é removido; marca, título, texto, data e ações se centralizam com transição sobre o fundo de natureza. Rever viagem reabre a sequência. Movimento reduzido salta ao conteúdo centralizado sem zoom.
 
 - Variação cromática confirmada: capítulos em areia quente, azul claro, verde, pêssego, lima clara, mel e lilás; texto navy e marca original preservados.
 

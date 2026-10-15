@@ -26,7 +26,7 @@ export function RegistrationProvider({ children }: { children: React.ReactNode }
   return (
     <RegistrationContext.Provider value={{ openRegistration, closeRegistration }}>
       {children}
-      <Modal open={open} onClose={closeRegistration} title="Cadastre-se no Dia D">
+      <Modal open={open} onClose={closeRegistration} title="Faça seu cadastro no Dia D">
         <RegistrationForm onSuccess={() => {}} />
       </Modal>
     </RegistrationContext.Provider>

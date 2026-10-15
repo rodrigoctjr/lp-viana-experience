@@ -29,7 +29,7 @@ export function PreviewSection() {
         O melhor de Viana, em preview.
       </TextReveal>
       <p className="mt-4 max-w-xl font-body text-primary/60">
-        Deslize para explorar as categorias do Dia D — natureza, cerveja, hospedagem e
+        Deslize para explorar as categorias do Dia D: natureza, cerveja, hospedagem e
         gastronomia capixaba.
       </p>
 
