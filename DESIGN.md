@@ -3,6 +3,15 @@ name: Destino Viana
 description: Identidade editorial e cartográfica do Viana Experience.
 colors:
   paper: "#f4f3ec"
+  warm-sand: "#f8e7ce"
+  sky-background: "#d5e8ed"
+  mint-background: "#d7e7cf"
+  coral-background: "#f0bc9e"
+  lime-background: "#eef1dc"
+  honey-background: "#f3dda0"
+  lilac-background: "#e6def1"
+  peach-emphasis: "#703522"
+  peach-secondary-text: "#344e50"
   surface-elevated: "#ffffff"
   mineral: "#dfe8df"
   primary: "#143c42"
@@ -68,7 +77,7 @@ components:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
   navigation:
-    backgroundColor: "{colors.paper}"
+    backgroundColor: "{colors.warm-sand}"
     textColor: "{colors.ink}"
   category-chip:
     backgroundColor: "{colors.primary}"
@@ -85,9 +94,9 @@ components:
 
 **Creative North Star: "Destino Viana"**
 
-Uma linguagem de atlas e ensaio fotográfico apresenta Viana como um destino a descobrir. Superfícies claras, azul profundo e fotografias grandes dão espaço à marca original e à informação do evento.
+Uma linguagem de atlas e ensaio fotográfico apresenta Viana como um destino a descobrir. Capítulos em cores claras, texto navy e fotografias grandes dão espaço à marca original e à informação do evento. A abertura sai do atlas e chega à fotografia da cidade.
 
-A tipografia editorial organiza os capítulos; a interface permanece direta e legível. O movimento localiza o município e acompanha a passagem entre capítulos, sem bloquear o scroll ou exigir animação para acessar conteúdo.
+A tipografia editorial organiza os capítulos; a interface permanece direta e legível. O movimento localiza o município, transforma o mapa em fotografia e acompanha a passagem entre capítulos, sem bloquear o scroll ou exigir animação para acessar conteúdo.
 
 **Key Characteristics:**
 - Abertura cartográfica com origem identificada.
@@ -96,26 +105,35 @@ A tipografia editorial organiza os capítulos; a interface permanece direta e le
 
 ## Colors
 
-A areia sustenta a leitura, o azul profundo cria os capítulos escuros e o verde conecta a paisagem. Os valores normativos estão no frontmatter; os aliases legados continuam no CSS para os fluxos existentes.
+A areia quente acolhe a marca; azul claro, verde, pêssego, lima clara, mel e lilás distinguem os capítulos. O azul profundo permanece no atlas e nos textos navy. Os valores normativos estão no frontmatter; os aliases legados continuam no CSS para os fluxos existentes.
 
 ### Primary
 - **Azul editorial** (`primary`): títulos, ações principais e navegação.
-- **Azul de atlas** (`primary-deep`): mapa e programação.
+- **Azul de atlas** (`primary-deep`): mapa e estrutura de contraste.
 
 ### Secondary
 - **Verde mineral** (`hop`): destaques de natureza e hover da ação do hero.
 
 ### Tertiary
 - **Coral terra** (`accent`, `accent-hover`): data sobre areia e ações dos componentes compartilhados.
-- **Coral iluminado** (`accent-sun`): ênfases sobre azul profundo.
+- **Coral iluminado** (`accent-sun`): data sobre azul profundo ou fotografia sombreada.
+- **Terra sobre pêssego** (`peach-emphasis`): ênfase no título e ícones da programação.
 
 ### Neutral
-- **Areia** (`paper`): fundo de leitura e texto claro.
+- **Areia** (`paper`): base legada de leitura e texto claro.
+- **Areia quente** (`warm-sand`): hero, cabeçalho e menu móvel.
+- **Azul claro** (`sky-background`): faixa fotográfica e jogo.
+- **Verde claro** (`mint-background`): pilares.
+- **Pêssego** (`coral-background`): Dia D, com títulos e corpo em navy.
+- **Lima clara** (`lime-background`): atrações.
+- **Mel** (`honey-background`): quiz.
+- **Lilás** (`lilac-background`): fechamento.
 - **Branco** (`surface-elevated`): cartões do catálogo.
-- **Mineral claro** (`mineral`): faixa fotográfica e quiz.
+- **Mineral claro** (`mineral`): base mineral anterior, mantida no CSS sob as substituições de capítulo.
 - **Tinta** (`ink`): texto de base.
 - **Texto secundário sólido** (`secondary-text`): descrições editoriais e horários das atrações.
-- **Verde claro sobre azul** (`on-dark-muted`): descrições na programação e legendas do mapa.
+- **Verde claro sobre azul** (`on-dark-muted`): legendas do mapa.
+- **Texto sobre pêssego** (`peach-secondary-text`): descrições e informação de data da programação.
 
 **The Legibility Rule.** Preserve o texto secundário sólido nas superfícies claras e avalie cada combinação de texto e fundo antes de reduzir sua opacidade.
 
@@ -159,12 +177,16 @@ O catálogo conserva informações, categorias, filtros e ações existentes. Ca
 Campos existentes de cadastro e vouchers mantêm rótulos explícitos, bordas, estado de foco e validação dos fluxos atuais. Não redesenhar sua lógica ao aplicar os tokens.
 
 ### Navigation
-Cabeçalho fixo em areia: 88px no desktop, 76px no celular. Âncoras respeitam o espaço superior de 100px. O botão móvel expande uma lista de links com linhas de 52px; foco visível acompanha a navegação por teclado.
+Cabeçalho fixo em areia quente: 88px no desktop, 76px no celular. Âncoras respeitam o espaço superior de 100px. O botão móvel expande uma lista de links com linhas de 52px; foco visível acompanha a navegação por teclado.
 
 ### Cartographic opening
-Malhas locais do IBGE mostram Brasil, recuo inicial e aproximação ao Espírito Santo e a Viana. O pin marca o município; a fonte cartográfica fica visível. A viagem pode ser repetida, dura 4,2s no desktop e 3s no celular e tem versão estática em movimento reduzido. A data aparece também no conteúdo textual do hero. A ordem mobile e esses tempos são decisões desta superfície; novos usos do sistema devem respeitar seu próprio contexto.
+Malhas locais do IBGE mostram Brasil, recuo inicial e aproximação ao Espírito Santo e a Viana. Uma pausa regional (viewBox 746 473 230 285) revela o pin municipal; a câmera então avança até viewBox 858.4 630 8 10. A câmera dura 6,2s no desktop e 4,8s no celular. O pin não indica o endereço de um evento.
 
-**The Motion Rule.** Preserve a informação e as ações acessíveis durante o movimento; com movimento reduzido, mostre o destino estático e retire deslocamentos decorativos.
+A chegada usa a imagem existente public/images/viana/estacao.jpg, revelada por uma abertura circular do centro (1,2s), com assentamento de escala 1,16 para 1 (2s). A abertura começa em 5,2s no desktop e 3,9s no celular, sobrepondo o fim do zoom. A legenda identifica a Estação Ferroviária de Viana e credita Rafael Deminicis, CC BY-SA 4.0. Sombreamento da foto sustenta a leitura de legenda, data, replay e fonte IBGE.
+
+Replay e data permanecem acessíveis; a data aparece também no conteúdo textual do hero. Em movimento reduzido, a foto final e sua legenda ficam estáticas, sem abertura circular ou assentamento. A ordem mobile e esses tempos são decisões desta superfície; novos usos do sistema devem respeitar seu próprio contexto.
+
+**The Motion Rule.** Preserve a informação e as ações acessíveis durante o movimento; com movimento reduzido, mostre a foto final estática e retire deslocamentos decorativos.
 
 ## Do's and Don'ts
 
@@ -172,7 +194,7 @@ Malhas locais do IBGE mostram Brasil, recuo inicial e aproximação ao Espírito
 - Do preservar as imagens originais da marca e a data confirmada.
 - Do manter foco visível e controles com espaço de toque.
 - Do usar fotografias com alternativas e créditos existentes.
-- Do oferecer o destino estático quando houver preferência por movimento reduzido.
+- Do oferecer a foto final estática quando houver preferência por movimento reduzido.
 
 ### Don't:
 - Don't usar animação como espera obrigatória para conteúdo ou ações.

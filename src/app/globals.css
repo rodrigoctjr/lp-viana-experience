@@ -370,3 +370,53 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
   .map-event { animation-delay: 2.7s; }
   .map-ripple { animation-delay: 3s; }
 }
+
+/* Variação cromática — a viagem sai do atlas e chega à cidade. */
+:root { --color-coral-background: #f0bc9e; --color-sky-background: #d5e8ed; --color-honey-background: #f3dda0; --color-mint-background: #d7e7cf; --color-lilac-background: #e6def1; }
+.destination-hero,.atlas-header,.atlas-mobile-nav { background: #f8e7ce; }
+.atlas-header { border-color: #dec8a9; }
+.destination-photo-strip { background: var(--color-sky-background); }
+#pillars { background: var(--color-mint-background); }
+.day-chapter { background: var(--color-coral-background); color: #143c42; }
+.day-heading h2 em { color: #703522; }
+.day-date span,.day-program p { color: #344e50; }
+.day-program { border-color: #97634c; }
+.day-program article { border-color: #bd8c70; }
+.day-program svg { stroke: #703522; }
+#atracoes { background: #eef1dc; }
+#quiz { background: var(--color-honey-background); }
+#jogo { background: var(--color-sky-background); }
+.destination-close { background: var(--color-lilac-background); }
+.destination-map { --photo-delay: 5.2s; --pin-show: 2.7s; --pin-hide: 4s; }
+.map-arrival { animation: map-arrive .5s var(--ease-out) var(--pin-show) both, map-leave .3s ease var(--pin-hide) forwards; }
+.map-pin { animation-delay: var(--pin-show); }
+.map-region-labels { animation: map-leave .3s ease var(--pin-hide) forwards; }
+.map-ripple { animation-delay: 3.2s; }
+.map-event { z-index: 4; animation-delay: 3s; text-shadow: 0 2px 12px #082a3455; }
+.map-caption { z-index: 5; }
+.map-source { z-index: 5; color: #edf5ef; }
+.city-arrival { position: absolute; inset: 0; z-index: 2; overflow: hidden; margin: 0; clip-path: circle(0% at 50% 50%); animation: city-aperture 1.2s var(--ease-out) var(--photo-delay) forwards; }
+.city-photo-drift { position: absolute; inset: 0; transform: scale(1.16); animation: city-settle 2s var(--ease-out) var(--photo-delay) forwards; }
+.city-arrival-photo { object-fit: cover; object-position: 57% center; }
+.city-photo-shade { position: absolute; inset: 0; background: linear-gradient(180deg, #082a34cc, transparent 36%, #082a34ef 100%); }
+.city-arrival-caption { position: absolute; bottom: 190px; left: 35px; right: 25px; color: #fff8ee; opacity: 0; animation: city-caption-in .7s var(--ease-out) calc(var(--photo-delay) + .4s) forwards; }
+.city-arrival-caption > span { font-size: 14px; }
+.city-arrival-caption strong { display: block; font: 400 clamp(28px,3.2vw,46px)/1.12 var(--font-dm-serif),serif; margin-top: 8px; max-width: 500px; }
+.city-arrival-caption p { margin-top: 12px; font-size: 12px; }
+.city-arrival-caption small { display: block; margin-top: 8px; font-size: 9px; color: #d8e8df; }
+@keyframes map-leave { to { opacity: 0; } }
+@keyframes city-aperture { to { clip-path: circle(100% at 50% 50%); } }
+@keyframes city-settle { to { transform: scale(1); } }
+@keyframes city-caption-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 767px) {
+  .destination-map { --photo-delay: 3.9s; --pin-show: 2s; --pin-hide: 3.1s; }
+  .city-arrival-caption { bottom: 175px; left: 24px; }
+  .city-arrival-caption strong { font-size: 30px; max-width: 300px; }
+  .map-event { animation-delay: 2.4s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .city-arrival { animation: none; clip-path: none; }
+  .city-photo-drift { animation: none; transform: none; }
+  .city-arrival-caption { animation: none; opacity: 1; transform: none; }
+  .map-arrival,.map-region-labels { animation: none; opacity: 0; }
+}

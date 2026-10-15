@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T22:24:50.164Z",
+  "generatedAt": "2026-10-15T01:35:09.000Z",
   "title": "Design System: Destino Viana",
   "extensions": {
     "colorMeta": {
@@ -171,6 +171,132 @@
           "oklch(83.57% 0.0342 167.82)",
           "oklch(95.00% 0.0342 167.82)"
         ]
+      },
+      "warm-sand": {
+        "role": "neutral",
+        "displayName": "Areia quente",
+        "tonalRamp": [
+          "oklch(15.00% 0.0379 77.63)",
+          "oklch(26.43% 0.0379 77.63)",
+          "oklch(37.86% 0.0379 77.63)",
+          "oklch(49.29% 0.0379 77.63)",
+          "oklch(60.71% 0.0379 77.63)",
+          "oklch(72.14% 0.0379 77.63)",
+          "oklch(83.57% 0.0379 77.63)",
+          "oklch(95.00% 0.0379 77.63)"
+        ]
+      },
+      "sky-background": {
+        "role": "neutral",
+        "displayName": "Azul claro",
+        "tonalRamp": [
+          "oklch(15.00% 0.0213 215.26)",
+          "oklch(26.43% 0.0213 215.26)",
+          "oklch(37.86% 0.0213 215.26)",
+          "oklch(49.29% 0.0213 215.26)",
+          "oklch(60.71% 0.0213 215.26)",
+          "oklch(72.14% 0.0213 215.26)",
+          "oklch(83.57% 0.0213 215.26)",
+          "oklch(95.00% 0.0213 215.26)"
+        ]
+      },
+      "mint-background": {
+        "role": "neutral",
+        "displayName": "Verde claro",
+        "tonalRamp": [
+          "oklch(15.00% 0.0364 135.03)",
+          "oklch(26.43% 0.0364 135.03)",
+          "oklch(37.86% 0.0364 135.03)",
+          "oklch(49.29% 0.0364 135.03)",
+          "oklch(60.71% 0.0364 135.03)",
+          "oklch(72.14% 0.0364 135.03)",
+          "oklch(83.57% 0.0364 135.03)",
+          "oklch(95.00% 0.0364 135.03)"
+        ]
+      },
+      "coral-background": {
+        "role": "neutral",
+        "displayName": "Pêssego",
+        "tonalRamp": [
+          "oklch(15.00% 0.0726 51.38)",
+          "oklch(26.43% 0.0726 51.38)",
+          "oklch(37.86% 0.0726 51.38)",
+          "oklch(49.29% 0.0726 51.38)",
+          "oklch(60.71% 0.0726 51.38)",
+          "oklch(72.14% 0.0726 51.38)",
+          "oklch(83.57% 0.0726 51.38)",
+          "oklch(95.00% 0.0726 51.38)"
+        ]
+      },
+      "lime-background": {
+        "role": "neutral",
+        "displayName": "Lima clara",
+        "tonalRamp": [
+          "oklch(15.00% 0.0279 113.53)",
+          "oklch(26.43% 0.0279 113.53)",
+          "oklch(37.86% 0.0279 113.53)",
+          "oklch(49.29% 0.0279 113.53)",
+          "oklch(60.71% 0.0279 113.53)",
+          "oklch(72.14% 0.0279 113.53)",
+          "oklch(83.57% 0.0279 113.53)",
+          "oklch(95.00% 0.0279 113.53)"
+        ]
+      },
+      "honey-background": {
+        "role": "neutral",
+        "displayName": "Mel",
+        "tonalRamp": [
+          "oklch(15.00% 0.0817 90.53)",
+          "oklch(26.43% 0.0817 90.53)",
+          "oklch(37.86% 0.0817 90.53)",
+          "oklch(49.29% 0.0817 90.53)",
+          "oklch(60.71% 0.0817 90.53)",
+          "oklch(72.14% 0.0817 90.53)",
+          "oklch(83.57% 0.0817 90.53)",
+          "oklch(95.00% 0.0817 90.53)"
+        ]
+      },
+      "lilac-background": {
+        "role": "neutral",
+        "displayName": "Lilás",
+        "tonalRamp": [
+          "oklch(15.00% 0.0269 304.82)",
+          "oklch(26.43% 0.0269 304.82)",
+          "oklch(37.86% 0.0269 304.82)",
+          "oklch(49.29% 0.0269 304.82)",
+          "oklch(60.71% 0.0269 304.82)",
+          "oklch(72.14% 0.0269 304.82)",
+          "oklch(83.57% 0.0269 304.82)",
+          "oklch(95.00% 0.0269 304.82)"
+        ]
+      },
+      "peach-emphasis": {
+        "role": "tertiary",
+        "displayName": "Terra sobre pêssego",
+        "tonalRamp": [
+          "oklch(15.00% 0.0891 38.43)",
+          "oklch(26.43% 0.0891 38.43)",
+          "oklch(37.86% 0.0891 38.43)",
+          "oklch(49.29% 0.0891 38.43)",
+          "oklch(60.71% 0.0891 38.43)",
+          "oklch(72.14% 0.0891 38.43)",
+          "oklch(83.57% 0.0891 38.43)",
+          "oklch(95.00% 0.0891 38.43)"
+        ]
+      },
+      "peach-secondary-text": {
+        "role": "neutral",
+        "displayName": "Texto sobre pêssego",
+        "tonalRamp": [
+          "oklch(15.00% 0.0317 202.03)",
+          "oklch(26.43% 0.0317 202.03)",
+          "oklch(37.86% 0.0317 202.03)",
+          "oklch(49.29% 0.0317 202.03)",
+          "oklch(60.71% 0.0317 202.03)",
+          "oklch(72.14% 0.0317 202.03)",
+          "oklch(83.57% 0.0317 202.03)",
+          "oklch(95.00% 0.0317 202.03)"
+        ]
       }
     },
     "typographyMeta": {
@@ -211,18 +337,38 @@
       },
       {
         "name": "camera-desktop",
-        "value": "4.2s",
+        "value": "6.2s",
         "purpose": "Hero no desktop."
       },
       {
         "name": "camera-mobile",
-        "value": "3s",
+        "value": "4.8s",
         "purpose": "Hero até 767px."
       },
       {
         "name": "reduced-motion",
-        "value": "static destination",
-        "purpose": "Destino estático e deslocamentos decorativos removidos."
+        "value": "static final city photograph",
+        "purpose": "Foto e legenda finais estáticas, sem abertura ou assentamento."
+      },
+      {
+        "name": "city-aperture",
+        "value": "1.2s",
+        "purpose": "Abertura circular a partir do centro, com ease-out."
+      },
+      {
+        "name": "city-settle",
+        "value": "2s; scale(1.16) to scale(1)",
+        "purpose": "Assentamento da fotografia."
+      },
+      {
+        "name": "city-photo-delay-desktop",
+        "value": "5.2s",
+        "purpose": "Início da abertura e assentamento no desktop."
+      },
+      {
+        "name": "city-photo-delay-mobile",
+        "value": "3.9s",
+        "purpose": "Início da abertura e assentamento até 767px."
       }
     ],
     "breakpoints": [
@@ -251,6 +397,24 @@
       ],
       "tonalRamps": "Synthesized OKLCH previews; not production tokens.",
       "validation": "JSON syntax and local consistency checks only; no engine or panel execution."
+    },
+    "heroJourney": {
+      "regionalViewBox": "746 473 230 285",
+      "finalViewBox": "858.4 630 8 10",
+      "sequence": [
+        "Brasil",
+        "recuo",
+        "Espírito Santo e Viana",
+        "pausa regional com pin",
+        "aproximação profunda",
+        "fotografia da Estação Ferroviária"
+      ],
+      "photograph": {
+        "path": "public/images/viana/estacao.jpg",
+        "credit": "Rafael Deminicis · CC BY-SA 4.0",
+        "caption": "Estação Ferroviária · Viana, ES"
+      },
+      "reducedMotion": "Foto e legenda finais estáticas; data e replay preservados."
     }
   },
   "components": [
@@ -308,7 +472,7 @@
       "refersTo": "navigation",
       "description": "Amostra dos links do cabeçalho, sem lógica do menu.",
       "html": "<nav class=\"ds-navigation\" aria-label=\"Seções\"><a class=\"ds-control ds-nav-link\" href=\"#dia-d\">Dia D</a><a class=\"ds-control ds-nav-link\" href=\"#atracoes\">Atrações</a></nav>",
-      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-navigation{display:flex;gap:26px;background:var(--color-paper,#f4f3ec);padding:12px 24px}.ds-nav-link{font-size:12px;font-weight:500;color:var(--color-ink,#14343b);padding:14px 0;text-decoration:none}.ds-nav-link:hover{color:var(--color-accent,#b84732)}"
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-navigation{display:flex;gap:26px;background:#f8e7ce;padding:12px 24px}.ds-nav-link{font-size:12px;font-weight:500;color:var(--color-ink,#14343b);padding:14px 0;text-decoration:none}.ds-nav-link:hover{color:var(--color-accent,#b84732)}"
     },
     {
       "name": "Filtro selecionado",
@@ -329,7 +493,7 @@
   ],
   "narrative": {
     "northStar": "Destino Viana",
-    "overview": "Uma linguagem de atlas e ensaio fotográfico apresenta Viana como um destino a descobrir. Superfícies claras, azul profundo e fotografias grandes dão espaço à marca original e à informação do evento.\n\nA tipografia editorial organiza os capítulos; a interface permanece direta e legível. O movimento localiza o município e acompanha a passagem entre capítulos, sem bloquear o scroll ou exigir animação para acessar conteúdo.",
+    "overview": "Uma linguagem de atlas e ensaio fotográfico apresenta Viana como um destino a descobrir. Capítulos em cores claras, texto navy e fotografias grandes dão espaço à marca original e à informação do evento. A abertura sai do atlas e chega à fotografia da cidade.\n\nA tipografia editorial organiza os capítulos; a interface permanece direta e legível. O movimento localiza o município, transforma o mapa em fotografia e acompanha a passagem entre capítulos, sem bloquear o scroll ou exigir animação para acessar conteúdo.",
     "keyCharacteristics": [
       "Abertura cartográfica com origem identificada.",
       "Capítulos fotográficos com espaço para leitura.",
@@ -343,7 +507,7 @@
       },
       {
         "name": "The Motion Rule",
-        "body": "Preserve a informação e as ações acessíveis durante o movimento; com movimento reduzido, mostre o destino estático e retire deslocamentos decorativos.",
+        "body": "Preserve a informação e as ações acessíveis durante o movimento; com movimento reduzido, mostre a foto final estática e retire deslocamentos decorativos.",
         "section": "components"
       }
     ],
@@ -351,7 +515,7 @@
       "Do preservar as imagens originais da marca e a data confirmada.",
       "Do manter foco visível e controles com espaço de toque.",
       "Do usar fotografias com alternativas e créditos existentes.",
-      "Do oferecer o destino estático quando houver preferência por movimento reduzido."
+      "Do oferecer a foto final estática quando houver preferência por movimento reduzido."
     ],
     "donts": [
       "Don't usar animação como espera obrigatória para conteúdo ou ações.",
