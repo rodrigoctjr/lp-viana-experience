@@ -2,7 +2,7 @@ import { Logo } from "@/components/ui/Logo";
 import { InstitutionalLogos } from "@/components/ui/InstitutionalLogos";
 import { NAV_LINKS, WHATSAPP_INSTITUTIONAL } from "@/lib/constants";
 
-export function Footer() {
+export function Footer({ homePath = "" }: { homePath?: string }) {
   return (
     <footer className="border-t border-brown/20 bg-brown-deep pb-12 text-on-accent">
       <InstitutionalLogos className="page-institutional" />
@@ -19,7 +19,7 @@ export function Footer() {
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
-                  href={link.href}
+                  href={`${homePath}${link.href}`}
                   className="font-mono-label text-[10px] text-on-accent/50 transition-colors hover:text-accent-sun"
                 >
                   {link.label}

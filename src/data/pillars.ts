@@ -4,7 +4,7 @@ export const pillars = [
     title: "História e Cultura",
     subtitle: "Igreja Matriz de Viana",
     description:
-      "Patrimônio colonial, tradições capixabas e a memória viva de uma cidade que guarda séculos de história.",
+      "Casarios, monumentos e manifestações culturais guardam a memória de Viana, construída por povos indígenas, africanos e imigrantes europeus.",
     accent: "terra" as const,
     icon: "church" as const,
   },
@@ -13,16 +13,16 @@ export const pillars = [
     title: "Aventura Natural",
     subtitle: "A Rota das Águas",
     description:
-      "Rio Jucu, trilhas, canoagem e esportes de aventura em meio à natureza exuberante do interior capixaba.",
+      "Trilhas, canoagem no Rio Jucu e piscinas naturais convidam a aproveitar o verde. Um passeio entre a tranquilidade do campo e a aventura.",
     accent: "jungle" as const,
     icon: "kayak" as const,
   },
   {
     id: "cervejeiro",
-    title: "Inovação Econômica",
-    subtitle: "O Novo Polo Cervejeiro",
+    title: "Sabores de Viana",
+    subtitle: "Do fogão a lenha à cerveja artesanal",
     description:
-      "Cervejarias artesanais, degustações e o novo polo cervejeiro que transforma Viana em destino gastronômico.",
+      "Comida caseira, receitas no fogão a lenha e cerveja artesanal produzida no município. Os sabores do campo também fazem parte da viagem.",
     accent: "amber" as const,
     icon: "barrel" as const,
   },

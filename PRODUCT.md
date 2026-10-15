@@ -24,3 +24,5 @@ Site do Dia D do Turismo em Viana/ES. Apresenta o evento, atrações e parceiros
 src/data/attractions.ts e API existente de vouchers são as fontes de informação operacional. Geometria de localização fornecida pelas malhas públicas do IBGE, preservadas em public/maps. O pin indica o município, não o endereço de um evento.
 
 A capa do hero ocupa a altura dinâmica da tela, incluindo o cabeçalho. A faixa fotográfica fica abaixo da capa. O mapa móvel usa a mesma área do conteúdo, sem empilhar uma segunda tela durante a introdução. Telas baixas recebem espaçamento e marca compactos; conteúdo ampliado por acessibilidade pode expandir a capa para preservar a leitura.
+
+A apresentação turística usa resumo e fotografias após a capa; cultura, natureza e sabores distribuem o texto do cliente. A leitura histórica complementar fica em /historia, acessível pelo bloco de cultura e pela foto da estação.
