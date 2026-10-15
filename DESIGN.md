@@ -225,3 +225,5 @@ Os seis acessos individuais ao explorador exibem ação textual em cápsula pree
 Consolidação: a seção Viana desponta para o turismo foi removida. Três mundos aparece diretamente após o hero e concentra os três temas, com CTA geral, botões por tema e explorador em overlay. Componente e estilos exclusivos da seção duplicada foram removidos.
 
 A marca original do hero recupera maior presença: caixa de até 440px no desktop, 360px em telas baixas, 320px no celular e 280px em celulares baixos. Na abertura cartográfica, a marca usa 300px no desktop e 230px no celular. A imagem original e a proporção são preservadas.
+
+Uma cena 3D de pêndulo aparece após Três mundos, com personagem estilizado articulado, capacete, arnês e corda, sobre um cenário de rio e plataforma. Three.js é carregado perto da seção; progresso de scroll controla juntas e trajetória, com reversão ao subir. O render pausa fora de vista e ocorre sob demanda. Movimento reduzido mantém pose estática; perda de contexto WebGL apresenta a fotografia existente. A cena usa espaço próprio e não cobre leitura nem controles.
