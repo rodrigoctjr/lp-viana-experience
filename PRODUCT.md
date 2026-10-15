@@ -28,3 +28,5 @@ A capa do hero ocupa a altura dinâmica da tela, incluindo o cabeçalho. A faixa
 A apresentação turística usa resumo e fotografias após a capa; cultura, natureza e sabores distribuem o texto do cliente. A leitura histórica complementar fica em /historia, acessível pelo bloco de cultura e pela foto da estação.
 
 A exploração dos temas acontece em popup compartilhado nas duas seções, preservando URL e posição na página. A rota histórica permanece somente para acesso direto; as entradas principais abrem o tema no overlay.
+
+A apresentação de cultura, natureza e sabores fica apenas na seção Três mundos. A seção Viana desponta para o turismo foi removida para evitar repetição.

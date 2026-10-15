@@ -221,3 +221,5 @@ A antiga faixa de foto após o hero dá lugar à apresentação em azul claro co
 As duas seções de apresentação usam o explorador compartilhado em overlay. CTAs preenchidos e fotos abrem história, natureza ou sabores no próprio contexto. Popup com imagem acima do texto, leitura rolável e controles fixos, setas, indicadores, teclado e gesto móvel. A história completa expande dentro do popup. Sem reprodução automática ou navegação para outra página no fluxo principal.
 
 Os seis acessos individuais ao explorador exibem ação textual em cápsula preenchida, além das entradas gerais. O popup tem largura máxima de 700px e altura máxima de 820px, respeitando a tela; fotografia de até 220px, leitura rolável e controles persistentes.
+
+Consolidação: a seção Viana desponta para o turismo foi removida. Três mundos aparece diretamente após o hero e concentra os três temas, com CTA geral, botões por tema e explorador em overlay. Componente e estilos exclusivos da seção duplicada foram removidos.

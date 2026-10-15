@@ -8,7 +8,6 @@ import { Logo } from "@/components/ui/Logo";
 import { DestinationMap } from "@/components/hero/DestinationMap";
 import { NatureBackdrop } from "@/components/ui/NatureBackdrop";
 import { InstitutionalLogos } from "@/components/ui/InstitutionalLogos";
-import { DestinationIntro } from "@/components/sections/DestinationIntro";
 
 export function Hero({ refCopy }: { refCopy?: string }) {
   const [journey, setJourney] = useState(0);
@@ -54,6 +53,6 @@ export function Hero({ refCopy }: { refCopy?: string }) {
       </motion.div>
       <InstitutionalLogos className="hero-institutional" />
     </section>
-      <DestinationIntro /></LayoutGroup>
+    </LayoutGroup>
   );
 }

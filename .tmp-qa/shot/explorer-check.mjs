@@ -29,11 +29,13 @@ try {
   await page.setViewport({ width: 1440, height: 1000 });
   await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'reduce' }]);
   await page.goto('http://localhost:3457/', { waitUntil: 'networkidle0' });
-  const itemCtas = await page.$$eval('.destination-item-cta, .pillar-history-link', els => els.map(el => ({ text: el.textContent.trim(), height: el.getBoundingClientRect().height, background: getComputedStyle(el).backgroundColor })));
-  assert.equal(itemCtas.length, 6);
+  assert.equal(await page.$('#conheca-viana'), null);
+  assert.equal(await page.$eval('#top', el => el.nextElementSibling.id), 'pillars');
+  const itemCtas = await page.$$eval('.pillar-history-link', els => els.map(el => ({ text: el.textContent.trim(), height: el.getBoundingClientRect().height, background: getComputedStyle(el).backgroundColor })));
+  assert.equal(itemCtas.length, 3);
   assert.ok(itemCtas.every(cta => cta.text.length > 10 && cta.height >= 44 && cta.background === 'rgb(20, 60, 66)'));
   const url = page.url();
-  const trigger = await open('#conheca-viana .destination-explore-cta');
+  const trigger = await open('#pillars .destination-explore-cta');
   const position = await page.evaluate(() => scrollY);
   assert.equal(await heading(), titles[0]);
   const desktop = await page.$eval('.destination-explorer-dialog', el => { const r = el.getBoundingClientRect(); return { width: r.width, height: r.height }; });
@@ -59,7 +61,7 @@ try {
   assert.ok(Math.abs(await page.evaluate(() => scrollY) - position) < 2);
   assert.equal(page.url(), url);
   const entries = [];
-  for (const selector of ['.destination-intro-link', '.pillar-photo', '.pillar-history-link']) {
+  for (const selector of ['.pillar-photo', '.pillar-history-link']) {
     for (let i = 0; i < 3; i++) {
       const element = await open(selector, i);
       assert.equal(await heading(), titles[i]);
@@ -77,7 +79,7 @@ try {
   await page.setViewport({ width: 375, height: 667, isMobile: true, hasTouch: true });
   await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'no-preference' }]);
   await page.goto(url, { waitUntil: 'networkidle0' });
-  await open('#conheca-viana .destination-explore-cta');
+  await open('#pillars .destination-explore-cta');
   const session = await page.createCDPSession();
   const image = await page.$eval('.destination-explorer-photo > div', el => { const r = el.getBoundingClientRect(); return { x: r.x, y: r.y, width: r.width, height: r.height }; });
   const y = image.y + image.height / 2;
@@ -93,7 +95,7 @@ try {
   assert.equal(page.url(), url);
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
   assert.deepEqual(errors, []);
-  const report = { entries, ctas: 2, itemCtas, desktop, keyboard: true, focusRestored: true, historyExpanded: true, fixedControls: true, scrollReset: true, overlayClose: true, touchSwipe: true, sameUrl: true, mobile, errors };
+  const report = { entries, ctas: 1, duplicateSectionRemoved: true, itemCtas, desktop, keyboard: true, focusRestored: true, historyExpanded: true, fixedControls: true, scrollReset: true, overlayClose: true, touchSwipe: true, sameUrl: true, mobile, errors };
   fs.writeFileSync(`${out}/explorer-qa.json`, JSON.stringify(report, null, 2));
   console.log(JSON.stringify(report, null, 2));
 } finally { await page.close(); await browser.close(); }
