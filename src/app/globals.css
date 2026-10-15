@@ -491,7 +491,7 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
 .hero-city-image { object-fit: cover; object-position: center 52%; }
 .hero-city-shade { background: linear-gradient(90deg,#05272ee8 0%,#05272ebd 45%,#05272e45 100%),linear-gradient(0deg,#05272e99,transparent 55%); }
 .hero-photographic .destination-copy { color: #fff9e9; }
-.hero-photographic .destination-copy h1 { max-width: 300px; padding: 10px 20px; background: #faf6e8; border-radius: 4px; margin-bottom: 24px; }
+.hero-photographic .destination-copy h1 { max-width: 440px; padding: 10px 20px; background: #faf6e8; border-radius: 4px; margin-bottom: 24px; }
 .hero-photographic .destination-copy h2 { color: #fff9e9; font-size: clamp(40px,5.3vw,76px); line-height: 1.02; }
 .hero-photographic .destination-copy h2 em { color: #ffd66f; }
 .hero-photographic .destination-copy > p,.hero-photographic .destination-date div > span { color: #fff9e9; }
@@ -516,7 +516,7 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
 .hero-cartographic-opening .destination-map-stage::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg,#082a34ed,transparent 65%); }
 .hero-cartographic-opening .map-caption { z-index: 5; right: 100px; flex-direction: row; align-items: center; }
 .map-opening-copy { position: absolute; z-index: 2; left: 5vw; bottom: 64px; max-width: 44%; color: #fff9e9; }
-.map-opening-logo { width: 210px !important; padding: 10px 16px; background: #faf6e8; border-radius: 4px; margin-bottom: 28px; }
+.map-opening-logo { width: 300px !important; padding: 10px 16px; background: #faf6e8; border-radius: 4px; margin-bottom: 28px; }
 .map-opening-copy h2 { font: 400 clamp(34px,4vw,60px)/1.08 var(--font-dm-serif),serif; letter-spacing: -.03em; }
 .map-opening-copy h2 em { color: #ffd66f; }
 .map-opening-copy p { font-size: 14px; margin-top: 18px; }
@@ -569,11 +569,11 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
   .institutional-logo-city { height: 46px; }
   .hero-city-image { object-position: 44% center; }
   .hero-city-shade { background: linear-gradient(180deg,#05272ebf,#05272ebf 65%,#05272ee0); }
-  .hero-photographic .destination-copy h1 { max-width: 230px; margin-bottom: 18px; }
+  .hero-photographic .destination-copy h1 { max-width: 320px; margin-bottom: 18px; }
   .hero-photographic .destination-copy h2 { font-size: 40px; }
   .map-opening-copy { left: 24px; right: 24px; bottom: 48px; max-width: none; }
   .map-opening-copy h2 { font-size: 32px; }
-  .map-opening-logo { width: 170px !important; margin-bottom: 18px; }
+  .map-opening-logo { width: 230px !important; margin-bottom: 18px; }
   .hero-cartographic-opening .map-event { display: none; }
   .hero-cartographic-opening .map-caption { right: 60px; align-items: flex-start; flex-direction: column; }
   .hero-cartographic-opening .destination-map-stage::after { background: linear-gradient(0deg,#082a34f5,transparent 80%); }
@@ -594,7 +594,10 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
   .destination-copy > p { margin-top: 10px; }
   .destination-date { margin-top: 12px; }
   .destination-actions { margin-top: 14px; }
-  .hero-photographic .destination-copy h1 { max-width: 210px; margin-bottom: 14px; }
+  .hero-photographic .destination-copy h1 { max-width: 360px; margin-bottom: 14px; }
   .hero-photographic .destination-copy h2 { font-size: clamp(34px,4.3vw,58px); }
   .hero-photographic .destination-day { font-size: 66px; }
+}
+@media (max-width: 767px) and (max-height: 900px) {
+  .hero-photographic .destination-copy h1 { max-width: 280px; margin-bottom: 10px; }
 }
