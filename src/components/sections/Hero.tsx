@@ -24,8 +24,14 @@ export function Hero({ refCopy }: { refCopy?: string }) {
     setPhase("mapping");
   }
   return (
-    <LayoutGroup><section id="top" className="destination-hero" data-phase={phase}>
+    <LayoutGroup><section id="top" className={`destination-hero${phase !== "mapping" ? " hero-photographic" : ""}`} data-phase={phase}>
       <NatureBackdrop />
+      <motion.div className="hero-city-scene" aria-hidden="true" initial={false} animate={{ opacity: phase === "mapping" ? 0 : 1 }} transition={{ duration: reduced ? 0 : .85, ease: "easeOut" }}>
+        <motion.div className="hero-city-camera" initial={false} animate={{ scale: phase === "mapping" ? 1.08 : 1 }} transition={{ duration: reduced ? 0 : 2.4, ease: [.23, 1, .32, 1] }}>
+          <Image src="/images/viana/igreja-matriz-atual.png" alt="" fill priority sizes="100vw" className="hero-city-image" />
+        </motion.div>
+        <div className="hero-city-shade" />
+      </motion.div>
       <motion.div layout transition={{ layout: positionTransition }} className={`destination-hero-grid${phase === "centered" ? " hero-centered" : ""}`}>
         <div className="destination-copy">
           <motion.h1 layout="position" transition={{ layout: positionTransition }}><span className="sr-only">Viana Experience, Dia D do Turismo</span><Logo variant="hero" priority className="destination-logo" /></motion.h1>

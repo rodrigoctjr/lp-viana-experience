@@ -213,3 +213,5 @@ O botão Rever viagem continua disponível fora do mapa removido e reinicia a in
 A capa do hero ocupa a altura dinâmica da tela, incluindo o cabeçalho. A faixa fotográfica fica abaixo da capa. O mapa móvel usa a mesma área do conteúdo, sem empilhar uma segunda tela durante a introdução. Telas baixas recebem espaçamento e marca compactos; conteúdo ampliado por acessibilidade pode expandir a capa para preservar a leitura.
 
 As marcas Descubra Viana e Prefeitura de Viana aparecem em faixa clara na base da capa e no rodapé, com proporções originais. A capa reserva 80px no desktop e 72px no celular para essa assinatura institucional.
+
+A chegada cartográfica agora revela a foto atual da Igreja Matriz em toda a capa. O estado hero-photographic usa branco quente no título, amarelo solar na ênfase, data e ação principal, sombra verde sobre a foto e a marca original em fundo claro. A foto entra junto ao fade do mapa e acomoda uma aproximação de escala 1,08 para 1 em 2,4s, sem loop; movimento reduzido apresenta a fotografia estática. Logos institucionais, duração da câmera, pin e replay permanecem.
