@@ -5,11 +5,13 @@ import Image from "next/image";
 import { useState } from "react";
 import { Logo } from "@/components/ui/Logo";
 import { DestinationMap } from "@/components/hero/DestinationMap";
+import { NatureBackdrop } from "@/components/ui/NatureBackdrop";
 
 export function Hero({ refCopy }: { refCopy?: string }) {
   const [journey, setJourney] = useState(0);
   return (
     <section id="top" className="destination-hero">
+      <NatureBackdrop />
       <div className="destination-hero-grid">
         <div className="destination-copy">
           <h1><span className="sr-only">Viana Experience — Dia D do Turismo</span><Logo variant="hero" priority className="destination-logo" /></h1>

@@ -1,6 +1,7 @@
 "use client";
 import { motion, useReducedMotion } from "motion/react";
 import { NatureTransition } from "@/components/ui/NatureTransition";
+import { NatureBackdrop } from "@/components/ui/NatureBackdrop";
 import { SectionNext } from "@/components/ui/SectionNext";
 import { diaDThemes } from "@/data/dia-d-themes";
 const icons = [
@@ -11,7 +12,7 @@ const icons = [
 ];
 export function DiaDTeaser() {
   const reduced = useReducedMotion();
-  return <section id="dia-d" className="day-chapter"><NatureTransition /><div className="container-site relative z-10">
+  return <section id="dia-d" className="day-chapter"><NatureTransition /><NatureBackdrop /><div className="container-site relative z-10">
     <div className="day-heading"><h2>Um dia inteiro.<br /><em>Todos os caminhos.</em></h2><div className="day-date"><strong>08.11</strong><span>Domingo, 2026<br />Dia D do Turismo<br />Viana, ES</span></div></div>
     <div className="day-program">{diaDThemes.map((theme, i) => <motion.article key={theme.id} initial={false} whileInView={reduced ? undefined : { opacity: [.65, 1] }} viewport={{ once: true }} transition={{ duration: .6 }}><svg viewBox="0 0 40 40" aria-hidden="true" strokeLinecap="round" strokeLinejoin="round">{icons[i]}</svg><h3>{theme.title}</h3><p>{theme.description}</p></motion.article>)}</div>
     <SectionNext copy="Escolha por onde começar. Os parceiros e suas experiências estão logo adiante." label="Explorar atrações" target="atracoes" />

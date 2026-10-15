@@ -45,9 +45,13 @@ typography:
     fontSize: "13px"
     fontWeight: 600
 rounded:
-  photo: "4px"
-  action: "5px"
-  attraction: "12px"
+  photo: "28px"
+  action: "999px"
+  attraction: "24px"
+  photo-strip: "22px"
+  quiz-answer: "20px"
+  game: "24px"
+  map: "0px"
 spacing:
   gutter: "clamp(22px, 5vw, 80px)"
   chapter: "96px"
@@ -82,6 +86,8 @@ components:
   category-chip:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.surface-elevated}"
+  nature-backdrop:
+    textColor: "{colors.hop}"
   attraction-card:
     backgroundColor: "{colors.surface-elevated}"
     textColor: "{colors.primary}"
@@ -155,20 +161,20 @@ DM Serif Display dá caráter aos títulos; Bricolage organiza interface, data, 
 
 Contêiner com largura máxima de 1440px e espaço lateral fluido. Os capítulos compartilhados usam 96px de respiro vertical, passando a 128px a partir de 640px; programação e fechamento usam 100px. O hero em desktop combina duas colunas proporcionais (.95fr / 1.05fr), com marca e informação ao lado do mapa.
 
-Até 767px, o mapa ocupa a primeira linha e revela pin e data na tela inicial; marca completa, textos e ações vêm em seguida. O mapa tem altura mínima de 510px. Os pilares deixam o escalonamento de 80/160px e passam a uma coluna; a programação e o fechamento também se empilham. O menu substitui a navegação desktop. Entre 768px e 1100px, a navegação permanece e a ação lateral do cabeçalho fica oculta.
+Até 767px, o mapa ocupa a primeira linha e revela pin e data na tela inicial; marca completa, textos e ações vêm em seguida. O mapa tem altura mínima de 510px. Os pilares deixam o escalonamento de 80/160px e passam a uma coluna; a programação e o fechamento também se empilham. Marca, título, parágrafo, bloco de data e ações ficam centralizados no hero móvel; o texto dentro da data mantém alinhamento à esquerda. O menu substitui a navegação desktop. Entre 768px e 1100px, a navegação permanece e a ação lateral do cabeçalho fica oculta.
 
 ## Elevation & Depth
 
-O sistema usa contraste de superfícies e fotografia como profundidade. Cartões de atrações têm borda fina e nenhuma sombra; o menu móvel usa sombra discreta para separar o painel do conteúdo. Curvas de água são decorativas e não interceptam interação. A textura de grão legada está desativada.
+O sistema usa contraste de superfícies e fotografia como profundidade. Cartões de atrações têm borda fina e nenhuma sombra; o menu móvel usa sombra discreta para separar o painel do conteúdo. Curvas de água e folhagens são decorativas e não interceptam interação. NatureBackdrop aparece no hero, nos capítulos compartilhados, no Dia D e no fechamento. Folhas oscilam em ciclos de 14s e água em 18s, usando transform; useInView pausa os ciclos fora do viewport. Em movimento reduzido, os fundos ficam estáticos. A textura de grão legada está desativada.
 
 ## Shapes
 
-Fotografias dos pilares usam cantos discretos; ações do hero têm curva curta e atrações têm cantos mais suaves. O mapa abre com um único canto superior esquerdo amplo (110px no desktop, 60px no celular). Filtros e contatos existentes mantêm a forma de cápsula.
+Fotografias dos pilares usam cantos de 28px; cartões de atrações, 24px; a fotografia da faixa, 22px. Ações, botões, replay e contatos adotam cápsulas (999px), com exceção das respostas do quiz (20px). O contêiner do jogo usa 24px. O mapa é a exceção explícita: todos os cantos são retos (0px), em qualquer breakpoint. A fotografia final ocupa esse mesmo quadro reto.
 
 ## Components
 
 ### Buttons
-A ação do hero usa fundo azul, hover verde, altura mínima de 48px e seta consistente. O link secundário usa linha inferior. Botões compartilhados preservam variantes coral, contorno e transparente, com foco e estados desabilitado/carregando. Controles de navegação, filtros e ações usam alvos de pelo menos 44px; essa regra não declara auditoria integral de todos os links de texto.
+A ação do hero usa fundo azul, hover verde, altura mínima de 48px e seta consistente. O link secundário usa contorno completo, padding de 12px 20px e forma de cápsula. Botões compartilhados preservam variantes coral, contorno e transparente, com foco e estados desabilitado/carregando. Controles de navegação, filtros e ações usam alvos de pelo menos 44px; essa regra não declara auditoria integral de todos os links de texto.
 
 ### Cards and filters
 O catálogo conserva informações, categorias, filtros e ações existentes. Cartões usam superfície branca, borda fina, imagem em 4:3 e texto de horário sólido. Os filtros de categoria indicam seleção por preenchimento e estado acessível.
@@ -179,10 +185,13 @@ Campos existentes de cadastro e vouchers mantêm rótulos explícitos, bordas, e
 ### Navigation
 Cabeçalho fixo em areia quente: 88px no desktop, 76px no celular. Âncoras respeitam o espaço superior de 100px. O botão móvel expande uma lista de links com linhas de 52px; foco visível acompanha a navegação por teclado.
 
-### Cartographic opening
-Malhas locais do IBGE mostram Brasil, recuo inicial e aproximação ao Espírito Santo e a Viana. Uma pausa regional (viewBox 746 473 230 285) revela o pin municipal; a câmera então avança até viewBox 858.4 630 8 10. A câmera dura 6,2s no desktop e 4,8s no celular. O pin não indica o endereço de um evento.
+### Nature backgrounds
+Fundos de folhas e água acrescentam movimento discreto atrás do conteúdo, com camadas isoladas e sem alvos de interação. São pausados fora de vista e estáticos em movimento reduzido. Essa ambientação complementa as transições entre capítulos.
 
-A chegada usa a imagem existente public/images/viana/estacao.jpg, revelada por uma abertura circular do centro (1,2s), com assentamento de escala 1,16 para 1 (2s). A abertura começa em 5,2s no desktop e 3,9s no celular, sobrepondo o fim do zoom. A legenda identifica a Estação Ferroviária de Viana e credita Rafael Deminicis, CC BY-SA 4.0. Sombreamento da foto sustenta a leitura de legenda, data, replay e fonte IBGE.
+### Cartographic opening
+Malhas locais do IBGE mostram Brasil, recuo inicial e aproximação ao Espírito Santo e a Viana. O enquadramento estadual (viewBox 818 565 82 102) faz o Espírito Santo quase preencher a etapa e mantém uma pausa. A câmera passa pelo recorte da cidade (850 619 25 31) e chega a viewBox 858.4 630 8 10. Pin e rótulo ajustam a escala em sentido inverso ao zoom para manter sua presença visual controlada. A câmera dura 7,4s no desktop e 5,8s no celular. O pin não indica o endereço de um evento.
+
+A chegada usa a imagem existente public/images/viana/estacao.jpg, revelada por uma abertura circular do centro (1,2s), com assentamento de escala 1,16 para 1 (2s). A abertura começa em 6,3s no desktop e 4,8s no celular, sobrepondo o fim do zoom. A legenda identifica a Estação Ferroviária de Viana e credita Rafael Deminicis, CC BY-SA 4.0. Sombreamento da foto sustenta a leitura de legenda, data, replay e fonte IBGE.
 
 Replay e data permanecem acessíveis; a data aparece também no conteúdo textual do hero. Em movimento reduzido, a foto final e sua legenda ficam estáticas, sem abertura circular ou assentamento. A ordem mobile e esses tempos são decisões desta superfície; novos usos do sistema devem respeitar seu próprio contexto.
 

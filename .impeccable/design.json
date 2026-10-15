@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-15T01:35:09.000Z",
+  "generatedAt": "2026-10-15T01:52:17.364Z",
   "title": "Design System: Destino Viana",
   "extensions": {
     "colorMeta": {
@@ -337,12 +337,12 @@
       },
       {
         "name": "camera-desktop",
-        "value": "6.2s",
+        "value": "7.4s",
         "purpose": "Hero no desktop."
       },
       {
         "name": "camera-mobile",
-        "value": "4.8s",
+        "value": "5.8s",
         "purpose": "Hero até 767px."
       },
       {
@@ -362,13 +362,23 @@
       },
       {
         "name": "city-photo-delay-desktop",
-        "value": "5.2s",
+        "value": "6.3s",
         "purpose": "Início da abertura e assentamento no desktop."
       },
       {
         "name": "city-photo-delay-mobile",
-        "value": "3.9s",
+        "value": "4.8s",
         "purpose": "Início da abertura e assentamento até 767px."
+      },
+      {
+        "name": "nature-wind",
+        "value": "14s ease-in-out infinite alternate",
+        "purpose": "Folhagens via transform; pausa fora do viewport; estático em movimento reduzido."
+      },
+      {
+        "name": "nature-current",
+        "value": "18s ease-in-out infinite alternate",
+        "purpose": "Água via transform; pausa fora do viewport; estático em movimento reduzido."
       }
     ],
     "breakpoints": [
@@ -393,19 +403,21 @@
         "src/components/hero/DestinationMap.tsx",
         "src/components/ui/Button.tsx",
         "src/components/ui/Forms.tsx",
-        "src/components/sections/AttractionsSection.tsx"
+        "src/components/sections/AttractionsSection.tsx",
+        "src/components/ui/NatureBackdrop.tsx"
       ],
       "tonalRamps": "Synthesized OKLCH previews; not production tokens.",
       "validation": "JSON syntax and local consistency checks only; no engine or panel execution."
     },
     "heroJourney": {
-      "regionalViewBox": "746 473 230 285",
+      "regionalViewBox": "818 565 82 102",
       "finalViewBox": "858.4 630 8 10",
       "sequence": [
         "Brasil",
         "recuo",
-        "Espírito Santo e Viana",
-        "pausa regional com pin",
+        "Espírito Santo em enquadramento próximo",
+        "pausa estadual",
+        "Viana",
         "aproximação profunda",
         "fotografia da Estação Ferroviária"
       ],
@@ -414,7 +426,17 @@
         "credit": "Rafael Deminicis · CC BY-SA 4.0",
         "caption": "Estação Ferroviária · Viana, ES"
       },
-      "reducedMotion": "Foto e legenda finais estáticas; data e replay preservados."
+      "reducedMotion": "Foto e legenda finais estáticas; data e replay preservados.",
+      "cityViewBox": "850 619 25 31",
+      "pinScale": "Inverse camera zoom compensation",
+      "frameRadius": "0px at every breakpoint"
+    },
+    "responsiveHero": {
+      "mobileMax": "767px",
+      "mapOrder": "first",
+      "copyAlignment": "center",
+      "dateInternalAlignment": "left",
+      "mapRadius": "0px on all breakpoints"
     }
   },
   "components": [
@@ -424,7 +446,7 @@
       "refersTo": "destination-primary",
       "description": "Ação para o próximo capítulo.",
       "html": "<a class=\"ds-control ds-destination-primary\" href=\"#dia-d\">Explorar o Dia D<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></a>",
-      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-destination-primary{background:var(--color-primary,#143c42);color:#fff;padding:15px 20px;border-radius:5px;min-height:48px;gap:24px;font-size:13px;font-weight:600;text-decoration:none}.ds-destination-primary:hover{background:var(--color-hop,#326650)}.ds-destination-primary:active{filter:brightness(.95)}"
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-destination-primary{background:var(--color-primary,#143c42);color:#fff;padding:15px 20px;border-radius:999px;min-height:48px;gap:24px;font-size:13px;font-weight:600;text-decoration:none}.ds-destination-primary:hover{background:var(--color-hop,#326650)}.ds-destination-primary:active{filter:brightness(.95)}"
     },
     {
       "name": "Link do hero",
@@ -432,7 +454,7 @@
       "refersTo": "destination-secondary",
       "description": "Ação secundária com linha inferior.",
       "html": "<a class=\"ds-control ds-destination-secondary\" href=\"#atracoes\">Ver as atrações<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></a>",
-      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-destination-secondary{min-height:48px;color:var(--color-ink,#14343b);border-bottom:1px solid #9bb3a8;gap:24px;font-size:13px;font-weight:600;text-decoration:none}.ds-destination-secondary:hover{color:var(--color-hop,#326650)}"
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-destination-secondary{min-height:48px;color:var(--color-ink,#14343b);border:1px solid #8ba596;padding:12px 20px;border-radius:999px;gap:24px;font-size:13px;font-weight:600;text-decoration:none}.ds-destination-secondary:hover{color:var(--color-hop,#326650)}"
     },
     {
       "name": "Botão primary",
@@ -440,7 +462,7 @@
       "refersTo": "button-primary",
       "description": "Variante do botão compartilhado.",
       "html": "<button class=\"ds-control ds-button-primary\">Continuar</button>",
-      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-button-primary{padding:0 24px;border-radius:4px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border:0;background:var(--color-accent,#b84732);color:#fff}.ds-button-primary:hover{background:var(--color-accent-hover,#963923)}.ds-button-primary:active{transform:translateY(1px)}"
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-button-primary{padding:0 24px;border-radius:999px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border:0;background:var(--color-accent,#b84732);color:#fff}.ds-button-primary:hover{background:var(--color-accent-hover,#963923)}.ds-button-primary:active{transform:translateY(1px)}"
     },
     {
       "name": "Botão secondary",
@@ -448,7 +470,7 @@
       "refersTo": "button-secondary",
       "description": "Variante do botão compartilhado.",
       "html": "<button class=\"ds-control ds-button-secondary\">Continuar</button>",
-      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-button-secondary{padding:0 24px;border-radius:4px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border:2px solid var(--color-ink,#14343b);background:transparent;color:var(--color-ink,#14343b)}.ds-button-secondary:hover{background:var(--color-surface-muted,#e3ebe3)}.ds-button-secondary:active{transform:translateY(1px)}"
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-button-secondary{padding:0 24px;border-radius:999px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border:2px solid var(--color-ink,#14343b);background:transparent;color:var(--color-ink,#14343b)}.ds-button-secondary:hover{background:var(--color-surface-muted,#e3ebe3)}.ds-button-secondary:active{transform:translateY(1px)}"
     },
     {
       "name": "Botão ghost",
@@ -456,7 +478,7 @@
       "refersTo": "button-ghost",
       "description": "Variante do botão compartilhado.",
       "html": "<button class=\"ds-control ds-button-ghost\">Continuar</button>",
-      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-button-ghost{padding:0 24px;border-radius:4px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border:0;background:transparent;color:var(--color-on-primary,#f4f3ec)}.ds-button-ghost:hover{background:color-mix(in srgb,var(--color-terra,#b5421c) 20%,transparent)}.ds-button-ghost:active{transform:translateY(1px)}"
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-button-ghost{padding:0 24px;border-radius:999px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border:0;background:transparent;color:var(--color-on-primary,#f4f3ec)}.ds-button-ghost:hover{background:color-mix(in srgb,var(--color-terra,#b5421c) 20%,transparent)}.ds-button-ghost:active{transform:translateY(1px)}"
     },
     {
       "name": "Campo",
@@ -488,7 +510,15 @@
       "refersTo": "attraction-card",
       "description": "Superfície e hierarquia; amostra sem inventar oferta operacional.",
       "html": "<article class=\"ds-card\"><p class=\"ds-card-place\">Viana, Espírito Santo</p><h3 class=\"ds-card-title\">Atração</h3><p class=\"ds-card-copy\">Informações da atração e ações existentes.</p><a class=\"ds-control ds-card-link\" href=\"#atracoes\">Ver atrações</a></article>",
-      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-card{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;padding:24px;border:1px solid #ccd9cf;border-radius:12px;background:var(--color-surface-elevated,#fff);color:var(--color-primary,#143c42);box-shadow:none;max-width:340px}.ds-card-place{font-size:10px;letter-spacing:.075em;text-transform:uppercase}.ds-card-title{font-size:26px;font-weight:600;margin:8px 0 12px}.ds-card-copy{font-size:14px;line-height:1.625;color:var(--color-primary,#143c42)}.ds-card-link{font-size:12px;color:var(--color-primary,#143c42)}.ds-card-link:hover{color:var(--color-hop,#326650)}"
+      "css": ".ds-control{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;cursor:pointer;transition:background .2s,color .2s}.ds-control:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-control{transition:none!important;transform:none!important}}.ds-control:focus-visible{outline:2px solid var(--color-accent,#b84732);outline-offset:3px}.ds-card{font-family:var(--font-bricolage,\"Bricolage Grotesque\"),system-ui,sans-serif;padding:24px;border:1px solid #ccd9cf;border-radius:24px;background:var(--color-surface-elevated,#fff);color:var(--color-primary,#143c42);box-shadow:none;max-width:340px}.ds-card-place{font-size:10px;letter-spacing:.075em;text-transform:uppercase}.ds-card-title{font-size:26px;font-weight:600;margin:8px 0 12px}.ds-card-copy{font-size:14px;line-height:1.625;color:var(--color-primary,#143c42)}.ds-card-link{font-size:12px;color:var(--color-primary,#143c42)}.ds-card-link:hover{color:var(--color-hop,#326650)}"
+    },
+    {
+      "name": "Fundo de natureza",
+      "kind": "custom",
+      "refersTo": "nature-backdrop",
+      "description": "Amostra decorativa estática de água; no site, ciclos CSS pausam fora do viewport via useInView.",
+      "html": "<div class=\"ds-nature-backdrop\" aria-hidden=\"true\"><svg class=\"ds-nature-water\" viewBox=\"0 0 1440 240\" preserveAspectRatio=\"none\" fill=\"none\"><path d=\"M-150 150C120 15 370 225 720 105S1260 30 1600 135M-150 175C150 40 400 250 750 130S1290 55 1600 160M-150 200C180 65 430 275 780 155S1320 80 1600 185\" stroke=\"currentColor\" stroke-width=\"1.2\"/></svg></div>",
+      "css": ".ds-nature-backdrop{position:relative;overflow:hidden;height:180px;color:var(--color-hop,#326650);pointer-events:none}.ds-nature-water{position:absolute;inset:0;width:116%;height:180px;opacity:.15}"
     }
   ],
   "narrative": {

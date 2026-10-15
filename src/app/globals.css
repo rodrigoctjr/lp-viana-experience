@@ -255,7 +255,7 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
 .destination-primary { background: #143c42; color: #fff; padding: 15px 20px; border-radius: 5px; transition: background .2s; }
 .destination-primary:hover { background: #326650; }
 .destination-secondary { border-bottom: 1px solid #9bb3a8; }
-.destination-map-stage { position: relative; background: #082a34; min-width: 0; overflow: hidden; border-top-left-radius: 110px; }
+.destination-map-stage { position: relative; background: #082a34; min-width: 0; overflow: hidden; border-radius: 0; }
 .destination-map { position: absolute; inset: 0; }
 .geographic-map { width: 100%; height: 100%; position: absolute; inset: 0; }
 .map-compass { position: absolute; top: 35px; right: 35px; z-index: 1; color: #b9d5c9; display: grid; justify-items: center; gap: 7px; font-size: 10px; }
@@ -334,7 +334,7 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
   .destination-date { margin-top: 22px; gap: 16px; }.destination-day { font-size: 72px; }
   .destination-actions { margin-top: 24px; gap: 22px; }
   .destination-primary,.destination-secondary { font-size: 12px; gap: 12px; }
-  .destination-map-stage { min-height: 510px; border-radius: 60px 0 0 0; }
+  .destination-map-stage { min-height: 510px; border-radius: 0; }
   .map-caption { left: 28px; top: 22px; font-size: 10px; }
   .map-compass { top: 28px; right: 24px; }
   .map-source { left: 24px; bottom: 13px; font-size: 8px; }.map-event { right: 24px; bottom: 43px; }
@@ -419,4 +419,42 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
   .city-photo-drift { animation: none; transform: none; }
   .city-arrival-caption { animation: none; opacity: 1; transform: none; }
   .map-arrival,.map-region-labels { animation: none; opacity: 0; }
+}
+
+/* Folhagens, água e formas acolhedoras; o mapa mantém bordas retas. */
+.destination-hero { position: relative; overflow: hidden; isolation: isolate; }
+.destination-hero-grid,.destination-photo-strip { position: relative; z-index: 1; }
+.nature-backdrop { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; color: #326650; }
+.nature-bough { position: absolute; width: clamp(170px,20vw,300px); height: auto; opacity: .16; transform-origin: 50% 100%; animation: nature-wind 14s ease-in-out infinite alternate paused; }
+.nature-bough-left { left: -70px; bottom: -35px; }
+.nature-bough-right { right: -60px; top: 70px; rotate: 175deg; animation-delay: -5s; opacity: .12; }
+.nature-water { position: absolute; bottom: 10%; left: -8%; width: 116%; height: 180px; opacity: .15; animation: nature-current 18s ease-in-out infinite alternate paused; }
+.nature-backdrop[data-active="true"] .nature-bough,.nature-backdrop[data-active="true"] .nature-water { animation-play-state: running; }
+.destination-hero > .nature-backdrop { opacity: .8; }
+.pillar-photo { border-radius: 28px; }
+#atracoes article { border-radius: 24px; }
+.destination-photo { border-radius: 22px; margin-left: 12px; height: calc(100% - 24px); }
+.destination-primary,.destination-secondary,.atlas-header-cta,.map-caption button,main button,main a[class*="rounded-sm"] { border-radius: 999px; }
+.destination-secondary { padding: 12px 20px; border: 1px solid #8ba596; }
+.atlas-header-cta { border: 1px solid #adc3ad; padding: 10px 20px; }
+.map-caption button { padding: 3px 10px; }
+#quiz [aria-label="Opções de resposta"] button { border-radius: 20px; }
+#jogo .overflow-hidden { border-radius: 24px; }
+.destination-map { --photo-delay: 6.3s; --pin-show: 2.7s; --pin-hide: 5.3s; }
+@keyframes nature-wind { from { transform: translate3d(-5px,0,0) rotate(-4deg); } to { transform: translate3d(12px,-8px,0) rotate(4deg); } }
+@keyframes nature-current { from { transform: translate3d(-3%,0,0); } to { transform: translate3d(3%,-8px,0); } }
+@media (max-width: 767px) {
+  .destination-copy { align-items: center; text-align: center; padding-inline: clamp(20px,5vw,40px); }
+  .destination-copy h1 { display: flex; justify-content: center; }
+  .destination-logo { margin-inline: auto; }
+  .destination-copy > p { margin-inline: auto; }
+  .destination-date { justify-content: center; text-align: left; }
+  .destination-actions { justify-content: center; width: 100%; gap: 12px 20px; }
+  .destination-photo-strip p { text-align: center; padding-right: 18px; flex: 1; }
+  .nature-bough { width: 190px; opacity: .12; }
+  .nature-bough-right { right: -85px; }
+  .destination-map { --photo-delay: 4.8s; --pin-show: 2.1s; --pin-hide: 4.2s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nature-bough,.nature-water { animation: none; }
 }

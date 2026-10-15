@@ -18,9 +18,10 @@ async function load(width,height,reduced=false){
  await page.evaluate(()=>document.fonts.ready);
 }
 async function inspect(name){
- await delay(8000);
- report[name]=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,photoClip:getComputedStyle(document.querySelector('.city-arrival')).clipPath,photoLoaded:document.querySelector('.city-arrival-photo').naturalWidth>0,viewBox:document.querySelector('.geographic-map').getAttribute('viewBox'),arrival:getComputedStyle(document.querySelector('.map-arrival')).opacity,date:document.querySelector('.destination-date').innerText,images:[...document.querySelectorAll('#top img')].map(i=>({src:i.getAttribute('src'),loaded:i.complete&&i.naturalWidth>0}))}));
+ await delay(9000);
+ report[name]=await page.evaluate(()=>{const center=selector=>{const b=document.querySelector(selector).getBoundingClientRect();return b.x+b.width/2};return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,logoCenter:center('.destination-logo'),headingCenter:center('.destination-copy h2'),dateCenter:center('.destination-date'),mapRadius:getComputedStyle(document.querySelector('.destination-map-stage')).borderRadius,photoClip:getComputedStyle(document.querySelector('.city-arrival')).clipPath,photoLoaded:document.querySelector('.city-arrival-photo').naturalWidth>0,viewBox:document.querySelector('.geographic-map').getAttribute('viewBox'),arrival:getComputedStyle(document.querySelector('.map-arrival')).opacity,date:document.querySelector('.destination-date').innerText,images:[...document.querySelectorAll('#top img')].map(i=>({src:i.getAttribute('src'),loaded:i.complete&&i.naturalWidth>0}))}});
  await page.screenshot({path:`${out}/${name}-hero.png`});
+ if(name!=='desktop') await (await page.$('.destination-copy')).screenshot({path:`${out}/${name}-copy.png`});
  for(let y=0;y<await page.evaluate(()=>document.body.scrollHeight);y+=650){await page.evaluate(top=>scrollTo({top,behavior:'instant'}),y);await delay(120);}
  await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await delay(300);
  await page.screenshot({path:`${out}/${name}.png`,fullPage:true});
@@ -28,9 +29,10 @@ async function inspect(name){
 await load(1440,1000);await inspect('desktop');
 await page.click('.map-caption button');await delay(700);
 report.replayStart=await page.$eval('.geographic-map',el=>el.getAttribute('viewBox'));
-await page.screenshot({path:`${out}/map-brazil.png`});await delay(4000);
-await page.screenshot({path:`${out}/map-close.png`});await delay(1000);
-await page.screenshot({path:`${out}/city-transition.png`});await delay(1800);
+await page.waitForFunction(()=>document.querySelector('.geographic-map').getAttribute('viewBox')==='818 565 82 102',{timeout:10000});
+report.regionalView=await page.$eval('.geographic-map',el=>el.getAttribute('viewBox'));
+report.markerOffset=await page.evaluate(()=>{const origin=new DOMPoint(0,0);const a=origin.matrixTransform(document.querySelector('.map-arrival').getScreenCTM());const b=origin.matrixTransform(document.querySelector('.map-marker').getScreenCTM());return Math.hypot(a.x-b.x,a.y-b.y)});
+await page.screenshot({path:`${out}/map-state.png`});await delay(6500);
 report.replayEnd=await page.$eval('.geographic-map',el=>el.getAttribute('viewBox'));
 await page.$eval('#atracoes',el=>el.scrollIntoView({behavior:'instant'}));await delay(800);
 report.attractionsTotal=await page.$$eval('#atracoes article h3',els=>els.map(el=>el.textContent));
@@ -51,8 +53,10 @@ await load(390,844);await inspect('mobile');
 await page.click('.atlas-menu-toggle');report.menuOpen=await page.$eval('.atlas-menu-toggle',el=>el.getAttribute('aria-expanded'));
 await page.click('#atlas-mobile-nav a[href="#quiz"]');await page.waitForFunction(()=>Math.abs(document.querySelector('#quiz').getBoundingClientRect().top)<120,{timeout:10000});report.menuClosed=await page.$eval('.atlas-menu-toggle',el=>el.getAttribute('aria-expanded'));
 report.navQuiz=await page.evaluate(()=>Math.abs(document.querySelector('#quiz').getBoundingClientRect().top)<120);
+await load(698,900);await inspect('user-698');
 await load(390,844,true);await delay(200);
 report.reduced=await page.evaluate(()=>({photoClip:getComputedStyle(document.querySelector('.city-arrival')).clipPath,photoLoaded:document.querySelector('.city-arrival-photo').naturalWidth>0,viewBox:document.querySelector('.geographic-map').getAttribute('viewBox'),arrival:getComputedStyle(document.querySelector('.map-arrival')).opacity}));await page.screenshot({path:`${out}/reduced.png`});
 fs.writeFileSync(`${out}/qa.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));await browser.close();
-const checks=[errors.length===0,report.desktop.scrollWidth===1440,report.mobile.scrollWidth===390,report.replayEnd==='858.4 630 8 10',report.replayStart!==report.replayEnd,report.attractionsTotal.length===14,report.adventure.length>0,report.quizBefore!==report.quizAfter,report.quizRevealed.length>0,report.gameBefore.width>0,report.gameAfter.includes('PONTOS:')&&report.gameAfter.includes('= PULAR'),report.menuOpen==='true',report.menuClosed==='false',report.navQuiz,report.reduced.viewBox==='858.4 630 8 10',report.desktop.photoLoaded&&report.mobile.photoLoaded&&report.reduced.photoLoaded&&report.reduced.photoClip==='none',report.reduced.arrival==='0'];
+const centered=q=>Math.abs(q.logoCenter-q.width/2)<1&&Math.abs(q.headingCenter-q.width/2)<1&&Math.abs(q.dateCenter-q.width/2)<1;
+const checks=[errors.length===0,report.markerOffset<1,report.desktop.scrollWidth===1440,report.mobile.scrollWidth===390,report['user-698'].scrollWidth===698,centered(report.mobile),centered(report['user-698']),report.desktop.mapRadius==='0px',report.mobile.mapRadius==='0px',report.regionalView==='818 565 82 102',report.replayEnd==='858.4 630 8 10',report.replayStart!==report.replayEnd,report.attractionsTotal.length===14,report.adventure.length>0,report.quizBefore!==report.quizAfter,report.quizRevealed.length>0,report.gameBefore.width>0,report.gameAfter.includes('PONTOS:')&&report.gameAfter.includes('= PULAR'),report.menuOpen==='true',report.menuClosed==='false',report.navQuiz,report.reduced.viewBox==='858.4 630 8 10',report.desktop.photoLoaded&&report.mobile.photoLoaded&&report.reduced.photoLoaded&&report.reduced.photoClip==='none',report.reduced.arrival==='0'];
 if(checks.some(ok=>!ok)){console.error('FAILED CHECKS',checks);process.exitCode=1;}else console.log('All interaction checks passed.');

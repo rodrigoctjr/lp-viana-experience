@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { NatureTransition } from "@/components/ui/NatureTransition";
+import { NatureBackdrop } from "@/components/ui/NatureBackdrop";
 
 type SectionVariant = "ochre" | "cream" | "brown" | "nature";
 
@@ -37,6 +38,7 @@ export function SectionShell({
       )}
     >
       {decor || accentBar ? <NatureTransition /> : null}
+      {decor ? <NatureBackdrop /> : null}
       <div className="container-site relative z-10">{children}</div>
     </section>
   );
