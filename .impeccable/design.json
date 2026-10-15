@@ -332,17 +332,17 @@
       },
       {
         "name": "camera-ease",
-        "value": "cubic-bezier(.77,0,.175,1)",
+        "value": "cubic-bezier(.16,1,.3,1)",
         "purpose": "Aproximação cartográfica."
       },
       {
         "name": "camera-desktop",
-        "value": "7.4s",
+        "value": "2s",
         "purpose": "Hero no desktop."
       },
       {
         "name": "camera-mobile",
-        "value": "5.8s",
+        "value": "2s",
         "purpose": "Hero até 767px."
       },
       {
@@ -400,25 +400,19 @@
       "validation": "JSON syntax and local consistency checks only; no engine or panel execution."
     },
     "heroJourney": {
-      "regionalViewBox": "818 565 82 102",
       "finalViewBox": "858.4 630 8 10",
       "sequence": [
         "Brasil",
-        "recuo",
-        "Espírito Santo em enquadramento próximo",
-        "pausa estadual",
-        "Viana",
-        "aproximação profunda",
+        "aproximação contínua até Viana em 2s",
         "fade-out e remoção do mapa",
-        "conteúdo centralizado sobre natureza"
+        "capa fotográfica com conteúdo centralizado"
       ],
       "reducedMotion": "Conteúdo centralizado imediatamente; sem zoom, fade ou reposicionamento animado.",
-      "cityViewBox": "850 619 25 31",
       "pinScale": "Inverse camera zoom compensation",
       "frameRadius": "0px at every breakpoint",
       "completionTrigger": "DestinationMap onAnimationComplete → fading; AnimatePresence onExitComplete → centered",
       "replay": "Botão externo ao mapa removido reabre mapping; contador de jornada ignora callbacks antigos.",
-      "finalState": "Marca, título, descrição, data e ações centralizados; fundo de natureza; sem mapa ou foto de chegada."
+      "finalState": "Fotografia da Igreja Matriz com marca, título, data, ações e logos institucionais."
     },
     "responsiveHero": {
       "mobileMax": "767px",

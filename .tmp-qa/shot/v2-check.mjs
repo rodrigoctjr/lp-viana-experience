@@ -39,6 +39,7 @@ async function measure() {
   });
 }
 async function inspect(name) {
+  if (await page.$('.destination-map-stage')) await page.screenshot({ path: `${out}/${name}-opening.png` });
   await settled(); report[name] = await measure();
   await page.screenshot({ path: `${out}/${name}-hero.png` });
   if (name !== 'desktop') await (await page.$('.destination-copy')).screenshot({ path: `${out}/${name}-copy.png` });
@@ -56,7 +57,8 @@ try {
   });
   await page.click('.hero-replay'); await page.waitForSelector('.geographic-map'); await delay(500);
   report.replayStart = await page.$eval('.geographic-map', el => el.getAttribute('viewBox'));
-  await page.waitForFunction(() => document.querySelector('.geographic-map')?.getAttribute('viewBox') === '818 565 82 102', { timeout: 10000 });
+  await page.screenshot({ path: `${out}/map-opening-desktop.png` });
+  await page.waitForFunction(() => { const width = Number(document.querySelector('.geographic-map')?.getAttribute('viewBox')?.split(' ')[2]); return width < 120 && width >= 8; }, { timeout: 10000 });
   report.regionalView = await page.$eval('.geographic-map', el => el.getAttribute('viewBox'));
   report.markerOffset = await page.evaluate(() => {
     const origin = new DOMPoint(0, 0);
@@ -100,7 +102,10 @@ try {
     report.errors.length === 0, report.consoleErrors.length === 0,
     ...['desktop', 'mobile', 'user-698', 'reduced', 'replayEnd'].map(name => centered(report[name]) && report[name].mapRemoved && report[name].scrollWidth === report[name].width),
     report.phases.some(p => p.phase === 'mapping'), report.phases.some(p => p.phase === 'fading'), report.phases.at(-1).phase === 'centered',
-    report.markerOffset < 1, report.finalPinOpacity === '1', report.regionalView === '818 565 82 102', report.attractionsTotal.length === 14, report.adventure.length === 4,
+    report.markerOffset < 1, report.finalPinOpacity === '1', Number(report.regionalView.split(' ')[2]) <= 120,
+    report.phases.find(p => p.phase === 'fading').time - report.phases.find(p => p.phase === 'mapping').time >= 1800,
+    report.phases.find(p => p.phase === 'fading').time - report.phases.find(p => p.phase === 'mapping').time < 2400,
+    report.attractionsTotal.length === 14, report.adventure.length === 4,
     report.quizBefore !== report.quizAfter, report.quizRevealed.length > 0, report.gameAfter.includes('PONTOS:') && report.gameAfter.includes('= PULAR'), report.menuOpen === 'true', report.menuClosed === 'false'
   ];
   fs.writeFileSync(`${out}/qa.json`, JSON.stringify(report, null, 2));

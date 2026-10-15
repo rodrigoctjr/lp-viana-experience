@@ -1,29 +1,18 @@
 "use client";
 import { motion, useReducedMotion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { mapStates, mapMunicipalities, vianaPin } from "@/data/viana-map";
 
-const regionalView = "818 565 82 102";
-const cityView = "850 619 25 31";
 const finalView = "858.4 630 8 10";
-const cameraTimes = [0, 0.1, 0.4, 0.58, 0.8, 1];
 export function DestinationMap({ onZoomComplete }: { onZoomComplete?: () => void }) {
   const reduced = useReducedMotion();
   const markerRef = useRef<SVGGElement>(null);
-  const [compact, setCompact] = useState(false);
-  useEffect(() => {
-    const media = window.matchMedia("(max-width: 767px)");
-    const update = () => setCompact(media.matches);
-    update();
-    media.addEventListener("change", update);
-    return () => media.removeEventListener("change", update);
-  }, []);
   const [x, y] = vianaPin;
-  const duration = reduced ? 0 : compact ? 5.8 : 7.4;
+  const duration = reduced ? 0 : 2;
   return (
     <div className="destination-map" data-reduced={reduced || undefined}>
       <div className="map-compass" aria-hidden="true"><span>N</span><svg viewBox="0 0 24 50"><path d="M12 2L20 38L12 31L4 38Z" fill="currentColor" /><path d="M12 2V31" stroke="#082a34" /></svg></div>
-      <motion.svg className="geographic-map" role="img" aria-labelledby="destination-map-title" initial={{ viewBox: reduced ? finalView : "120 10 850 970" }} animate={{ viewBox: reduced ? finalView : ["120 10 850 970", "0 -40 1080 1200", regionalView, regionalView, cityView, finalView] }} transition={{ duration, times: cameraTimes, ease: [0.77, 0, 0.175, 1] }} onUpdate={latest => {
+      <motion.svg className="geographic-map" role="img" aria-labelledby="destination-map-title" initial={{ viewBox: reduced ? finalView : "120 10 850 970" }} animate={{ viewBox: finalView }} transition={{ duration, ease: [.16, 1, .3, 1] }} onUpdate={latest => {
         const width = Number(String(latest.viewBox).split(" ")[2]);
         // Native SVG scaling keeps (0,0) at the municipality; CSS origins use the text bounds.
         if (Number.isFinite(width)) markerRef.current?.setAttribute("transform", `scale(${width / 230})`);

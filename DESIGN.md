@@ -159,9 +159,9 @@ DM Serif Display dá caráter aos títulos; Bricolage organiza interface, data, 
 
 ## Layout
 
-Contêiner com largura máxima de 1440px e espaço lateral fluido. Os capítulos compartilhados usam 96px de respiro vertical, passando a 128px a partir de 640px; programação e fechamento usam 100px. Durante a introdução, o hero em desktop combina duas colunas proporcionais (.95fr / 1.05fr), com marca e informação ao lado do mapa. Após a saída e remoção do mapa, uma coluna centraliza marca, título, descrição, data e ações. A composição interna da data mantém texto à esquerda.
+Contêiner com largura máxima de 1440px e espaço lateral fluido. Os capítulos compartilhados usam 96px de respiro vertical, passando a 128px a partir de 640px; programação e fechamento usam 100px. Durante a introdução, o mapa ocupa toda a capa, com chamada de campanha e data sobrepostas. Após a saída e remoção do mapa, uma coluna centraliza marca, título, descrição, data e ações. A composição interna da data mantém texto à esquerda.
 
-Até 767px, o mapa ocupa a primeira linha e revela pin e data na tela inicial; marca completa, textos e ações vêm em seguida. O mapa tem altura mínima de 510px. Os pilares deixam o escalonamento de 80/160px e passam a uma coluna; a programação e o fechamento também se empilham. Marca, título, parágrafo, bloco de data e ações ficam centralizados no hero móvel; o texto dentro da data mantém alinhamento à esquerda. O menu substitui a navegação desktop. Entre 768px e 1100px, a navegação permanece e a ação lateral do cabeçalho fica oculta.
+Até 767px, o mapa ocupa a mesma área da capa, com chamada na base e opção Pular abertura no alto. Os pilares deixam o escalonamento de 80/160px e passam a uma coluna; a programação e o fechamento também se empilham. Marca, título, parágrafo, bloco de data e ações ficam centralizados no hero móvel; o texto dentro da data mantém alinhamento à esquerda. O menu substitui a navegação desktop. Entre 768px e 1100px, a navegação permanece e a ação lateral do cabeçalho fica oculta.
 
 ## Elevation & Depth
 
@@ -189,7 +189,7 @@ Cabeçalho fixo em areia quente: 88px no desktop, 76px no celular. Âncoras resp
 Fundos de folhas e água acrescentam movimento discreto atrás do conteúdo, com camadas isoladas e sem alvos de interação. São pausados fora de vista e estáticos em movimento reduzido. Essa ambientação complementa as transições entre capítulos.
 
 ### Cartographic opening
-Malhas locais do IBGE mostram Brasil, recuo inicial e aproximação ao Espírito Santo e a Viana. O enquadramento estadual (viewBox 818 565 82 102) faz o Espírito Santo quase preencher a etapa e mantém uma pausa. A câmera passa pelo recorte da cidade (850 619 25 31) e chega a viewBox 858.4 630 8 10. Pin e rótulo ajustam a escala em sentido inverso ao zoom para manter sua presença visual controlada. A câmera dura 7,4s no desktop e 5,8s no celular. O pin não indica o endereço de um evento.
+Malhas locais do IBGE mostram uma aproximação contínua do Brasil até Viana em 2s, sem recuo ou pausas intermediárias, terminando em viewBox 858.4 630 8 10. Pin e rótulo compensam o zoom por escala inversa, surgem desde o começo da viagem e permanecem até o fade. O mapa ocupa toda a capa; chamada do Dia D, data e Pular abertura compõem a introdução. O pin indica o município, não o endereço de um evento.
 
 O encerramento segue as fases mapping → fading → centered. O pin permanece visível até o fim do zoom e sai junto com o mapa. O callback real de conclusão do zoom inicia o fade-out do mapa (0,65s); após a remoção do quadro, a conclusão da saída dispara a centralização dos grupos por Motion layout (0,85s, ease-out). Não há fotografia de chegada. O estado final reúne marca, título, descrição, data e ações sobre o fundo de natureza. O subtítulo é “Dia D do Turismo. Viva Viana.”.
 

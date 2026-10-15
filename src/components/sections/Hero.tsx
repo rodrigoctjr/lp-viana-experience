@@ -24,7 +24,7 @@ export function Hero({ refCopy }: { refCopy?: string }) {
     setPhase("mapping");
   }
   return (
-    <LayoutGroup><section id="top" className={`destination-hero${phase !== "mapping" ? " hero-photographic" : ""}`} data-phase={phase}>
+    <LayoutGroup><section id="top" className="destination-hero hero-photographic hero-cartographic-opening" data-phase={phase}>
       <NatureBackdrop />
       <motion.div className="hero-city-scene" aria-hidden="true" initial={false} animate={{ opacity: phase === "mapping" ? 0 : 1 }} transition={{ duration: reduced ? 0 : .85, ease: "easeOut" }}>
         <motion.div className="hero-city-camera" initial={false} animate={{ scale: phase === "mapping" ? 1.08 : 1 }} transition={{ duration: reduced ? 0 : 2.4, ease: [.23, 1, .32, 1] }}>
@@ -43,9 +43,10 @@ export function Hero({ refCopy }: { refCopy?: string }) {
           {phase === "centered" ? <motion.button layout="position" transition={{ layout: positionTransition }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} type="button" onClick={replay} className="hero-replay">Rever viagem <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6" /></svg></motion.button> : null}
         </div>
         <AnimatePresence onExitComplete={() => setPhase(current => current === "fading" ? "centered" : current)}>
-        {phase === "mapping" ? <motion.div key={`map-${journey}`} className="destination-map-stage" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .65, ease: "easeOut" }}>
+        {phase === "mapping" ? <motion.div key={`map-${journey}`} className="destination-map-stage" initial={false} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .65, ease: "easeOut" }}>
           <DestinationMap onZoomComplete={() => finishZoom(journey)} />
-          <div className="map-caption"><span>Brasil <span aria-hidden="true">/</span> Espírito Santo <span aria-hidden="true">/</span> <strong>Viana</strong></span><button type="button" onClick={replay} aria-label="Repetir aproximação do mapa até Viana"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6" /></svg>Rever viagem</button></div>
+          <div className="map-opening-copy"><Logo variant="hero" className="map-opening-logo" /><h2>Dia D do Turismo.<br /><em>A viagem começa aqui.</em></h2><p>8 de novembro de 2026 · Viana, ES</p></div>
+          <div className="map-caption"><span>Brasil <span aria-hidden="true">/</span> Espírito Santo <span aria-hidden="true">/</span> <strong>Viana</strong></span><button type="button" onClick={() => finishZoom(journey)}>Pular abertura <DirectionArrow /></button></div>
           <a className="map-source" href="https://servicodados.ibge.gov.br/api/docs/malhas?versao=3" target="_blank" rel="noopener noreferrer">Base cartográfica: IBGE · localização do município</a>
         </motion.div> : null}
         </AnimatePresence>
