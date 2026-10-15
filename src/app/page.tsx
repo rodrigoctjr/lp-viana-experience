@@ -12,12 +12,14 @@ import { ImpactCta } from "@/components/sections/ImpactCta";
 import { Pillars } from "@/components/sections/Pillars";
 import { QuizTotemSection } from "@/components/sections/QuizTotemSection";
 import { RunnerGameSection } from "@/components/sections/RunnerGameSection";
+import { DestinationExplorerProvider } from "@/components/providers/DestinationExplorerProvider";
 
 export default function HomePage() {
   const [refCopy, setRefCopy] = useState<string | undefined>();
 
   return (
     <MotionConfig reducedMotion="user">
+      <DestinationExplorerProvider>
       <RefHandler onRefCopy={setRefCopy} />
       <Header />
       <main>
@@ -30,6 +32,7 @@ export default function HomePage() {
         <ImpactCta />
       </main>
       <Footer />
+      </DestinationExplorerProvider>
     </MotionConfig>
   );
 }

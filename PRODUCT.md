@@ -26,3 +26,5 @@ src/data/attractions.ts e API existente de vouchers são as fontes de informaç�
 A capa do hero ocupa a altura dinâmica da tela, incluindo o cabeçalho. A faixa fotográfica fica abaixo da capa. O mapa móvel usa a mesma área do conteúdo, sem empilhar uma segunda tela durante a introdução. Telas baixas recebem espaçamento e marca compactos; conteúdo ampliado por acessibilidade pode expandir a capa para preservar a leitura.
 
 A apresentação turística usa resumo e fotografias após a capa; cultura, natureza e sabores distribuem o texto do cliente. A leitura histórica complementar fica em /historia, acessível pelo bloco de cultura e pela foto da estação.
+
+A exploração dos temas acontece em popup compartilhado nas duas seções, preservando URL e posição na página. A rota histórica permanece somente para acesso direto; as entradas principais abrem o tema no overlay.
