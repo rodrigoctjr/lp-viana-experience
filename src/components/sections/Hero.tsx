@@ -1,11 +1,11 @@
 "use client";
 import { DirectionArrow } from "@/components/ui/DirectionArrow";
 
-import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "motion/react";
 import { Logo } from "@/components/ui/Logo";
 import { DestinationMap } from "@/components/hero/DestinationMap";
+import { HeroCarousel, HeroFilmstrip, useHeroRotation } from "@/components/hero/HeroCarousel";
 import { NatureBackdrop } from "@/components/ui/NatureBackdrop";
 import { InstitutionalLogos } from "@/components/ui/InstitutionalLogos";
 
@@ -14,6 +14,7 @@ export function Hero({ refCopy }: { refCopy?: string }) {
   const activeJourney = useRef(0);
   const [phase, setPhase] = useState<"mapping" | "fading" | "centered">("mapping");
   const reduced = useReducedMotion();
+  const slides = useHeroRotation(phase === "centered");
   const finishZoom = useCallback((completedJourney: number) => {
     if (completedJourney === activeJourney.current) setPhase(current => current === "mapping" ? "fading" : current);
   }, []);
@@ -28,7 +29,7 @@ export function Hero({ refCopy }: { refCopy?: string }) {
       <NatureBackdrop />
       <motion.div className="hero-city-scene" aria-hidden="true" initial={false} animate={{ opacity: phase === "mapping" ? 0 : 1 }} transition={{ duration: reduced ? 0 : .85, ease: "easeOut" }}>
         <motion.div className="hero-city-camera" initial={false} animate={{ scale: phase === "mapping" ? 1.08 : 1 }} transition={{ duration: reduced ? 0 : 2.4, ease: [.23, 1, .32, 1] }}>
-          <Image src="/images/viana/igreja-matriz-atual.png" alt="" fill priority sizes="100vw" className="hero-city-image" />
+          <HeroCarousel active={slides.active} rotating={slides.rotating} />
         </motion.div>
         <div className="hero-city-shade" />
       </motion.div>
@@ -51,6 +52,7 @@ export function Hero({ refCopy }: { refCopy?: string }) {
         </motion.div> : null}
         </AnimatePresence>
       </motion.div>
+      {phase === "centered" ? <HeroFilmstrip active={slides.active} rotating={slides.rotating} onSelect={slides.goTo} /> : null}
       <InstitutionalLogos className="hero-institutional" />
     </section>
     </LayoutGroup>

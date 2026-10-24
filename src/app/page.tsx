@@ -4,6 +4,8 @@ import { useState } from "react";
 import { MotionConfig } from "motion/react";
 import { RefHandler } from "@/components/RefHandler";
 import { AttractionsSection } from "@/components/sections/AttractionsSection";
+import { DayGuideSection } from "@/components/sections/DayGuideSection";
+import { DayRulesSection } from "@/components/sections/DayRulesSection";
 import { DiaDTeaser } from "@/components/sections/DiaDTeaser";
 import { Footer } from "@/components/sections/Footer";
 import { Header } from "@/components/sections/Header";
@@ -27,7 +29,9 @@ export default function HomePage() {
         <Hero refCopy={refCopy} />
         <Pillars />
         <DiaDTeaser />
+        <DayGuideSection />
         <AttractionsSection />
+        <DayRulesSection />
         <QuizTotemSection />
         <RunnerGameSection />
         <ImpactCta />

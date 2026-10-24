@@ -1,6 +1,7 @@
 export const NAV_LINKS = [
   { label: "Destinos", href: "#pillars" },
   { label: "Dia D", href: "#dia-d" },
+  { label: "Como funciona", href: "#programacao" },
   { label: "Atrações", href: "#atracoes" },
   { label: "Quiz", href: "#quiz" },
   { label: "Jogo", href: "#jogo" },
@@ -8,7 +9,7 @@ export const NAV_LINKS = [
 
 export const WHATSAPP_INSTITUTIONAL = "5527999990000";
 
-export const EVENT_TARGET = new Date("2026-11-08T09:00:00-03:00");
+export const EVENT_TARGET = new Date("2026-11-08T06:00:00-03:00");
 export const EVENT_DATE_LABEL = "08.11.2026";
 
 export const REF_COPY: Record<string, string> = {
