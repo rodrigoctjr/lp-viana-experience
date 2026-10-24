@@ -13,7 +13,7 @@ import { Pillars } from "@/components/sections/Pillars";
 import { QuizTotemSection } from "@/components/sections/QuizTotemSection";
 import { RunnerGameSection } from "@/components/sections/RunnerGameSection";
 import { DestinationExplorerProvider } from "@/components/providers/DestinationExplorerProvider";
-import { AdventureScene } from "@/components/sections/AdventureScene";
+import { JourneyMotion } from "@/components/ui/JourneyMotion";
 
 export default function HomePage() {
   const [refCopy, setRefCopy] = useState<string | undefined>();
@@ -26,7 +26,6 @@ export default function HomePage() {
       <main>
         <Hero refCopy={refCopy} />
         <Pillars />
-        <AdventureScene />
         <DiaDTeaser />
         <AttractionsSection />
         <QuizTotemSection />
@@ -34,6 +33,7 @@ export default function HomePage() {
         <ImpactCta />
       </main>
       <Footer />
+      <JourneyMotion />
       </DestinationExplorerProvider>
     </MotionConfig>
   );

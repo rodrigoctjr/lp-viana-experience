@@ -564,26 +564,7 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
 .destination-explorer-position button { display: grid; place-items: center; width: 44px; height: 44px; cursor: pointer; }
 .destination-explorer-position button span { width: 8px; height: 8px; border-radius: 50%; background: #77958b; }
 .destination-explorer-position button[aria-current="step"] span { width: 20px; border-radius: 8px; background: #143c42; }
-.adventure-chapter { background: #e7eddb; color: #143c42; padding-block: 96px; }
-.adventure-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; min-height: 140svh; align-items: start; }
-.adventure-copy { position: sticky; top: 180px; padding-top: 40px; }
-.adventure-copy h2 { font: 400 clamp(38px,4.5vw,64px)/1.08 var(--font-dm-serif),serif; letter-spacing: -.03em; }
-.adventure-copy h2 em { color: #326650; }
-.adventure-copy > p { max-width: 40ch; font-size: 16px; line-height: 1.8; margin-top: 24px; }
-.adventure-scroll-cue { display: block; margin: 24px 0; font-size: 13px; color: #476267; }
-.adventure-stage { position: sticky; top: 112px; height: min(72svh,660px); border-radius: 32px; background: #d1e1c9; overflow: hidden; }
-.adventure-stage canvas { display: block; width: 100%; height: 100%; }
-.adventure-scene-caption { position: absolute; bottom: 20px; left: 24px; right: 24px; text-align: center; font-size: 12px; color: #143c42; pointer-events: none; }
-.adventure-poster { position: absolute; inset: 0; }
-.adventure-poster img { object-fit: cover; }
-.adventure-chapter:not([data-scene="ready"]) .adventure-scene-caption { color: white; text-shadow: 0 1px 5px #143c42; }
-.adventure-chapter[data-reduced="true"] .adventure-layout,.adventure-chapter[data-scene="fallback"] .adventure-layout { min-height: auto; }
 @media (max-width: 767px) {
-  .adventure-chapter { padding-block: 56px; }
-  .adventure-layout { display: block; min-height: 155svh; }
-  .adventure-copy { position: static; padding-top: 0; }
-  .adventure-copy > p { font-size: 15px; }
-  .adventure-stage { margin-top: 32px; top: 92px; height: min(66svh,500px); }
   .institutional-logo-discover { height: 36px; }
   .institutional-logo-city { height: 46px; }
   .hero-city-image { object-position: 44% center; }
@@ -620,3 +601,21 @@ section > .container-site > .section-eyebrow, section > .container-site > div > 
 @media (max-width: 767px) and (max-height: 900px) {
   .hero-photographic .destination-copy h1 { max-width: 280px; margin-bottom: 10px; }
 }
+
+.journey-motion { position: fixed; inset: 0; z-index: 60; pointer-events: none; overflow: hidden; opacity: 0; color: #326650; }
+.journey-motion svg { display: block; width: 100%; height: 100%; pointer-events: none; }
+.journey-motion path { stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+.journey-contours { opacity: 0; }
+.journey-contours path { stroke-width: .8; }
+.journey-track { stroke-width: 1; opacity: .08; }
+.journey-line { stroke-width: 1.2; opacity: .32; }
+.journey-trail { stroke-width: 1.7; opacity: .78; }
+.journey-marker-ring { stroke: currentColor; stroke-width: .8; opacity: .45; }
+.journey-marker-point { fill: currentColor; opacity: .85; }
+@media (max-width: 767px) {
+  .journey-contours [data-contour="4"],.journey-contours [data-contour="5"] { display: none; }
+  .journey-line { opacity: .25; }
+  .journey-trail { stroke-width: 1.4; opacity: .65; }
+  .journey-marker-ring { r: 6px; }
+}
+@media (prefers-reduced-motion: reduce) { .journey-motion { display: none; } }
