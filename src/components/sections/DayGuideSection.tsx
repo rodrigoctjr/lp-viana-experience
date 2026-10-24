@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { TextReveal } from "@/components/ui/TextReveal";
-import { programItems, vianaExperienceContacts, type ProgramItem } from "@/data/programacao";
+import { programItems, type ProgramItem } from "@/data/programacao";
 import { cn, scrollToSection } from "@/lib/utils";
 
 const dayFacts = [
@@ -279,39 +279,21 @@ export function DayGuideSection() {
         })}
       </ol>
 
-      <div className="mt-12 flex flex-col gap-6 rounded-3xl bg-brown p-6 text-on-accent sm:p-8 lg:flex-row lg:items-center lg:justify-between">
-        <div>
-          <p className="font-mono-label text-[10px] text-accent-sun">Informações Viana Experience</p>
-          <p className="mt-2 flex flex-wrap gap-x-6 gap-y-1 font-body text-base">
-            {vianaExperienceContacts.map((contact) => (
-              <a
-                key={contact.phone}
-                href={whatsappUrl(contact.phone)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline-offset-4 hover:underline"
-              >
-                {contact.name} · {contact.phoneLabel}
-              </a>
-            ))}
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center gap-4">
-          <button
-            type="button"
-            onClick={() => scrollToSection("atracoes")}
-            className="rounded-full bg-on-accent px-6 py-3 font-body text-xs font-bold uppercase tracking-[0.12em] text-brown transition-transform hover:scale-[1.03]"
-          >
-            Ver parceiros e cortesias →
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToSection("regras")}
-            className="font-body text-sm text-on-accent/80 underline underline-offset-4 hover:text-on-accent"
-          >
-            Regras e dúvidas
-          </button>
-        </div>
+      <div className="mt-12 flex flex-wrap items-center gap-4">
+        <button
+          type="button"
+          onClick={() => scrollToSection("atracoes")}
+          className="rounded-full bg-brown px-6 py-3 font-body text-xs font-bold uppercase tracking-[0.12em] text-on-accent transition-transform hover:scale-[1.03]"
+        >
+          Ver parceiros e fazer inscrições →
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollToSection("regras")}
+          className="font-body text-sm text-primary/70 underline underline-offset-4 hover:text-primary"
+        >
+          Regras e dúvidas
+        </button>
       </div>
     </SectionShell>
   );

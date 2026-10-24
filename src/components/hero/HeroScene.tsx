@@ -51,7 +51,7 @@ export function HeroScene() {
         />
       </motion.svg>
 
-      {/* Contour lines — Rota das Águas & trilhas */}
+      {/* Contour lines: Rota das Águas e trilhas */}
       <svg
         className="absolute inset-0 size-full opacity-[0.14]"
         viewBox="0 0 1440 900"

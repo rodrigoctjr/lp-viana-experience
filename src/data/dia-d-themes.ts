@@ -39,7 +39,7 @@ export const diaDThemes = [
   {
     id: "gastronomia",
     title: "Gastronomia",
-    description: "Comida mineira, fogão à lenha e o mangará dos parceiros do Dia D.",
+    description: "Comida mineira, fogão a lenha e o mangará dos parceiros do Dia D.",
     icon: "food" as const,
   },
   {

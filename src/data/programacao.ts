@@ -1,4 +1,3 @@
-import { ATTRACTION_FORM_URL } from "@/data/attractions";
 
 // Programação oficial do Dia D (documento "Programação Viana Experience", out/2026).
 
@@ -33,6 +32,15 @@ export interface ProgramItem {
   coupon?: string;
   contact?: ProgramContact;
 }
+
+// Formulários de inscrição para o sorteio, um por atividade.
+export const PROGRAM_FORMS = {
+  banhoDeFloresta: "https://forms.gle/Z5ERhnwmw9Sae8HP8",
+  pedal: "https://forms.gle/yqNqLRoeQtjxRuVbA",
+  cursoCervejeiro: "https://forms.gle/wRPKVe1HcqHWTXmr8",
+} as const;
+
+const RAFFLE_SIGNUP_LABEL = "Inscrever e concorrer";
 
 const RADICAL_CONTACT: ProgramContact = {
   name: "Radical",
@@ -76,7 +84,7 @@ export const programItems: ProgramItem[] = [
         value:
           "Short, bermuda ou legging, meias apropriadas e tênis de corrida. Leve boné, protetor solar e óculos de sol.",
       },
-      { label: "Kit", value: "As orientações chegam no e-mail da inscrição." },
+      { label: "Kit", value: "As orientações chegam pelo e-mail informado na inscrição." },
       { label: "Documento", value: "Identificação com foto." },
     ],
     maps: [{ label: "Parque Linear de Canaã", url: "https://maps.app.goo.gl/ZkaMXUnVto9V6FHD6" }],
@@ -179,7 +187,7 @@ export const programItems: ProgramItem[] = [
       { label: "Concentração", value: "6h30" },
       { label: "Largada", value: "7h30" },
     ],
-    highlights: ["Gratuito", "Vagas ilimitadas"],
+    highlights: ["Sorteio para os inscritos"],
     details: [
       {
         label: "Percurso",
@@ -187,7 +195,7 @@ export const programItems: ProgramItem[] = [
       },
       { label: "Como chegar", value: PARQUE_EXPOSICOES_ACESSO },
       { label: "Estacionamento", value: "Gratuito, com bastante espaço no Parque de Exposições." },
-      { label: "Inscrição", value: "Gratuita, pelo formulário oficial, até 06/11." },
+      { label: "Inscrição", value: "Pelo formulário, até 06/11. Inscreva-se e concorra: sorteio para os inscritos." },
       { label: "Idade", value: "Menores de idade só com os pais." },
       {
         label: "O que levar",
@@ -196,7 +204,7 @@ export const programItems: ProgramItem[] = [
       { label: "Documento", value: "Identificação com foto." },
     ],
     maps: [{ label: "Parque de Exposições", url: PARQUE_EXPOSICOES_MAPS }],
-    signup: { label: "Inscrever no formulário", url: ATTRACTION_FORM_URL },
+    signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.pedal },
     contact: { name: "Layzzane", phone: "5527999559955", phoneLabel: "(27) 99955-9955" },
   },
   {
@@ -231,7 +239,7 @@ export const programItems: ProgramItem[] = [
     time: "8h",
     title: "Vale das Cachoeiras e sítios",
     place: "Cachoeira do Aloísio, Piscinas Zé Maria, Parque Túnel da Alegria, Sítio Gava e Sítio Água Viva",
-    summary: "Dia de lazer nos parceiros, com cortesias reservadas direto com cada um.",
+    summary: "Dia de lazer nos parceiros. Inscreva-se e concorra: sorteio para os inscritos.",
   },
   {
     id: "banho-de-floresta",
@@ -240,7 +248,7 @@ export const programItems: ProgramItem[] = [
     organizer: "Equipe do Incaper · Jucuruaba",
     place: "Fazenda Experimental Reginaldo Conde (Incaper), Jucuruaba",
     schedule: [{ label: "Sessões", value: "9h, 10h e 11h" }],
-    highlights: ["Gratuito", "40 vagas por sessão", "De 8 a 80 anos"],
+    highlights: ["Sorteio para os inscritos", "De 8 a 80 anos"],
     details: [
       { label: "Como chegar", value: `De carro ou aplicativo. ${INCAPER_ACESSO}` },
       { label: "Estacionamento", value: "Gratuito, no local." },
@@ -248,7 +256,7 @@ export const programItems: ProgramItem[] = [
         label: "Transporte",
         value: "Não há transporte gratuito. Quem precisar de apoio deve falar com a organização até 06/11.",
       },
-      { label: "Inscrição", value: "Gratuita, até 06/11." },
+      { label: "Inscrição", value: "Pelo formulário, até 06/11. Inscreva-se e concorra: sorteio para os inscritos." },
       {
         label: "O que vestir",
         value:
@@ -263,7 +271,7 @@ export const programItems: ProgramItem[] = [
       { label: "Documento", value: "Identificação oficial com foto." },
     ],
     maps: [{ label: "Fazenda Experimental", url: "https://maps.app.goo.gl/HWS9wsB3SeL3zNEy8" }],
-    signup: { label: "Inscrever no formulário", url: ATTRACTION_FORM_URL },
+    signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.banhoDeFloresta },
     contact: { name: "Incaper Jucuruaba", phone: "5527995831368", phoneLabel: "(27) 99583-1368" },
   },
   {
@@ -272,18 +280,22 @@ export const programItems: ProgramItem[] = [
     title: "Cursos cervejeiros",
     place: "Cervejarias Piabier (Formate), Indomável (Centro) e Origem (Jucu)",
     schedule: [{ label: "Horário", value: "9h às 17h" }],
-    highlights: ["30 vagas por turma", "Certificado do IFES"],
+    highlights: ["Sorteio para os inscritos", "Certificado do IFES"],
     details: [
-      { label: "Cervejeiro Caseiro", value: "Cervejaria Piabier, em Formate. 30 vagas." },
-      { label: "Cervejeiro Caseiro", value: "Cervejaria Indomável, no Centro de Viana. 30 vagas." },
-      { label: "Harmonização com Cerveja", value: "Cervejaria Origem, no Jucu. 30 vagas." },
+      { label: "Cervejeiro Caseiro", value: "Cervejaria Piabier, em Formate." },
+      { label: "Cervejeiro Caseiro", value: "Cervejaria Indomável, no Centro de Viana." },
+      { label: "Harmonização com Cerveja", value: "Cervejaria Origem, no Jucu." },
+      {
+        label: "Inscrição",
+        value: "Um formulário só, em que você escolhe a turma. Inscreva-se e concorra: sorteio para os inscritos.",
+      },
     ],
     maps: [
       { label: "Piabier", url: "https://maps.app.goo.gl/Vx1Fpd728ZZS6LLy9" },
       { label: "Indomável", url: "https://maps.app.goo.gl/AtFUwSauL2SMZzkQ9" },
       { label: "Origem", url: "https://maps.app.goo.gl/QoGzDSfSDLXrhGDb9" },
     ],
-    signupNote: "Inscrições em breve",
+    signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.cursoCervejeiro },
   },
   {
     id: "brinde-artesanato",
@@ -304,7 +316,7 @@ export const programItems: ProgramItem[] = [
     time: "16h",
     title: "Shows musicais",
     place: "Viana Restaurante (Estação)",
-    summary: "Dupla João Pedro e Miguel e Samba DM.",
+    summary: "Com a dupla João Pedro e Miguel e o Samba DM.",
   },
 ];
 

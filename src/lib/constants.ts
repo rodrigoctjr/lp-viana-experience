@@ -7,7 +7,8 @@ export const NAV_LINKS = [
   { label: "Jogo", href: "#jogo" },
 ] as const;
 
-export const WHATSAPP_INSTITUTIONAL = "5527999990000";
+// Contato de informações do Viana Experience (Júlio).
+export const WHATSAPP_INSTITUTIONAL = "5527999130746";
 
 export const EVENT_TARGET = new Date("2026-11-08T06:00:00-03:00");
 export const EVENT_DATE_LABEL = "08.11.2026";

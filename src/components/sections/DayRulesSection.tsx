@@ -3,7 +3,7 @@
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { TextReveal } from "@/components/ui/TextReveal";
-import { couponRules, courtesyRules, dayFaqItems } from "@/data/dia-8";
+import { couponRules, dayFaqItems, raffleRules } from "@/data/dia-8";
 
 function RuleList({ title, rules }: { title: string; rules: readonly string[] }) {
   return (
@@ -36,7 +36,7 @@ export function DayRulesSection() {
 
       <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-12">
         <div className="space-y-8 rounded-3xl bg-brown p-8 text-on-accent sm:p-10 lg:col-span-5">
-          <RuleList title="Cortesias" rules={courtesyRules} />
+          <RuleList title="Sorteio" rules={raffleRules} />
           <RuleList title="Cupons de desconto" rules={couponRules} />
         </div>
 

@@ -10,7 +10,6 @@ import { VoucherDialog } from "@/components/sections/VoucherDialog";
 import {
   ATTRACTION_FILTERS,
   attractions,
-  ATTRACTION_FORM_URL,
   whatsappClaimUrl,
   type Attraction,
   type AttractionFilter,
@@ -120,16 +119,21 @@ function AttractionLinks({
           {item.externalLabel ?? "Abrir o site"}
         </a>
       ) : null}
-      {item.claim === "form" ? (
+      {item.claim === "form" && item.formUrl ? (
         <a
-          href={ATTRACTION_FORM_URL}
+          href={item.formUrl}
           target="_blank"
           rel="noopener noreferrer"
           className={cn(actionClass, "bg-brown text-on-accent hover:bg-brown-deep")}
         >
-          Inscrever
+          Inscrever e concorrer
           <span className="sr-only"> (abre o formulário em nova aba)</span>
         </a>
+      ) : null}
+      {item.claim === "form" && !item.formUrl ? (
+        <span className={cn(actionClass, "cursor-default bg-brown/10 text-primary/50")}>
+          Inscrições em breve
+        </span>
       ) : null}
       {item.claim === "signup" ? (
         <button
@@ -269,7 +273,7 @@ export function AttractionsSection() {
           </TextReveal>
           <p className="mt-4 max-w-2xl font-body text-[#476267]">
             Aventura com a Radical Oficial, corrida de rua, sítios, cachoeira, parque e restaurantes.
-            Cada parceiro separou vagas ou cortesias para o dia 8 de novembro.
+            Em vários deles, há sorteio para os inscritos: inscreva-se e concorra.
           </p>
         </div>
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrar atrações">
