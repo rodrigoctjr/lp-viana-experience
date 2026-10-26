@@ -16,7 +16,7 @@ export function SectionNext({ copy, label, target, tone = "light" }: SectionNext
     <div className="mt-14 flex flex-col gap-5 border-t border-current/10 pt-8 sm:flex-row sm:items-end sm:justify-between">
       <p
         className={cn(
-          "max-w-xl font-display text-xl italic leading-snug sm:text-2xl",
+          "max-w-xl font-display text-xl leading-snug sm:text-2xl",
           dark ? "text-on-accent" : "text-primary",
         )}
       >

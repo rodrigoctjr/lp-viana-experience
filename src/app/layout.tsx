@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import {
   Alfa_Slab_One,
   Bricolage_Grotesque,
-  DM_Serif_Display,
   JetBrains_Mono,
+  Schibsted_Grotesk,
 } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
-const dmSerif = DM_Serif_Display({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-dm-serif",
+const schibsted = Schibsted_Grotesk({
+  subsets: ["latin", "latin-ext"],
+  weight: ["500", "600"],
+  variable: "--font-schibsted",
   display: "swap",
 });
 
@@ -64,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${dmSerif.variable} ${bricolage.variable} ${jetbrains.variable} ${alfaSlab.variable} antialiased`}
+        className={`${schibsted.variable} ${bricolage.variable} ${jetbrains.variable} ${alfaSlab.variable} antialiased`}
       >
         {children}
         {GA_ID && (
