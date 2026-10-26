@@ -230,7 +230,7 @@ export const programItems: ProgramItem[] = [
       { label: "Concentração", value: "6h30" },
       { label: "Largada", value: "7h30" },
     ],
-    highlights: ["Vagas ilimitadas", "Brinde para os 300 primeiros"],
+    highlights: ["Vagas ilimitadas", "Sorteio para os inscritos"],
     details: [
       {
         label: "Percurso",
@@ -238,7 +238,7 @@ export const programItems: ProgramItem[] = [
       },
       { label: "Como chegar", value: PARQUE_EXPOSICOES_ACESSO },
       { label: "Estacionamento", value: "Gratuito, com bastante espaço no Parque de Exposições." },
-      { label: "Inscrição", value: "No site da Radical, até 06/11." },
+      { label: "Inscrição", value: "No site da Radical, até 06/11. Inscreva-se e concorra: sorteio para os inscritos." },
       { label: "Idade", value: "Acima de 8 anos, com os pais." },
       { label: "O que levar", value: "Roupa de trilha e garrafa de água." },
       { label: "Documento", value: "Identificação com foto." },

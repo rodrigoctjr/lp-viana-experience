@@ -161,8 +161,8 @@ export const attractions: Attraction[] = [
     place: "Radical Oficial",
     summary:
       "Trilha conduzida pela Radical Oficial no Dia D. A mesma equipe organiza o pêndulo e a descida de caiaque.",
-    offer: "Vagas ilimitadas. Os 300 primeiros inscritos ganham brinde.",
-    offerShort: "Brinde aos 300 primeiros",
+    offer: "Inscreva-se e concorra.",
+    offerShort: "Sorteio para os inscritos",
     hours: "Dia D · concentração 6h30, largada 7h30 no Parque de Exposições",
     image: "/images/atracoes/trilha-pontilhao.webp",
     imageAlt: "Grupo caminhando pelos trilhos até o pontilhão de ferro, entre a mata.",
