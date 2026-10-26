@@ -46,6 +46,14 @@ export function Footer({ homePath = "" }: { homePath?: string }) {
               </li>
             ))}
           </ul>
+          <a
+            href="https://www.instagram.com/vianaexperience/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-body text-sm text-on-accent underline-offset-4 hover:underline"
+          >
+            Instagram oficial · @vianaexperience
+          </a>
         </div>
       </div>
     </footer>

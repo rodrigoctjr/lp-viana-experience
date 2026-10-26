@@ -38,9 +38,22 @@ export const PROGRAM_FORMS = {
   banhoDeFloresta: "https://forms.gle/Z5ERhnwmw9Sae8HP8",
   pedal: "https://forms.gle/yqNqLRoeQtjxRuVbA",
   cursoCervejeiro: "https://forms.gle/wRPKVe1HcqHWTXmr8",
+  vianaRestaurante: "https://forms.gle/rR3TfXq13mRmgggT7",
+  cantimDiMinas: "https://forms.gle/tviKVj6Y8MRP1P6NA",
+  recantoDosLagos: "https://forms.gle/dHVpKs4XgbGMje1PA",
+  sitioGava: "https://forms.gle/rd4qRLuMrbi1uvAR7",
+  sitioAguaViva: "https://forms.gle/ixS1Kt8MT3E3HZVFA",
+  parqueTunelDaAlegria: "https://forms.gle/6246EECshgE7mmBj6",
+  piscinasZeMaria: "https://forms.gle/64nMQuQ5fQMbsqkT7",
+  cachoeiraAloisio: "https://forms.gle/Zri7zg7Gm3XdyjxA6",
 } as const;
 
 const RAFFLE_SIGNUP_LABEL = "Inscrever e concorrer";
+const RAFFLE_SIGNUP_DETAIL = "Pelo formulário, até 06/11. Inscreva-se e concorra: sorteio para os inscritos.";
+
+const ROTA_DAS_AGUAS = "Rota das Águas · Vale das Cachoeiras";
+const ROTA_DAS_AGUAS_DESPESAS =
+  "O que você consumir no local é por sua conta. Confira com o espaço valores de entrada, disponibilidade e condições de acesso.";
 
 const RADICAL_CONTACT: ProgramContact = {
   name: "Radical",
@@ -235,11 +248,118 @@ export const programItems: ProgramItem[] = [
     contact: RADICAL_CONTACT,
   },
   {
-    id: "vale-das-cachoeiras",
+    id: "sitio-gava",
     time: "8h",
-    title: "Vale das Cachoeiras e sítios",
-    place: "Cachoeira do Aloísio, Piscinas Zé Maria, Parque Túnel da Alegria, Sítio Gava e Sítio Água Viva",
-    summary: "Dia de lazer nos parceiros. Inscreva-se e concorra: sorteio para os inscritos.",
+    title: "Sítio Gava",
+    organizer: ROTA_DAS_AGUAS,
+    place: "Piapitangui, Viana",
+    schedule: [{ label: "Funcionamento", value: "9h às 17h" }],
+    highlights: ["Sorteio para os inscritos"],
+    details: [
+      {
+        label: "Atrações",
+        value: "Piscinas, churrasqueiras, campo de futebol, trilha ecológica, cama elástica e balanços.",
+      },
+      { label: "Atenção", value: "É proibido o consumo de bebidas alcoólicas no sítio." },
+      { label: "Inscrição", value: RAFFLE_SIGNUP_DETAIL },
+      { label: "Despesas", value: ROTA_DAS_AGUAS_DESPESAS },
+    ],
+    maps: [{ label: "Sítio Gava", url: "https://maps.app.goo.gl/jXQh65KU5yFFXf4T7" }],
+    signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.sitioGava },
+  },
+  {
+    id: "sitio-agua-viva",
+    time: "8h",
+    title: "Sítio Água Viva",
+    organizer: ROTA_DAS_AGUAS,
+    place: "Estrada de Formate a Piapitangui, Viana",
+    schedule: [{ label: "Funcionamento", value: "8h às 17h" }],
+    highlights: ["Sorteio para os inscritos"],
+    details: [
+      {
+        label: "Atrações",
+        value:
+          "Piscinas de água corrente, cachoeira, represa no rio, churrasqueiras, campo de areia, estacionamento e pousada.",
+      },
+      {
+        label: "Como chegar",
+        value: "Na estrada principal que liga Formate a Piapitangui, a cerca de 3,7 km da BR-262. CEP 29139-899.",
+      },
+      { label: "Inscrição", value: RAFFLE_SIGNUP_DETAIL },
+      { label: "Despesas", value: ROTA_DAS_AGUAS_DESPESAS },
+    ],
+    maps: [{ label: "Sítio Água Viva", url: "https://maps.app.goo.gl/rChKpVhDww8kiJA19" }],
+    signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.sitioAguaViva },
+  },
+  {
+    id: "parque-tunel-da-alegria",
+    time: "8h",
+    title: "Parque Túnel da Alegria",
+    organizer: ROTA_DAS_AGUAS,
+    place: "Vale das Cachoeiras, estrada de Formate",
+    schedule: [{ label: "Funcionamento", value: "8h às 17h" }],
+    highlights: ["Sorteio para os inscritos"],
+    details: [
+      { label: "Atrações", value: "Cachoeira, piscinas, toboágua e área de churrasco." },
+      {
+        label: "Destaque",
+        value: "Lazer no meio da natureza, cercado pelo Rio Santo Agostinho, no Vale das Cachoeiras.",
+      },
+      {
+        label: "Como chegar",
+        value: "Pela BR-262, depois da Sede de Viana, sentido Domingos Martins, seguindo pela estrada de Formate.",
+      },
+      { label: "Inscrição", value: RAFFLE_SIGNUP_DETAIL },
+      { label: "Despesas", value: ROTA_DAS_AGUAS_DESPESAS },
+    ],
+    maps: [{ label: "Parque Túnel da Alegria", url: "https://maps.app.goo.gl/3AZrGenTYriDaP5ZA" }],
+    signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.parqueTunelDaAlegria },
+  },
+  {
+    id: "piscinas-ze-maria",
+    time: "8h",
+    title: "Piscinas Zé Maria",
+    organizer: ROTA_DAS_AGUAS,
+    place: "Borbas, Viana",
+    schedule: [{ label: "Funcionamento", value: "8h às 17h" }],
+    highlights: ["Sorteio para os inscritos"],
+    details: [
+      {
+        label: "Atrações",
+        value: "Piscinas para adultos e crianças, churrasqueiras, área coberta, parquinho infantil e estacionamento.",
+      },
+      {
+        label: "Destaque",
+        value: "Área arborizada às margens do Rio Santo Agostinho, boa para descansar perto da natureza.",
+      },
+      { label: "Inscrição", value: RAFFLE_SIGNUP_DETAIL },
+      { label: "Despesas", value: ROTA_DAS_AGUAS_DESPESAS },
+    ],
+    maps: [{ label: "Piscinas Zé Maria", url: "https://maps.app.goo.gl/FQKdWmxyoRNCe4cE9" }],
+    signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.piscinasZeMaria },
+  },
+  {
+    id: "cachoeira-aloisio",
+    time: "8h",
+    title: "Cachoeira do Aloísio",
+    organizer: ROTA_DAS_AGUAS,
+    place: "Borbas, Viana",
+    schedule: [{ label: "Funcionamento", value: "7h às 20h" }],
+    highlights: ["Sorteio para os inscritos"],
+    details: [
+      {
+        label: "Atrações",
+        value: "Cachoeira, trilhas, piscina, área de camping e cerca de 60 churrasqueiras.",
+      },
+      {
+        label: "Destaque",
+        value: "O passeio sobe o morro, passa pela mata e segue a pé pelo leito do rio.",
+      },
+      { label: "Inscrição", value: RAFFLE_SIGNUP_DETAIL },
+      { label: "Despesas", value: ROTA_DAS_AGUAS_DESPESAS },
+    ],
+    maps: [{ label: "Cachoeira do Aloísio", url: "https://maps.app.goo.gl/MFHfunhBA2cqPkqx8" }],
+    signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.cachoeiraAloisio },
   },
   {
     id: "banho-de-floresta",
@@ -302,14 +422,74 @@ export const programItems: ProgramItem[] = [
     time: "11h",
     title: "Brinde e exposição de artesanato",
     place: "Viana Restaurante (Estação)",
+    schedule: [{ label: "Artesanato", value: "11h às 18h" }],
     summary: "A partir das 11h, os participantes retiram o brinde. No mesmo horário abre a exposição de artesanato.",
   },
   {
-    id: "almoco",
-    time: "12h",
-    title: "Almoço",
-    place: "Viana Restaurante (Estação), Cantim di Minas e Recanto dos Lagos",
-    summary: "No Recanto dos Lagos, o almoço tem pedalinho.",
+    id: "viana-restaurante",
+    time: "11h",
+    title: "Viana Restaurante · almoço",
+    place: "Estação Ferroviária de Viana",
+    schedule: [
+      { label: "Almoço", value: "a partir das 11h" },
+      { label: "Espaço", value: "9h às 18h" },
+    ],
+    highlights: ["Sorteio para os inscritos"],
+    details: [{ label: "Inscrição", value: RAFFLE_SIGNUP_DETAIL }],
+    maps: [{ label: "Viana Restaurante", url: "https://maps.app.goo.gl/7436G7t3xxzzbR3d8" }],
+    signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.vianaRestaurante },
+  },
+  {
+    id: "cantim-di-minas",
+    time: "11h",
+    title: "Cantim di Minas · almoço",
+    place: "Universal, Viana",
+    schedule: [{ label: "Almoço", value: "11h às 15h" }],
+    highlights: ["Sorteio para os inscritos"],
+    details: [{ label: "Inscrição", value: RAFFLE_SIGNUP_DETAIL }],
+    maps: [{ label: "Cantim di Minas", url: "https://maps.app.goo.gl/3zKjWMZAkJCqQqCa8" }],
+    signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.cantimDiMinas },
+  },
+  {
+    id: "recanto-dos-lagos",
+    time: "11h",
+    title: "Recanto dos Lagos · almoço e pedalinho",
+    place: "Universal, Viana",
+    schedule: [
+      { label: "Almoço", value: "11h às 15h" },
+      { label: "Espaço", value: "9h às 17h" },
+    ],
+    highlights: ["Sorteio para os inscritos"],
+    details: [{ label: "Inscrição", value: RAFFLE_SIGNUP_DETAIL }],
+    maps: [{ label: "Recanto dos Lagos", url: "https://maps.app.goo.gl/NXFkTPxmXCDzripK7" }],
+    signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.recantoDosLagos },
+  },
+  {
+    id: "pesque-e-pague-do-nenem",
+    time: "11h",
+    title: "Pesque e Pague do Neném",
+    place: "Viana",
+    schedule: [
+      { label: "Espaço e porções", value: "8h às 18h" },
+      { label: "Self-service", value: "11h30 às 14h30" },
+    ],
+    summary: "Entrada gratuita, sem reserva. Música ao vivo a partir das 12h.",
+    highlights: ["Entrada gratuita", "Sem reserva", "Música ao vivo"],
+    details: [
+      { label: "Música ao vivo", value: "A partir das 12h, com Max & André e Jobson Mayer." },
+      {
+        label: "Gastronomia",
+        value:
+          "Almoço self-service com churrasco a R$ 99,99/kg. Porções de tilápia, camarão, carne de sol, frango e outras, além de bebidas, sucos e drinks.",
+      },
+      {
+        label: "Lazer",
+        value:
+          "Pesca esportiva R$ 30 (com equipamento próprio), pesca comum R$ 10 (com vara e isca) e piscina R$ 20 para adultos e R$ 10 para crianças até 12 anos. Ambiente familiar, com mais de 20 espécies de peixes.",
+      },
+      { label: "Couvert artístico", value: "R$ 10." },
+    ],
+    maps: [{ label: "Pesque e Pague do Neném", url: "https://maps.app.goo.gl/F3Hhf55F7Zzt4AGA8" }],
   },
   {
     id: "shows",
