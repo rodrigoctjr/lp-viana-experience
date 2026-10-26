@@ -13,6 +13,17 @@ export function Footer({ homePath = "" }: { homePath?: string }) {
           <p className="mt-3 font-body text-xs text-on-accent/50">
             © 2026 Viana Experience · Dia D 08.11.2026 · Viana/ES
           </p>
+          <p className="mt-1 font-body text-xs text-on-accent/50">
+            Desenvolvido por{" "}
+            <a
+              href="https://www.vilainfo.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whitespace-nowrap text-on-accent/80 underline-offset-4 transition-colors hover:text-accent-sun hover:underline"
+            >
+              Vila Info
+            </a>
+          </p>
         </div>
 
         <nav aria-label="Rodapé">
