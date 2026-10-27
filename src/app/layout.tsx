@@ -47,10 +47,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/polo-cervejeiro-poster.png",
-        width: 800,
-        height: 800,
-        alt: "Viana Experience, Polo Cervejeiro Dia D do Turismo",
+        url: "/og/viana-experience-dia-d.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Viana Experience, Dia D do Turismo em 8 de novembro de 2026, Viana/ES",
       },
     ],
   },
