@@ -37,6 +37,7 @@ export interface ProgramItem {
 export const PROGRAM_FORMS = {
   banhoDeFloresta: "https://forms.gle/Z5ERhnwmw9Sae8HP8",
   pedal: "https://forms.gle/yqNqLRoeQtjxRuVbA",
+  cavalgada: "https://forms.gle/MqrPokGc4wTr2gLm9",
   cursoCervejeiro: "https://forms.gle/wRPKVe1HcqHWTXmr8",
   vianaRestaurante: "https://forms.gle/rR3TfXq13mRmgggT7",
   cantimDiMinas: "https://forms.gle/tviKVj6Y8MRP1P6NA",
@@ -219,6 +220,29 @@ export const programItems: ProgramItem[] = [
     maps: [{ label: "Parque de Exposições", url: PARQUE_EXPOSICOES_MAPS }],
     signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.pedal },
     contact: { name: "Layzzane", phone: "5527999559955", phoneLabel: "(27) 99955-9955" },
+  },
+  {
+    id: "cavalgada",
+    time: "6h30",
+    title: "Cavalgada",
+    place: "Parque de Exposições de Viana (Pavilhão de Eventos)",
+    schedule: [
+      { label: "Concentração", value: "6h30" },
+      { label: "Largada", value: "7h30" },
+    ],
+    highlights: ["Vagas ilimitadas"],
+    details: [
+      { label: "Percurso", value: "Saída do Parque de Exposições." },
+      { label: "Como chegar", value: PARQUE_EXPOSICOES_ACESSO },
+      { label: "Estacionamento", value: "Gratuito, com bastante espaço no Parque de Exposições." },
+      { label: "Inscrição", value: "Pelo formulário, até 06/11." },
+      { label: "Idade", value: "Menores de idade só com os pais." },
+      { label: "O que levar", value: "Roupa adequada para cavalgada e garrafa de água." },
+      { label: "Documento", value: "Identificação com foto." },
+    ],
+    maps: [{ label: "Parque de Exposições", url: PARQUE_EXPOSICOES_MAPS }],
+    signup: { label: "Inscrever na cavalgada", url: PROGRAM_FORMS.cavalgada },
+    contact: { name: "Samira", phone: "5527992810373", phoneLabel: "(27) 99281-0373" },
   },
   {
     id: "trilha",
