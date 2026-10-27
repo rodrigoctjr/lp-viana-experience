@@ -234,6 +234,23 @@ export const attractions: Attraction[] = [
     claim: "form",
   },
   {
+    id: "cavalgada",
+    name: "Cavalgada",
+    category: "Aventura",
+    place: "Parque de Exposições · Pavilhão de Eventos",
+    summary:
+      "Saída do Parque de Exposições de Viana, com estacionamento gratuito. Vá com roupa adequada e leve água. Menores só com os pais. Informações: Samira, (27) 99281-0373.",
+    offer: "Vagas ilimitadas. Inscrição até 06/11.",
+    offerShort: "Vagas ilimitadas",
+    hours: "Dia D · concentração 6h30, largada 7h30 no Parque de Exposições",
+    image: "/images/atracoes/cavalgada.jpg",
+    imageAlt: "Amazona de chapéu preto montada em um cavalo de crina clara.",
+    maps: "https://maps.app.goo.gl/iVek9YgosNFbnirT6",
+    externalUrl: "https://forms.gle/MqrPokGc4wTr2gLm9",
+    externalLabel: "Inscrever na cavalgada",
+    claim: "external",
+  },
+  {
     id: "linear-e-movimento",
     name: "Linear e Movimento",
     category: "Aventura",
