@@ -47,6 +47,7 @@ export const PROGRAM_FORMS = {
   parqueTunelDaAlegria: "https://forms.gle/6246EECshgE7mmBj6",
   piscinasZeMaria: "https://forms.gle/64nMQuQ5fQMbsqkT7",
   cachoeiraAloisio: "https://forms.gle/Zri7zg7Gm3XdyjxA6",
+  saboresDePerobas: "https://forms.gle/QBzeovWBTZEmZEUGA",
 } as const;
 
 const RAFFLE_SIGNUP_LABEL = "Inscrever e concorrer";
@@ -514,6 +515,29 @@ export const programItems: ProgramItem[] = [
       { label: "Couvert artístico", value: "R$ 10." },
     ],
     maps: [{ label: "Pesque e Pague do Neném", url: "https://maps.app.goo.gl/F3Hhf55F7Zzt4AGA8" }],
+  },
+  {
+    id: "sabores-de-perobas",
+    time: "14h",
+    title: "Sabores de Perobas",
+    place: "Perobas, Viana",
+    schedule: [{ label: "Horário", value: "14h" }],
+    summary:
+      "Doces, pães e compotas diferenciados, feitos com o que é colhido na propriedade. Nos fins de semana o espaço serve almoço e funciona também para o happy hour com os amigos.",
+    highlights: ["Sorteio para os inscritos"],
+    details: [
+      {
+        label: "Como chegar",
+        value:
+          "Pela BR-262, sentido Viana / Montanhas. Passe o bairro Bom Pastor e fique atento à entrada da Estrada de Perobas, à direita. Siga alguns quilômetros pela estrada rural: o restaurante tem placa na estrada. São de 15 a 25 minutos saindo da Sede de Viana.",
+      },
+      { label: "Estacionamento", value: "Gratuito, com amplo espaço no Parque de Exposições." },
+      { label: "Inscrição", value: RAFFLE_SIGNUP_DETAIL },
+      { label: "Redes sociais", value: "@sabores.de.perobas" },
+      { label: "Documento", value: "Identificação com foto." },
+    ],
+    signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.saboresDePerobas },
+    contact: { name: "Sabores de Perobas", phone: "5527999198537", phoneLabel: "(27) 99919-8537" },
   },
   {
     id: "shows",
