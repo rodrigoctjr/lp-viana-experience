@@ -285,7 +285,7 @@ export const attractions: Attraction[] = [
     hours: "Dia D · 9h às 17h",
     image: "/images/hero/cerveja-desktop.jpg",
     imageAlt: "Copo de cerveja artesanal sendo servido.",
-    formUrl: "https://forms.gle/wRPKVe1HcqHWTXmr8",
+    formUrl: "https://forms.gle/G52Kf1tphjHjBDLB7",
     claim: "form",
   },
   {
