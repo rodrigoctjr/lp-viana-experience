@@ -49,7 +49,7 @@ export const destinationStories = [
     caption: "Viana Restaurante",
     paragraphs: [
       "Os sabores de Viana dão vontade de repetir. Os restaurantes levam o sabor do campo à cidade, com comida caseira, receitas preparadas no fogão a lenha e mesas que fazem parte da experiência de conhecer o município.",
-      "Do café da manhã ao brinde com a cerveja artesanal produzida em Viana, a gastronomia acompanha o passeio. O polo cervejeiro também aproxima o visitante dos sabores e da produção local.",
+      "Do café da manhã à cerveja artesanal produzida em Viana, a gastronomia acompanha o passeio. O polo cervejeiro também aproxima o visitante dos sabores e da produção local.",
     ],
     details: [],
   },

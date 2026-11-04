@@ -20,7 +20,7 @@ export function Pillars() {
       <button type="button" className="pillar-photo" onClick={() => explore(i)} aria-label={`Explorar ${pillar.title}`} aria-haspopup="dialog"><Image src={images[i].src} alt={images[i].alt} fill sizes="(max-width: 767px) 90vw, 33vw" className="object-cover" /></button><h3>{pillar.title}</h3><p>{pillar.description}</p><small>{pillar.subtitle}</small>
       <button type="button" onClick={() => explore(i)} className="destination-primary pillar-history-link" aria-haspopup="dialog">{["Conhecer a história", "Explorar a natureza", "Descobrir os sabores"][i]} <DirectionArrow diagonal /></button>
     </motion.article>)}</div>
-    <SectionNext copy="Esses três mundos se cruzam num único domingo. O que cabe entre o amanhecer e o último brinde?" label="Descobrir o Dia D" target="dia-d" />
+    <SectionNext copy="Esses três mundos se cruzam num único domingo. O que cabe entre o amanhecer e o último show?" label="Descobrir o Dia D" target="dia-d" />
     <p className="mt-6 max-w-3xl text-xs leading-relaxed text-primary/70">Fotos de Viana: Igreja Matriz, imagem fornecida para o projeto; Mata Atlântica, Instituto Últimos Refúgios (CC BY SA 4.0); lúpulo, Prefeitura de Viana.</p>
   </SectionShell>;
 }
