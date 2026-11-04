@@ -99,7 +99,12 @@ function AttractionLinks({
           </a>
         ) : null}
       </div>
-      {item.claim === "whatsapp" && item.phone ? (
+      {item.closed ? (
+        <button type="button" disabled className={cn(actionClass, "cursor-not-allowed bg-brown/20 text-primary/40")}>
+          Inscrições encerradas
+        </button>
+      ) : null}
+      {!item.closed && item.claim === "whatsapp" && item.phone ? (
         <a
           href={whatsappClaimUrl(item.phone, item.name, item.whatsappText)}
           target="_blank"
@@ -109,7 +114,7 @@ function AttractionLinks({
           Reservar no WhatsApp
         </a>
       ) : null}
-      {item.claim === "external" && item.externalUrl ? (
+      {!item.closed && item.claim === "external" && item.externalUrl ? (
         <a
           href={item.externalUrl}
           target="_blank"
@@ -119,7 +124,7 @@ function AttractionLinks({
           {item.externalLabel ?? "Abrir o site"}
         </a>
       ) : null}
-      {item.claim === "form" && item.formUrl ? (
+      {!item.closed && item.claim === "form" && item.formUrl ? (
         <a
           href={item.formUrl}
           target="_blank"
@@ -130,12 +135,12 @@ function AttractionLinks({
           <span className="sr-only"> (abre o formulário em nova aba)</span>
         </a>
       ) : null}
-      {item.claim === "form" && !item.formUrl ? (
+      {!item.closed && item.claim === "form" && !item.formUrl ? (
         <span className={cn(actionClass, "cursor-default bg-brown/10 text-primary/50")}>
           Inscrições em breve
         </span>
       ) : null}
-      {item.claim === "signup" ? (
+      {!item.closed && item.claim === "signup" ? (
         <button
           type="button"
           disabled={soldOut(item, remaining)}
@@ -204,21 +209,35 @@ function AttractionCard({
       transition={{ delay: Math.min(index * 0.06, 0.24), duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       className="flex h-full flex-col overflow-hidden rounded-sm border-4 border-brown/15 bg-surface-elevated shadow-[0_16px_40px_-20px_rgba(107,61,46,0.45)]"
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className={cn("relative aspect-[4/3] overflow-hidden", item.imageContain && "bg-[#f8f3ea]")}>
         <Image
           src={item.image!}
           alt={item.imageAlt ?? ""}
           fill
-          className="object-cover transition-transform duration-700 ease-out hover:scale-105"
+          className={cn(
+            "transition-transform duration-700 ease-out",
+            item.imageContain ? "object-contain" : "object-cover hover:scale-105",
+          )}
           sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
         />
-        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-brown-deep/50 via-transparent to-brown-deep/10" />
+        {!item.imageContain ? (
+          <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-brown-deep/50 via-transparent to-brown-deep/10" />
+        ) : null}
+        {item.closed ? (
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-brown-deep/35">
+            <span className="w-[140%] -rotate-12 bg-terra py-2.5 text-center font-mono-label text-xs text-on-accent shadow-lg">
+              Inscrições encerradas
+            </span>
+          </div>
+        ) : null}
         <span className="absolute left-4 top-4 rounded-sm bg-ochre px-3 py-1.5 font-mono-label text-[10px] text-primary">
           {item.category}
         </span>
-        <span className="absolute bottom-4 right-4 rounded-sm bg-brown/90 px-3 py-1.5 font-mono-label text-[10px] text-on-accent">
-          {item.offerShort}
-        </span>
+        {!item.closed ? (
+          <span className="absolute bottom-4 right-4 rounded-sm bg-brown/90 px-3 py-1.5 font-mono-label text-[10px] text-on-accent">
+            {item.offerShort}
+          </span>
+        ) : null}
       </div>
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <p className="font-mono-label text-[10px] text-brown">{item.place}</p>
