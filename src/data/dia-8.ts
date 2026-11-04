@@ -36,7 +36,7 @@ export const dayFaqItems = [
     id: "inscricao",
     question: "Como faço a inscrição?",
     answer:
-      "Depende da atividade. Pedal, Banho de Floresta e cursos cervejeiros têm formulário: inscreva-se e concorra no sorteio para os inscritos. Pêndulo, caiaque e trilha são no site da Radical, e a corrida, no site da Linear e Movimento. Os demais parceiros atendem pelo WhatsApp ou terão formulário em breve. O card de cada atividade mostra o caminho.",
+      "Depende da atividade. Pedal, Banho de Floresta e curso cervejeiro têm formulário: inscreva-se e concorra no sorteio para os inscritos. Pêndulo, caiaque e trilha são no site da Radical. A corrida já está com as inscrições encerradas. Os demais parceiros atendem pelo WhatsApp ou terão formulário em breve. O card de cada atividade mostra o caminho.",
   },
   {
     id: "prazo",

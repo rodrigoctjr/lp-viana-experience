@@ -30,6 +30,8 @@ export interface ProgramItem {
   /** Quando ainda não há link de inscrição. */
   signupNote?: string;
   coupon?: string;
+  /** Inscrições encerradas: faixa no card e botão desabilitado. */
+  closed?: boolean;
   contact?: ProgramContact;
 }
 
@@ -80,7 +82,7 @@ export const programItems: ProgramItem[] = [
       { label: "Concentração", value: "5h30" },
       { label: "Largada", value: "6h" },
     ],
-    highlights: ["60 vagas", "A partir de 14 anos", "Cupom até 31/10"],
+    highlights: ["A partir de 14 anos"],
     details: [
       {
         label: "Como chegar",
@@ -93,7 +95,7 @@ export const programItems: ProgramItem[] = [
         value:
           "A organização não oferece transporte. Dá para ir de ônibus pela linha 911 da Ceturb (Canaã / Terminal Campo Grande via Primavera).",
       },
-      { label: "Inscrição", value: "No site da Linear e Movimento, até 06/11." },
+      { label: "Inscrição", value: "Inscrições encerradas." },
       {
         label: "O que vestir",
         value:
@@ -104,7 +106,7 @@ export const programItems: ProgramItem[] = [
     ],
     maps: [{ label: "Parque Linear de Canaã", url: "https://maps.app.goo.gl/ZkaMXUnVto9V6FHD6" }],
     signup: { label: "Inscrever na corrida", url: "https://www.linearemovimento.com.br/" },
-    coupon: "VIANAEXPERIENCE",
+    closed: true,
     contact: { name: "Sandrinho", phone: "5527998116525", phoneLabel: "(27) 99811-6525" },
   },
   {
@@ -422,24 +424,15 @@ export const programItems: ProgramItem[] = [
   {
     id: "cursos-cervejeiros",
     time: "9h",
-    title: "Cursos cervejeiros",
-    place: "Cervejarias Piabier (Formate), Indomável (Centro) e Origem (Jucu)",
+    title: "Curso Cervejeiro",
+    place: "Cervejaria Origem, Jucu",
     schedule: [{ label: "Horário", value: "9h às 17h" }],
-    highlights: ["Sorteio para os inscritos", "Certificado do IFES"],
+    highlights: ["40 vagas", "Sorteio para os inscritos", "Certificado do IFES"],
     details: [
-      { label: "Cervejeiro Caseiro", value: "Cervejaria Piabier, em Formate." },
-      { label: "Cervejeiro Caseiro", value: "Cervejaria Indomável, no Centro de Viana." },
-      { label: "Harmonização com Cerveja", value: "Cervejaria Origem, no Jucu." },
-      {
-        label: "Inscrição",
-        value: "Um formulário só, em que você escolhe a turma. Inscreva-se e concorra: sorteio para os inscritos.",
-      },
+      { label: "Vagas", value: "40." },
+      { label: "Inscrição", value: RAFFLE_SIGNUP_DETAIL },
     ],
-    maps: [
-      { label: "Piabier", url: "https://maps.app.goo.gl/Vx1Fpd728ZZS6LLy9" },
-      { label: "Indomável", url: "https://maps.app.goo.gl/AtFUwSauL2SMZzkQ9" },
-      { label: "Origem", url: "https://maps.app.goo.gl/QoGzDSfSDLXrhGDb9" },
-    ],
+    maps: [{ label: "Origem", url: "https://maps.app.goo.gl/QoGzDSfSDLXrhGDb9" }],
     signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.cursoCervejeiro },
   },
   {

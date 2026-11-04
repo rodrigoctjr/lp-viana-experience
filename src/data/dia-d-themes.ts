@@ -45,7 +45,7 @@ export const diaDThemes = [
   {
     id: "cervejas",
     title: "Cervejas artesanais",
-    description: "Cursos de cervejeiro caseiro e de harmonização, com certificado do IFES.",
+    description: "Curso cervejeiro na Cervejaria Origem, com certificado do IFES.",
     icon: "beer" as const,
   },
   {

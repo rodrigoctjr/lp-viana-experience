@@ -84,6 +84,11 @@ function ProgramCard({ item }: { item: ProgramItem }) {
           <p className="font-mono-label text-[10px] text-brown/70">{item.organizer}</p>
         ) : null}
         <h3 className="mt-1 font-display text-xl leading-tight text-primary sm:text-2xl">{item.title}</h3>
+        {item.closed ? (
+          <span className="mt-2 inline-flex rounded-sm bg-terra px-3 py-1 font-mono-label text-[10px] text-on-accent">
+            Inscrições encerradas
+          </span>
+        ) : null}
         <p className="mt-1 font-body text-sm text-primary/70">{item.place}</p>
         {scheduleLine ? (
           <p className="mt-2 font-body text-xs font-semibold text-brown">{scheduleLine}</p>
@@ -181,7 +186,15 @@ function ProgramCard({ item }: { item: ProgramItem }) {
               ) : null}
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
-                {item.signup ? (
+                {item.signup && item.closed ? (
+                  <span
+                    aria-disabled="true"
+                    className="inline-flex min-h-11 cursor-not-allowed items-center rounded-full bg-brown/20 px-5 font-body text-xs font-bold uppercase tracking-wider text-primary/40"
+                  >
+                    Inscrições encerradas
+                  </span>
+                ) : null}
+                {item.signup && !item.closed ? (
                   <a
                     href={item.signup.url}
                     target="_blank"
@@ -197,7 +210,7 @@ function ProgramCard({ item }: { item: ProgramItem }) {
                     {item.signupNote}
                   </span>
                 ) : null}
-                {item.coupon ? <CopyCoupon code={item.coupon} /> : null}
+                {item.coupon && !item.closed ? <CopyCoupon code={item.coupon} /> : null}
                 {item.contact ? (
                   <a
                     href={whatsappUrl(item.contact.phone)}

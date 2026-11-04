@@ -19,6 +19,8 @@ export interface Attraction {
   hours: string;
   image?: string;
   imageAlt?: string;
+  /** Arte com texto: mostra a imagem inteira em vez de recortar. */
+  imageContain?: boolean;
   instagram?: string;
   phone?: string;
   phoneLabel?: string;
@@ -34,6 +36,8 @@ export interface Attraction {
   sessions?: { time: string; spots: string }[];
   /** Formulário de inscrição da atração; sem ele, o card mostra "Inscrições em breve". */
   formUrl?: string;
+  /** Inscrições encerradas: faixa na foto e botão desabilitado. */
+  closed?: boolean;
   /** whatsapp: o parceiro controla. signup: a vaga fecha aqui. form: formulário de inscrição para o sorteio. */
   claim: AttractionClaim;
   slots?: VoucherSlot[];
@@ -257,26 +261,26 @@ export const attractions: Attraction[] = [
     category: "Aventura",
     place: "Corrida de 5 km",
     summary:
-      "Primeira corrida oficial da Linear e Movimento, no dia 8 de novembro. A inscrição é feita no site da prova.",
-    offer: "10% de desconto com o cupom VIANAEXPERIENCE, até 31 de outubro.",
-    offerShort: "10% no cupom",
-    hours: "8 de novembro · cupom até 31/10",
+      "Primeira corrida oficial da Linear e Movimento, no dia 8 de novembro.",
+    offer: "Inscrições encerradas.",
+    offerShort: "Inscrições encerradas",
+    hours: "8 de novembro · concentração 5h30, largada 6h",
     image: "/images/atracoes/linear-corrida.webp",
     imageAlt: "Kit da 1ª corrida Linear e Movimento: camiseta, viseira, bolsa e número de peito.",
     website: "https://www.linearemovimento.com.br/",
     externalUrl: "https://www.linearemovimento.com.br/",
     externalLabel: "Inscrever na corrida",
-    coupon: "VIANAEXPERIENCE",
+    closed: true,
     claim: "external",
   },
   {
     id: "curso-cervejeiro",
-    name: "Cursos cervejeiros",
+    name: "Curso Cervejeiro",
     category: "Gastronomia",
-    place: "Piabier (Formate) · Indomável (Centro) · Origem (Jucu)",
+    place: "Cervejaria Origem · Jucu",
     summary:
-      "Três turmas no Dia D: Cervejeiro Caseiro na Piabier e na Indomável, e Harmonização com Cerveja na Origem. Todas recebem certificado do IFES. No formulário, você escolhe a turma.",
-    offer: "Inscreva-se e concorra.",
+      "Uma turma no Dia D, na Cervejaria Origem, no Jucu, com certificado do IFES.",
+    offer: "40 vagas. Inscreva-se e concorra.",
     offerShort: "Sorteio para os inscritos",
     hours: "Dia D · 9h às 17h",
     image: "/images/hero/cerveja-desktop.jpg",
@@ -313,8 +317,10 @@ export const attractions: Attraction[] = [
     offer: "Inscreva-se e concorra.",
     offerShort: "Sorteio para os inscritos",
     hours: "Dia D · mesa, artesanato e música",
-    image: "/images/atracoes/viana-restaurante.webp",
-    imageAlt: "Salão do vagão do Viana Restaurante, com as mesas postas.",
+    image: "/images/atracoes/viana-restaurante-dia-d.webp",
+    imageAlt:
+      "Arte do Dia D do Turismo no Viana Restaurante: 11h abertura e feira de artesanato, 14h Wine Arte com Antônio Avelar, 15h Super Chefinhos, 16h João Pedro & Miguel e 18h Samba ADM.",
+    imageContain: true,
     instagram: "vianarestaurantees",
     maps: "https://maps.app.goo.gl/7436G7t3xxzzbR3d8",
     formUrl: "https://forms.gle/rR3TfXq13mRmgggT7",
