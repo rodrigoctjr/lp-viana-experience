@@ -247,7 +247,7 @@ export const attractions: Attraction[] = [
       "Saída do Parque de Exposições de Viana, com estacionamento gratuito. Vá com roupa adequada e leve água. Menores só com os pais. Informações: Samira, (27) 99281-0373.",
     offer: "Vagas ilimitadas. Inscrição até 06/11.",
     offerShort: "Vagas ilimitadas",
-    hours: "Dia D · concentração 6h30, largada 7h30 no Parque de Exposições",
+    hours: "Dia D · concentração 9h, saída 9h30 no Pavilhão de Eventos",
     image: "/images/atracoes/cavalgada.jpg",
     imageAlt: "Amazona de chapéu preto montada em um cavalo de crina clara.",
     maps: "https://maps.app.goo.gl/iVek9YgosNFbnirT6",
