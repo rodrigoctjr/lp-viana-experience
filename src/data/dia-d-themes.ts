@@ -25,12 +25,6 @@ export const diaDThemes = [
     icon: "bike" as const,
   },
   {
-    id: "cavalgada",
-    title: "Cavalgada",
-    description: "A tradição do campo capixaba, a cavalo.",
-    icon: "horse" as const,
-  },
-  {
     id: "corrida",
     title: "Corrida",
     description: "5 km no Parque Linear de Canaã, com a Linear e Movimento.",

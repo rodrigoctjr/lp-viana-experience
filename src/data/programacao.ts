@@ -39,7 +39,6 @@ export interface ProgramItem {
 export const PROGRAM_FORMS = {
   banhoDeFloresta: "https://forms.gle/Z5ERhnwmw9Sae8HP8",
   pedal: "https://forms.gle/yqNqLRoeQtjxRuVbA",
-  cavalgada: "https://forms.gle/MqrPokGc4wTr2gLm9",
   cursoCervejeiro: "https://forms.gle/G52Kf1tphjHjBDLB7",
   vianaRestaurante: "https://forms.gle/rR3TfXq13mRmgggT7",
   cantimDiMinas: "https://forms.gle/tviKVj6Y8MRP1P6NA",
@@ -364,29 +363,6 @@ export const programItems: ProgramItem[] = [
     ],
     maps: [{ label: "Cachoeira do Aloísio", url: "https://maps.app.goo.gl/MFHfunhBA2cqPkqx8" }],
     signup: { label: RAFFLE_SIGNUP_LABEL, url: PROGRAM_FORMS.cachoeiraAloisio },
-  },
-  {
-    id: "cavalgada",
-    time: "9h",
-    title: "Cavalgada",
-    place: "Pavilhão de Eventos (Parque de Exposições de Viana)",
-    schedule: [
-      { label: "Concentração", value: "9h" },
-      { label: "Saída", value: "9h30" },
-    ],
-    highlights: ["Vagas ilimitadas"],
-    details: [
-      { label: "Percurso", value: "Saída do Pavilhão de Eventos, no Parque de Exposições." },
-      { label: "Como chegar", value: PARQUE_EXPOSICOES_ACESSO },
-      { label: "Estacionamento", value: "Gratuito, com bastante espaço no Parque de Exposições." },
-      { label: "Inscrição", value: "Pelo formulário, até 06/11." },
-      { label: "Idade", value: "Menores de idade só com os pais." },
-      { label: "O que levar", value: "Roupa adequada para cavalgada e garrafa de água." },
-      { label: "Documento", value: "Identificação com foto." },
-    ],
-    maps: [{ label: "Parque de Exposições", url: PARQUE_EXPOSICOES_MAPS }],
-    signup: { label: "Inscrever na cavalgada", url: PROGRAM_FORMS.cavalgada },
-    contact: { name: "Samira", phone: "5527992810373", phoneLabel: "(27) 99281-0373" },
   },
   {
     id: "banho-de-floresta",

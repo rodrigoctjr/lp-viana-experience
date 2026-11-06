@@ -10,7 +10,6 @@ const icons: Record<(typeof diaDThemes)[number]["icon"], React.ReactNode> = {
   pendulum: <path d="M4 6h32M10 6l3 6m14-6-3 6M20 6v14m0 0a3 3 0 1 0 0 .1M17 26l3-3 3 3m-3-3v8m-4 3 4-3 4 3M4 36c6-3 10-3 16 0s10 3 16 0" />,
   mountain: <path d="M3 33 14 13l7 12 5-9 11 17H3zm8-16 3 3 3-3m10 3 2 3 2-1" />,
   bike: <path d="M4 27a6 6 0 1 0 12 0 6 6 0 1 0-12 0zm20 0a6 6 0 1 0 12 0 6 6 0 1 0-12 0zM10 27l6-12h9l5 12M16 15l6 12h-6m3-16h5M14 11h5" />,
-  horse: <path d="M8 34V22c0-5 4-8 9-8h7l4-6 2 5 4 3-2 4-4-1-3 4v11M14 22v12m-6-14-4 6m24-8h.1" />,
   run: <path d="M24 6a3 3 0 1 0 0 .1M20 13l-6 4-3 6m9-10 6 6 6 1M20 13l-3 9 6 5-2 9m-4-14-5 5H6" />,
   food: <path d="M5 21h30c0 8-6 13-15 13S5 29 5 21zm3-4c2-5 7-8 12-8s10 3 12 8M20 9V5M14 15h.1m6-1h.1m6 1h.1" />,
   beer: <path d="M9 12h19v21H9zM28 15h5a5 5 0 0 1 0 10h-5M15 17v10m7-10v10M9 12c-5-5 1-10 5-7 3-5 9-3 9 1 5-2 9 3 5 6" />,
