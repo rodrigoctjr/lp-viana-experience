@@ -11,6 +11,7 @@ import { Footer } from "@/components/sections/Footer";
 import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
 import { ImpactCta } from "@/components/sections/ImpactCta";
+import { PartnersSection } from "@/components/sections/PartnersSection";
 import { Pillars } from "@/components/sections/Pillars";
 import { QuizTotemSection } from "@/components/sections/QuizTotemSection";
 import { RunnerGameSection } from "@/components/sections/RunnerGameSection";
@@ -35,6 +36,7 @@ export default function HomePage() {
         <QuizTotemSection />
         <RunnerGameSection />
         <ImpactCta />
+        <PartnersSection />
       </main>
       <Footer />
       <JourneyMotion />
