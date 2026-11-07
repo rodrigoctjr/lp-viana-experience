@@ -24,7 +24,7 @@ export const dayFaqItems = [
     id: "onde",
     question: "Onde é o ponto de encontro?",
     answer:
-      "Depende da atividade. Pedal e trilha saem do Parque de Exposições de Viana; a corrida, do Parque Linear de Canaã; o pêndulo tem encontro no Posto Canaã; caiaque e Banho de Floresta, na fazenda do Incaper em Jucuruaba. Cada card da programação traz o mapa.",
+      "Depende da atividade. Pedal e trilha saem do Parque de Exposições de Viana; a corrida, da Praça Linear do Canaã; o pêndulo tem encontro no Posto Canaã; caiaque e Banho de Floresta, na fazenda do Incaper em Jucuruaba. Cada card da programação traz o mapa.",
   },
   {
     id: "volta",
