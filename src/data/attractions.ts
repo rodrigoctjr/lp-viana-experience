@@ -247,7 +247,7 @@ export const attractions: Attraction[] = [
       "Primeira corrida oficial da Linear e Movimento, no dia 8 de novembro.",
     offer: "Inscrições encerradas.",
     offerShort: "Inscrições encerradas",
-    hours: "8 de novembro · concentração 5h30, largada 6h",
+    hours: "8 de novembro · concentração 5h30, largada 6h30",
     image: "/images/atracoes/linear-corrida.webp",
     imageAlt: "Kit da 1ª corrida Linear e Movimento: camiseta, viseira, bolsa e número de peito.",
     website: "https://www.linearemovimento.com.br/",

@@ -27,7 +27,7 @@ export const diaDThemes = [
   {
     id: "corrida",
     title: "Corrida",
-    description: "5 km no Parque Linear de Canaã, com a Linear e Movimento.",
+    description: "5 km na Praça Linear do Canaã, com a Linear e Movimento.",
     icon: "run" as const,
   },
   {

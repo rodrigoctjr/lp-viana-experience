@@ -76,10 +76,10 @@ export const programItems: ProgramItem[] = [
     time: "5h30",
     title: "Corrida oficial · 5 km",
     organizer: "Linear e Movimento",
-    place: "Parque Linear de Canaã, entre Marcílio de Noronha e Universal",
+    place: "Praça Linear do Canaã, entre Marcílio de Noronha e Universal",
     schedule: [
       { label: "Concentração", value: "5h30" },
-      { label: "Largada", value: "6h" },
+      { label: "Largada", value: "6h30" },
     ],
     highlights: ["A partir de 14 anos"],
     details: [
@@ -88,7 +88,7 @@ export const programItems: ProgramItem[] = [
         value:
           "Pela marginal da BR-101/BR-262. Sentido Domingos Martins: depois da Real Café, siga pela marginal e vire à direita no semáforo após a DEFRAGO. Sentido Cariacica: use a marginal depois da passarela de pedestres do Canaã.",
       },
-      { label: "Estacionamento", value: "Gratuito, no Parque Linear de Canaã." },
+      { label: "Estacionamento", value: "Gratuito, na Praça Linear do Canaã." },
       {
         label: "Transporte",
         value:
@@ -103,7 +103,7 @@ export const programItems: ProgramItem[] = [
       { label: "Kit", value: "As orientações chegam pelo e-mail informado na inscrição." },
       { label: "Documento", value: "Identificação com foto." },
     ],
-    maps: [{ label: "Parque Linear de Canaã", url: "https://maps.app.goo.gl/ZkaMXUnVto9V6FHD6" }],
+    maps: [{ label: "Praça Linear do Canaã", url: "https://maps.app.goo.gl/ZkaMXUnVto9V6FHD6" }],
     signup: { label: "Inscrever na corrida", url: "https://www.linearemovimento.com.br/" },
     closed: true,
     contact: { name: "Sandrinho", phone: "5527998116525", phoneLabel: "(27) 99811-6525" },
