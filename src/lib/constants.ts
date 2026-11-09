@@ -1,4 +1,5 @@
 export const NAV_LINKS = [
+  { label: "Fotos", href: "#fotos" },
   { label: "Destinos", href: "#pillars" },
   { label: "Dia D", href: "#dia-d" },
   { label: "Como funciona", href: "#programacao" },
